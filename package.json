@@ -1,0 +1,31 @@
+{
+  "name": "homban2",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Homban - Go API + React frontend behind a local HTTPS reverse proxy",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "frontend",
+    "proxy"
+  ],
+  "scripts": {
+    "dev": "concurrently --names backend,frontend,proxy --prefix-colors blue,magenta,green --kill-others-on-fail \"npm:dev:backend\" \"npm:dev:frontend\" \"npm:dev:proxy\"",
+    "dev:backend": "go -C backend run ./cmd/server",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:proxy": "npm --workspace proxy run dev",
+    "build": "npm --workspace frontend run build && npm run build:backend",
+    "build:backend": "go -C backend build -o bin/server ./cmd/server",
+    "test": "npm run test:backend",
+    "test:backend": "go -C backend test ./...",
+    "check": "npm --workspace frontend run typecheck && npm --workspace proxy run typecheck && go -C backend vet ./...",
+    "trust-ca": "npm --workspace proxy run trust-ca",
+    "certs:clean": "node -e \"const fs=require('fs');for (const f of fs.readdirSync('proxy/certs')) if (/[.](crt|key)$/.test(f)) fs.rmSync('proxy/certs/'+f)\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

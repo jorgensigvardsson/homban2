@@ -1,0 +1,11 @@
+# Normalise line endings so two machines do not fight over them.
+# LF in the repository and in the working tree; every tool used here
+# (Node, Go, VS Code) is happy with LF on Windows.
+* text=auto eol=lf
+
+# Keep these exactly as they are.
+*.png binary
+*.jpg binary
+*.ico binary
+*.crt binary
+*.key binary

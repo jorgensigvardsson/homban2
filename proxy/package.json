@@ -1,0 +1,22 @@
+{
+  "name": "@homban/proxy",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Local HTTPS reverse proxy fronting the Go API and the Vite dev server",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "trust-ca": "tsx scripts/trust-ca.ts"
+  },
+  "dependencies": {
+    "http-proxy-3": "^1.23.3",
+    "mkcert": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

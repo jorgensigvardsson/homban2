@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+backend/bin/
+
+# Local certificates (generated on first run, never commit)
+proxy/certs/*
+!proxy/certs/.gitkeep
+
+# Environment
+.env
+.env.local
+*.local
+
+# Editors / OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
