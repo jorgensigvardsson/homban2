@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-hall-uppe",
+  "title": "Storstädning – hall uppe",
+  "roomType": "upstairs_hall",
+  "description": "Komplett storstädning av hallen på övervåningen, anpassad efter paneltak, mönstrad tapet, takarmatur, hög fast förvaring, två lådbyråer, prydnadsföremål, växter, rund matta, dörröppningar och hårt golv. Aktiviteterna är ordnade uppifrån och ned för att undvika dubbelarbete.",
+  "definitionOfDone": "Tak, armatur, väggar, tapet, dörrar, förvaring, lådor, inredning, matta, golv, lister, hörn och normalt dolda ytor är rengjorda. Förvaringen är återställd först när alla ytor är torra, och hallens passager, dörrar och förvaringsfunktioner fungerar utan hinder.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, möbler och detaljer – inte för att bedöma hur hallen ser ut för stunden.",
+    "Att fatta beslut om varje plagg eller ägodel räknas som organisering; själva storstädningen omfattar däremot att tömma hanterbara förvaringsdelar tillfälligt för rengöring.",
+    "Invändig rengöring av fast förvaring utförs bara där innehållet kan tas ut och återställas säkert.",
+    "Tapeten ska behandlas som känslig tills dess tvättbarhet har verifierats. Torr metod är förstahandsval.",
+    "Fast el, takarmatur och höga skåp demonteras inte. Tillverkarens skötselråd och elsäkerhet har alltid företräde.",
+    "Angränsande sovrum och andra rum ingår inte, men dörrblad, karmar och trösklar som vetter mot hallen gör det.",
+    "Eventuell trappa utanför den fotograferade hallzonen hanteras som en separat yta om den senare ska ingå. Gränsdragning är trots allt civilisationens tunnaste fernissa."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "upstairs-hall-01-preparation",
+      "order": 1,
+      "title": "Förbered hallen",
+      "tasks": [
+        {"id": "upstairs-hall-01-001", "title": "Flytta saker som hör hemma i andra rum", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-01-002", "title": "Ta bort skräp och tomma förpackningar", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-01-003", "title": "Töm byråernas ovansidor tillfälligt", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-01-004", "title": "Flytta lösa dekorationer och lampor till en säker arbetsyta", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-01-005", "title": "Flytta växter och krukor från städytorna", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-01-006", "title": "Ta bort den runda mattan och eventuellt halkskydd", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-01-007", "title": "Töm en förvaringsdel i taget om invändig rengöring ska göras", "details": "Behåll innehållet grupperat per låda eller skåpssektion så att återställningen blir korrekt.", "status": "pending", "condition": "if_possible"},
+        {"id": "upstairs-hall-01-008", "title": "Flytta fram fristående byråer där det kan göras utan skada", "safety": "Töm tunga lådor först och arbeta två personer om möbeln är tung eller instabil.", "status": "pending", "condition": "if_possible"},
+        {"id": "upstairs-hall-01-009", "title": "Skydda golv och möbler under arbete med tak och armatur", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-01-010", "title": "Vädra hallen via angränsande rum", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-02-ceiling",
+      "order": 2,
+      "title": "Paneltak, takkanter och höga ytor",
+      "tasks": [
+        {"id": "upstairs-hall-02-001", "title": "Dammsug eller torrdamma hela paneltaket", "details": "Arbeta i panelbrädornas riktning med mjukt munstycke eller tvättbart dammverktyg.", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-02-002", "title": "Rengör spåren mellan takpanelerna", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-02-003", "title": "Damma takets hörn och samtliga tak-vägganslutningar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-02-004", "title": "Ta bort spindelväv från tak och höga hörn", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-02-005", "title": "Torka försiktigt bort lokala märken på paneltaket", "details": "Använd väl urvriden duk och materialanpassad metod; undvik att väta skarvarna.", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-02-006", "title": "Damma ovansidorna på de höga fasta skåpen", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-02-007", "title": "Dammsug springan mellan skåpens ovansidor och taket", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-02-008", "title": "Kontrollera tak och höga hörn efter missfärgning, fukt eller sprickor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-02-009", "title": "Kontrollera att panelbrädor och taklister sitter stabilt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-03-ceiling-light",
+      "order": 3,
+      "title": "Takarmatur",
+      "tasks": [
+        {"id": "upstairs-hall-03-001", "title": "Släck armaturen och låt ljuskällan svalna helt", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-03-002", "title": "Bryt strömmen före fuktig rengöring eller arbete nära lamphållaren", "safety": "Vid osäkerhet ska endast torr damning utföras och elektriskt arbete lämnas till behörig person.", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-03-003", "title": "Damma takkåpa, kedja och upphängning", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-03-004", "title": "Damma armaturens utsida uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-03-005", "title": "Rengör varje dekorativ skiva eller detalj individuellt", "details": "Stöd armaturen med ena handen och använd en mjuk, nästan torr duk.", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-03-006", "title": "Rengör armaturens undersida och öppningar", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-03-007", "title": "Torka ljuskällan när den är kall", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-03-008", "title": "Kontrollera armaturen efter lösa delar eller skadad upphängning", "safety": "Använd inte armaturen om upphängningen verkar instabil.", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-03-009", "title": "Rengör eventuella insekter eller damm inuti armaturen", "status": "pending", "condition": "if_accessible_without_dismantling"},
+        {"id": "upstairs-hall-03-010", "title": "Funktionstesta armaturen efter att allt är torrt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-04-walls-wallpaper",
+      "order": 4,
+      "title": "Tapet, målade väggar och hörn",
+      "tasks": [
+        {"id": "upstairs-hall-04-001", "title": "Torrdamma den mönstrade tapeten uppifrån och ned", "details": "Använd mjukt dammborstmunstycke med låg sugkraft eller ren mikrofibervante.", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-002", "title": "Damma tapetens skarvar utan att lyfta kanterna", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-003", "title": "Punktbehandla fläckar på tapeten endast om den är tvättbar", "details": "Testa metod på en undanskymd yta och badda utan att gnugga.", "status": "pending", "condition": "if_wallpaper_is_washable"},
+        {"id": "upstairs-hall-04-004", "title": "Kontrollera tapeten efter lösa skarvar, bubblor eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-005", "title": "Damma samtliga målade väggytor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-006", "title": "Torka handmärken och lokala fläckar från målade väggar", "details": "Använd neutral, svag lösning och väl urvriden duk efter prov på dold yta.", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-04-007", "title": "Rengör väggarnas inner- och ytterhörn", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-008", "title": "Damma väggytorna bakom och intill byråerna", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-04-009", "title": "Damma väggytorna intill de fasta skåpen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-010", "title": "Ta bort damm längs tapetens avslutningar mot foder och lister", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-04-011", "title": "Kontrollera väggarna efter fukt, sprickor och färgsläpp", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-05-doors-openings",
+      "order": 5,
+      "title": "Dörrar, dörröppningar och foder",
+      "tasks": [
+        {"id": "upstairs-hall-05-001", "title": "Damma ovankanten på varje dörrblad", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-002", "title": "Torka båda sidor av dörrbladen som vetter mot hallen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-003", "title": "Rengör runt handtag och andra beröringsytor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-004", "title": "Rengör dörrhandtag och beslag", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-005", "title": "Damma dörrkarmarnas ovansidor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-006", "title": "Torka karmar och dörrfoder runt samtliga öppningar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-007", "title": "Rengör gångjärnens utsidor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-008", "title": "Dammsug springorna vid gångjärn och dörrstopp", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-009", "title": "Rengör eventuella krokar, skyltar och lösa föremål på dörrarna", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-05-010", "title": "Rengör trösklar och golvövergångar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-011", "title": "Kontrollera att dörrarna öppnar och stänger utan att ta i mattan eller golvet", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-05-012", "title": "Kontrollera handtag, gångjärn och dörrstopp efter glapp", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-06-built-in-storage",
+      "order": 6,
+      "title": "Höga fasta förvaringsskåp",
+      "tasks": [
+        {"id": "upstairs-hall-06-001", "title": "Damma samtliga skåpsfronter uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-002", "title": "Torka skåpsfronterna med materialanpassad metod", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-003", "title": "Rengör särskilt runt skåpens greppkanter och beröringszoner", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-004", "title": "Rengör skarvarna mellan skåpsluckorna", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-005", "title": "Dammsug nederkanterna och springan under skåpen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-006", "title": "Torka skåpens synliga socklar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-06-007", "title": "Töm en skåpssektion i taget", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-06-008", "title": "Dammsug skåpssektionernas invändiga tak, väggar och bottnar", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-06-009", "title": "Torka invändiga hyllor och fasta avdelare", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-06-010", "title": "Rengör garderobsstänger, krokar och beslag", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-06-011", "title": "Dammsug och torka lösa förvaringslådor eller korgar", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-06-012", "title": "Damma gångjärn och luckornas innerkanter", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-06-013", "title": "Låt rengjorda skåp torka helt innan innehållet återställs", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-06-014", "title": "Kontrollera skåpen efter lukt, fukt eller skadedjursspår", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-06-015", "title": "Kontrollera att samtliga luckor är raka och stänger korrekt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-07-drawer-units",
+      "order": 7,
+      "title": "Byråer och lådor",
+      "tasks": [
+        {"id": "upstairs-hall-07-001", "title": "Damma byråernas ovansidor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-002", "title": "Torka byråernas ovansidor och kanter", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-003", "title": "Damma och torka samtliga lådfronter", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-004", "title": "Rengör lådornas greppkanter", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-005", "title": "Rengör springorna mellan lådorna", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-006", "title": "Töm en låda i taget", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-07-007", "title": "Dammsug varje lådas botten, hörn och skenor", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-07-008", "title": "Torka varje lådas invändiga ytor", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-07-009", "title": "Rengör lådornas utsidor och undersidor där de är åtkomliga", "status": "pending", "condition": "if_drawers_are_removable"},
+        {"id": "upstairs-hall-07-010", "title": "Låt lådorna torka innan innehållet läggs tillbaka", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "upstairs-hall-07-011", "title": "Damma byråernas gavlar och nederkanter", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-012", "title": "Dammsug byråernas baksidor", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-07-013", "title": "Dammsug och torka golvet bakom och under byråerna", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-07-014", "title": "Kontrollera att alla lådor löper och stänger korrekt", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-07-015", "title": "Kontrollera byråerna efter instabilitet eller behov av väggförankring", "safety": "Höga eller lådförsedda möbler bör vara korrekt förankrade enligt tillverkarens anvisningar, särskilt där barn vistas.", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-08-decor-table-lamp",
+      "order": 8,
+      "title": "Prydnadsföremål och bordslampa",
+      "tasks": [
+        {"id": "upstairs-hall-08-001", "title": "Damma varje prydnadsföremål separat", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-08-002", "title": "Torka vaser och blanka föremål med materialanpassad duk", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-003", "title": "Rengör under varje prydnadsföremål", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-08-004", "title": "Damma konstgjorda eller torkade växtdelar varsamt", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-005", "title": "Rengör fat, brickor och småförvaring på byråerna", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-006", "title": "Släck och koppla ur bordslampan", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-007", "title": "Damma bordslampans skärm på in- och utsida", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-008", "title": "Torka lampfot och stam", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-009", "title": "Damma ljuskällan när den är kall", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-08-010", "title": "Torka sladd och stickpropp med torr duk", "safety": "Ingen fukt på stickpropp, strömbrytare eller kabelanslutningar.", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-011", "title": "Kontrollera lampans sladd och stickpropp efter skador", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-012", "title": "Rengör eventuella speglar eller glasdekorationer", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-08-013", "title": "Damma baksidorna på större dekorföremål", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-08-014", "title": "Kontrollera ömtåliga föremål efter sprickor eller instabil placering", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-09-plants",
+      "order": 9,
+      "title": "Växter, krukor och närliggande ytor",
+      "tasks": [
+        {"id": "upstairs-hall-09-001", "title": "Ta bort döda blad och löst växtmaterial", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-002", "title": "Damma eller duscha växtbladen enligt växtens behov", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-003", "title": "Torka krukornas utsidor och kanter", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-004", "title": "Rengör ytterkrukor och fat invändigt där det behövs", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-005", "title": "Torka bort jord och kalkmärken under krukorna", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-006", "title": "Kontrollera under krukor efter fukt eller missfärgning", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-007", "title": "Kontrollera växterna efter skadedjur", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-09-008", "title": "Låt krukor och underlag torka innan växterna ställs tillbaka", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-10-electrical",
+      "order": 10,
+      "title": "Strömbrytare, uttag och takdetaljer",
+      "tasks": [
+        {"id": "upstairs-hall-10-001", "title": "Damma strömbrytare och vägguttag", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-10-002", "title": "Torka strömbrytarplattor och uttagens utsidor", "safety": "Använd endast lätt fuktad duk och spraya aldrig direkt på eldetaljer.", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-10-003", "title": "Rengör runt strömbrytare där handmärken samlas", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-10-004", "title": "Dammsug försiktigt runt uttag och kabelgenomföringar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-10-005", "title": "Damma takmonterad detektor eller täckbricka", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-10-006", "title": "Funktionstesta eventuell brandvarnare enligt tillverkarens instruktion", "status": "pending", "condition": "if_smoke_alarm"},
+        {"id": "upstairs-hall-10-007", "title": "Byt batteri i eventuell brandvarnare om intervall eller varning kräver det", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-10-008", "title": "Kontrollera uttag och brytare efter sprickor, missfärgning eller glapp", "safety": "Skadade eldetaljer ska inte användas och ska bedömas av behörig elektriker.", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-11-rug",
+      "order": 11,
+      "title": "Rund matta och halkskydd",
+      "tasks": [
+        {"id": "upstairs-hall-11-001", "title": "Kontrollera mattans tvätt- och skötselråd", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-11-002", "title": "Dammsug mattans ovansida långsamt i flera riktningar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-11-003", "title": "Dammsug mattans kant runt hela omkretsen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-11-004", "title": "Vänd och dammsug mattans undersida", "status": "pending", "condition": "if_rug_can_be_moved"},
+        {"id": "upstairs-hall-11-005", "title": "Dammsug och rengör eventuellt halkskydd", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-11-006", "title": "Punktbehandla fläckar enligt mattans skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-11-007", "title": "Tvätta eller lämna in mattan om materialet och behovet motiverar det", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-11-008", "title": "Låt mattan torka helt före återplacering", "status": "pending", "condition": "if_wet_cleaned"},
+        {"id": "upstairs-hall-11-009", "title": "Kontrollera mattan efter slitage, lösa kanter och veck", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-11-010", "title": "Kontrollera att halkskyddet håller mattan plant och stilla", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-11-011", "title": "Rulla eller förvara mattan skyddat medan golvet rengörs", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-12-baseboards-thresholds",
+      "order": 12,
+      "title": "Golvlister, trösklar och kanter",
+      "tasks": [
+        {"id": "upstairs-hall-12-001", "title": "Dammsug samtliga golvlister ovanpå", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-002", "title": "Torka golvlisternas fram- och ovansidor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-003", "title": "Rengör hörn och skarvar mellan listerna", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-004", "title": "Rengör golvkanterna intill tapetväggen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-005", "title": "Dammsug springor längs skåpssocklar och byråfötter", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-006", "title": "Torka samtliga trösklar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-007", "title": "Rengör övergångsprofiler mellan olika golv", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-12-008", "title": "Kontrollera lister, trösklar och profiler efter glapp eller skador", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-12-009", "title": "Ta bort färgöverföring och märken från lister med skonsam metod", "status": "pending", "condition": "if_needed"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-13-floor",
+      "order": 13,
+      "title": "Hårt golv",
+      "tasks": [
+        {"id": "upstairs-hall-13-001", "title": "Dammsug hela den fria golvytan", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-002", "title": "Dammsug längs väggar, skåp och möbler med fogmunstycke", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-003", "title": "Dammsug bakom och under flyttbara byråer", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-13-004", "title": "Dammsug golvet under mattans normala placering", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-005", "title": "Punktbehandla fläckar och fastsittande smuts", "details": "Använd plastskrapa och golvanpassad metod; undvik överflödigt vatten.", "status": "pending", "condition": "if_needed"},
+        {"id": "upstairs-hall-13-006", "title": "Fukttorka hela golvet med medel anpassat till golvtypen", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-007", "title": "Torka manuellt i hörn och längs kanter som moppen inte når", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-008", "title": "Låt golvet torka innan matta och möbler återställs", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-009", "title": "Kontrollera golvet efter glipor, svällning, repor och lösa partier", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-13-010", "title": "Kontrollera att golvet inte är halt efter rengöringen", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-14-hidden-areas",
+      "order": 14,
+      "title": "Dolda och lätt missade ytor",
+      "tasks": [
+        {"id": "upstairs-hall-14-001", "title": "Dammsug bakom lösa föremål som normalt står på golvet", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-14-002", "title": "Rengör golvet under växtstativ och småmöbler", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-14-003", "title": "Dammsug mellan byråerna om en springa finns", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-14-004", "title": "Rengör skarven mellan byråerna och tapetväggen", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-14-005", "title": "Damma ovansidor på dörrfoder och höga karmar", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-14-006", "title": "Rengör undersidorna på utskjutande möbelkanter", "status": "pending", "condition": "if_accessible"},
+        {"id": "upstairs-hall-14-007", "title": "Kontrollera hörn och skåpsspringor efter insekter eller skadedjursspår", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-14-008", "title": "Rengör eventuella ventilationsöppningar i dörrar eller skåp", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-15-air-damage-check",
+      "order": 15,
+      "title": "Luft, lukt och underhållskontroll",
+      "tasks": [
+        {"id": "upstairs-hall-15-001", "title": "Vädra ur hall och förvaring efter rengöringen", "status": "pending", "condition": "if_possible"},
+        {"id": "upstairs-hall-15-002", "title": "Kontrollera hallen efter kvarvarande unken eller avvikande lukt", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-15-003", "title": "Kontrollera skåp och byråer efter kondens eller fuktmärken", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-15-004", "title": "Kontrollera golvet under mattan efter fukt eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-15-005", "title": "Kontrollera väggar och tak efter nya eller återkommande märken", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-15-006", "title": "Notera skador som kräver reparation i stället för rengöring", "status": "pending", "condition": "if_found"},
+        {"id": "upstairs-hall-15-007", "title": "Kontrollera att passagen mellan rummen är fri och halksäker", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-15-008", "title": "Kontrollera att inga sladdar ligger i gångstråket", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "upstairs-hall-16-reset-final-check",
+      "order": 16,
+      "title": "Återställ och slutkontrollera",
+      "tasks": [
+        {"id": "upstairs-hall-16-001", "title": "Återställ skåpens innehåll först när alla ytor är torra", "status": "pending", "condition": "if_interior_cleaning_was_done"},
+        {"id": "upstairs-hall-16-002", "title": "Återställ lådornas innehåll i rätt byrå och ordning", "status": "pending", "condition": "if_interior_cleaning_was_done"},
+        {"id": "upstairs-hall-16-003", "title": "Ställ tillbaka byråerna utan att klämma lister eller sladdar", "status": "pending", "condition": "if_moved"},
+        {"id": "upstairs-hall-16-004", "title": "Placera tillbaka torra växter med skydd under krukorna", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-16-005", "title": "Ställ tillbaka rengjorda dekorationer stabilt", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-006", "title": "Anslut och funktionstesta bordslampan", "status": "pending", "condition": "if_present"},
+        {"id": "upstairs-hall-16-007", "title": "Lägg tillbaka halkskydd och helt torr matta", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-008", "title": "Kontrollera att mattan ligger plant utan snubbelkant", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-009", "title": "Kontrollera samtliga dörrar, lådor och skåpluckor", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-010", "title": "Gör en slutrunda i dagsljus och tänd belysning", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-011", "title": "Ta bort städutrustning och skyddsmaterial", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-012", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-013", "title": "Tvätta använda dukar och moppar separat efter städzon", "status": "pending", "condition": "always"},
+        {"id": "upstairs-hall-16-014", "title": "Markera hallens storstädning som slutförd", "status": "pending", "condition": "always"}
+      ]
+    }
+  ]
+}

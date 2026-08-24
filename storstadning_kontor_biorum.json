@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-kontor-biorum",
+  "title": "Storstädning – kontor och biorum",
+  "roomType": "office_home_cinema",
+  "description": "Komplett storstädning av det kombinerade kontoret och biorummet med paneltak och infällda spotlights, takmonterad projektor, projektionsyta, väggmonterade högtalare, fönster med mörkläggningsrullgardin, arbetsplats med höj- och sänkbart skrivbord, flera skärmar, dator och omfattande kablage, ergonomisk kontorsstol, soffgrupp och fåtöljer, bord, förvaringsskåp och bokhylla, överskåp, madrasser, värmeelement samt heltäckningsmatta.",
+  "definitionOfDone": "Tak, belysning, projektor, bild- och ljudutrustning, väggar, projektionsyta, fönster, mörkläggning, arbetsplats, möbler, textilier, madrasser, förvaring, värmeelement och heltäckningsmatta är rengjorda även ovanpå, bakom, under, inuti och i springor där ytorna är avsedda att nås. Elektroniken är torr, ventilerad, korrekt återansluten och funktionstestad.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, installationer och detaljer – inte för att bedöma rummets tillfälliga skick.",
+    "Kontrollera skötselråd för projektorlins, projektionsyta, skärmar, högtalargaller, datorutrustning, möbeltextil, madrasser och heltäckningsmatta.",
+    "Spraya aldrig rengöringsmedel direkt på projektor, skärmar, dator, högtalare, eluttag, reglage eller annan elektronik.",
+    "Projektionsytor kan vara känsliga för vätska och tryck; använd endast metod som tillverkaren godkänner.",
+    "Tömning och rengöring av förvaring ingår. Beslut om arkivering, gallring eller kassering av dokument räknas som organisering.",
+    "Flytta inte takprojektor, tunga skärmar eller stora möbler ensam. Demontering av fasta installationer eller väggmonterad utrustning ingår inte.",
+    "Eftersom rummet ligger i anslutning till gillestugan bör heltäckningsmatta, ytterväggar och madrasser kontrolleras efter fukt och lukt."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "office-cinema-01-preparation",
+      "order": 1,
+      "title": "Förbered rummet och dokumentera tekniken",
+      "tasks": [
+        {"id": "office-cinema-01-001", "title": "Ta ut disk, skräp och föremål som hör hemma i andra rum", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-01-002", "title": "Töm tillfälligt bord, skrivbord, fönsterbräda och möblernas ovansidor", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-01-003", "title": "Ta bort lösa kuddar, filtar och andra tvättbara textilier", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-01-004", "title": "Töm bokhylla, skåp och överskåp sektionsvis", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-01-005", "title": "Spara öppet arbete och stäng av datorer och övrig utrustning korrekt", "status": "pending", "condition": "always", "safety": "data_and_electricity"},
+        {"id": "office-cinema-01-006", "title": "Fotografera alla kabelanslutningar innan något kopplas ur", "status": "pending", "condition": "if_helpful"},
+        {"id": "office-cinema-01-007", "title": "Märk kablar som annars kan förväxlas", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-01-008", "title": "Koppla ur flyttbar elektronik och låt projektor och skärmar svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-01-009", "title": "Flytta fram lättare möbler där det kan göras säkert", "status": "pending", "condition": "if_possible"},
+        {"id": "office-cinema-01-010", "title": "Vädra rummet under städningen", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "office-cinema-02-ceiling-lighting",
+      "order": 2,
+      "title": "Tak, spotlights och sensorer",
+      "tasks": [
+        {"id": "office-cinema-02-001", "title": "Damma eller dammsug hela paneltaket", "details": "Arbeta längs panelens skarvar med mjukt munstycke.", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-02-002", "title": "Ta bort spindelväv i takvinklar och hörn", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-02-003", "title": "Torka taklister och övergångar mot väggarna", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-02-004", "title": "Kontrollera taket efter fuktfläckar, sprickor eller lösa skarvar", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-02-005", "title": "Bryt strömmen och låt samtliga spotlights svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-02-006", "title": "Damma spotlightarnas ramar och skyddsglas", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-02-007", "title": "Rengör spotlightarnas utsidor med nästan torr duk", "status": "pending", "condition": "if_needed", "safety": "electricity"},
+        {"id": "office-cinema-02-008", "title": "Damma brandvarnare, sensorer och okända takdetaljer torrt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-02-009", "title": "Testa brandvarnaren med testknappen enligt tillverkarens anvisningar", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "office-cinema-02-010", "title": "Kontrollera spotlights och takdetaljer efter glapp eller skador", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-03-projector",
+      "order": 3,
+      "title": "Takmonterad projektor",
+      "tasks": [
+        {"id": "office-cinema-03-001", "title": "Stäng av projektorn korrekt och låt kylfläkten avsluta sin cykel", "status": "pending", "condition": "always", "safety": "electricity_and_heat"},
+        {"id": "office-cinema-03-002", "title": "Koppla ur projektorn när den har svalnat helt", "status": "pending", "condition": "if_user_accessible", "safety": "electricity"},
+        {"id": "office-cinema-03-003", "title": "Damma projektorns hölje med mjuk, torr duk", "status": "pending", "condition": "always", "safety": "electronics_and_height"},
+        {"id": "office-cinema-03-004", "title": "Dammsug luftintag och ventilationsöppningar försiktigt med låg sugkraft", "details": "För inte in munstycke eller tryckluft i apparaten om manualen inte anger det.", "status": "pending", "condition": "if_accessible", "safety": "electronics_and_height"},
+        {"id": "office-cinema-03-005", "title": "Ta ut och rengör projektorns användaråtkomliga luftfilter enligt manualen", "status": "pending", "condition": "if_supported", "safety": "electronics_and_height"},
+        {"id": "office-cinema-03-006", "title": "Låt rengjort filter torka helt innan återmontering", "status": "pending", "condition": "if_washed", "safety": "electricity"},
+        {"id": "office-cinema-03-007", "title": "Rengör objektivets utsida med linsblåsare och godkänd linsduk", "details": "Rör inte linsen med fingrarna och använd inte vanligt glasmedel.", "status": "pending", "condition": "if_needed", "safety": "optics"},
+        {"id": "office-cinema-03-008", "title": "Damma takfästets platta, arm, skruvar och kabeldragning", "status": "pending", "condition": "always", "safety": "height"},
+        {"id": "office-cinema-03-009", "title": "Kontrollera projektorfästet visuellt efter glapp utan att ändra justeringen", "status": "pending", "condition": "always", "safety": "height"},
+        {"id": "office-cinema-03-010", "title": "Rengör projektorns fjärrkontroll", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-03-011", "title": "Starta projektorn och kontrollera bild, fokus, temperaturvarning och fläktljud", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-04-walls-screen",
+      "order": 4,
+      "title": "Väggar och projektionsyta",
+      "tasks": [
+        {"id": "office-cinema-04-001", "title": "Damma de mörka väggarna uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-04-002", "title": "Punktbehandla märken med metod som den mörka väggfärgen tål", "details": "Prova först på en diskret plats eftersom mörk färg lätt blir blankfläckig.", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-04-003", "title": "Rengör väggytor bakom möbler och utrustning", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-04-004", "title": "Identifiera om projektionsytan är målad vägg, duk eller fast skiva", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-04-005", "title": "Damma projektionsytan med metod godkänd för materialet", "details": "Använd minimalt tryck och undvik att skapa polerade eller blanka partier.", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-04-006", "title": "Punktbehandla projektionsytan endast om tillverkaren eller färgsystemet tillåter det", "status": "pending", "condition": "if_supported"},
+        {"id": "office-cinema-04-007", "title": "Rengör projektionsytans ram, kanter och vägganslutning", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-04-008", "title": "Kontrollera projektionsytan efter bucklor, fläckar eller skador som påverkar bilden", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-04-009", "title": "Damma konstverk och ramar på möblernas ovansidor", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "office-cinema-05-audio",
+      "order": 5,
+      "title": "Högtalare och ljudutrustning",
+      "tasks": [
+        {"id": "office-cinema-05-001", "title": "Stäng av och koppla ur ljudutrustningen", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-05-002", "title": "Damma de väggmonterade högtalarnas höljen med torr duk", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-05-003", "title": "Dammsug högtalargaller försiktigt med låg sugkraft", "details": "Tryck inte in gallret eller högtalarelementet.", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-05-004", "title": "Rengör högtalarnas väggfästen och kabelanslutningar torrt", "status": "pending", "condition": "if_accessible", "safety": "electronics"},
+        {"id": "office-cinema-05-005", "title": "Damma soundbar, centerhögtalare eller annan ljudenhet utvändigt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-05-006", "title": "Rengör förstärkare, mottagare och mediaspelare utvändigt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-05-007", "title": "Dammsug ventilationsöppningar på ljudutrustning försiktigt", "status": "pending", "condition": "if_accessible", "safety": "electronics"},
+        {"id": "office-cinema-05-008", "title": "Rengör ljudsystemets fjärrkontroller", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-05-009", "title": "Kontrollera högtalarfästen och kablar visuellt efter glapp eller skador", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-05-010", "title": "Starta ljudsystemet och kontrollera samtliga kanaler", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-06-window-blind",
+      "order": 6,
+      "title": "Fönster och mörkläggningsrullgardin",
+      "tasks": [
+        {"id": "office-cinema-06-001", "title": "Töm fönsterbrädan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-06-002", "title": "Rulla ned mörkläggningsgardinen helt och dammsug den varsamt", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-06-003", "title": "Punktbehandla mörkläggningsgardinen enligt materialets skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-06-004", "title": "Rengör rullgardinens kassett, rulle, sidor och dragmekanism", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-06-005", "title": "Låt gardinen torka helt utrullad före upprullning", "status": "pending", "condition": "if_cleaned_damp"},
+        {"id": "office-cinema-06-006", "title": "Putsa fönsterglaset på insidan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-06-007", "title": "Putsa fönsterglaset på utsidan där det är säkert åtkomligt", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "office-cinema-06-008", "title": "Putsa mellan glasen", "status": "pending", "condition": "if_supported_by_window"},
+        {"id": "office-cinema-06-009", "title": "Rengör spröjs, karmar, bågar, handtag och tätningslister", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-06-010", "title": "Rengör fönsterspår, hörn, beslag och dräneringskanaler", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-06-011", "title": "Torka fönsterbrädan ovanpå, undertill och längs kanterna", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-06-012", "title": "Rengör vas och torkade växter på fönsterbrädan", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-06-013", "title": "Kontrollera fönstret efter kondens, mögelpåväxt eller skadade tätningslister", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-07-desk",
+      "order": 7,
+      "title": "Höj- och sänkbart skrivbord",
+      "tasks": [
+        {"id": "office-cinema-07-001", "title": "Töm skrivbordsskivan helt och sortera föremålen efter återställningsplats", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-07-002", "title": "Dammsug smulor och damm från skrivbordsskivan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-07-003", "title": "Rengör skrivbordsskivans ovansida, kanter och undersida med materialanpassad metod", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-07-004", "title": "Torka skrivbordets ben, fötter, tvärstag och ram", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-07-005", "title": "Damma lyftmekanismens synliga delar utan smörjmedel eller vätska", "status": "pending", "condition": "always", "safety": "mechanical"},
+        {"id": "office-cinema-07-006", "title": "Rengör höjdreglage och minnesknappar med nästan torr duk", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "office-cinema-07-007", "title": "Rengör kabelränna, kabelhållare och skrivbordets undersida", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-07-008", "title": "Flytta skrivbordet och rengör vägg, lister och matta bakom och under", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "office-cinema-07-009", "title": "Kontrollera skrivbordet efter glapp, klämrisk och skadade kablar", "status": "pending", "condition": "always", "safety": "mechanical_and_electricity"},
+        {"id": "office-cinema-07-010", "title": "Testa höj- och sänkfunktionen när området är fritt", "status": "pending", "condition": "always", "safety": "mechanical"}
+      ]
+    },
+    {
+      "id": "office-cinema-08-computer-equipment",
+      "order": 8,
+      "title": "Dator, bildskärmar och arbetsutrustning",
+      "tasks": [
+        {"id": "office-cinema-08-001", "title": "Koppla ur bildskärmar, docka, dator och tillbehör", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-08-002", "title": "Damma bildskärmarna med rena, torra skärmdukar", "details": "Spraya aldrig direkt på skärmarna.", "status": "pending", "condition": "always", "safety": "electronics"},
+        {"id": "office-cinema-08-003", "title": "Rengör skärmarnas ramar, kanter, baksidor och ventilationsöppningar", "status": "pending", "condition": "always", "safety": "electronics"},
+        {"id": "office-cinema-08-004", "title": "Damma monitorarmar, leder, fästen och stolpar", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-08-005", "title": "Kontrollera monitorarmarnas fästen visuellt utan att ändra inställningen", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-08-006", "title": "Rengör laptopens skärm, lock, tangentbord och ventilationsöppningar enligt tillverkarens råd", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-007", "title": "Rengör tangentbord genom att blåsa eller borsta bort löst skräp och torka tangenterna", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-008", "title": "Rengör mus, musmatta, handledsstöd och andra inmatningsenheter", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-009", "title": "Damma datorchassits utsida och ventilationsgaller", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-010", "title": "Rengör datorns dammfilter enligt tillverkarens anvisningar", "status": "pending", "condition": "if_supported", "safety": "electronics"},
+        {"id": "office-cinema-08-011", "title": "Rengör dockningsstation, laddare, hubbar och externa enheter utvändigt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-012", "title": "Rengör mikrofon, kamera, lampor och övriga armmonterade tillbehör", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-08-013", "title": "Damma grenuttag, nätadaptrar, kablar och kontakternas utsidor", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-08-014", "title": "Kontrollera kablar efter klämskador, skarpa böjar eller missfärgning", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-08-015", "title": "Ordna och fäst kablar med rörelsemån för det höj- och sänkbara skrivbordet", "status": "pending", "condition": "always", "safety": "mechanical_and_electricity"},
+        {"id": "office-cinema-08-016", "title": "Koppla in och testa skärmar, dator, kamera, ljud och nätverk", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-09-office-chair",
+      "order": 9,
+      "title": "Ergonomisk kontorsstol",
+      "tasks": [
+        {"id": "office-cinema-09-001", "title": "Dammsug sits, rygg, nackstöd och sömmar med möbelmunstycke", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-002", "title": "Punktbehandla klädseln enligt materialets skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-09-003", "title": "Torka armstöd, reglage och hårda plastdelar", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-004", "title": "Rengör stolens undersida, gaspelare och fotkryss", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-005", "title": "Ta bort hår och trådar från hjul och hjulaxlar", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-006", "title": "Torka hjulen och området kring dem", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-007", "title": "Kontrollera stolens reglage, hjul och armstöd efter glapp eller skador", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-09-008", "title": "Låt klädseln torka helt innan stolen används", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-10-secondary-screen-heater",
+      "order": 10,
+      "title": "Sekundär skärm och värmeelement",
+      "tasks": [
+        {"id": "office-cinema-10-001", "title": "Stäng av och koppla ur den sekundära TV:n eller skärmen", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "office-cinema-10-002", "title": "Damma skärmen med ren, torr skärmduk", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-10-003", "title": "Rengör ram, kanter, fot, baksida och ventilationsöppningar", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-10-004", "title": "Rengör fjärrkontroll och anslutningskablar", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "office-cinema-10-005", "title": "Stäng av och låt värmeelementet svalna helt", "status": "pending", "condition": "if_present", "safety": "heat_and_electricity"},
+        {"id": "office-cinema-10-006", "title": "Dammsug värmeelementets utsida, galler och luftöppningar", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "office-cinema-10-007", "title": "Torka värmeelementets hölje och reglage med nästan torr duk", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "office-cinema-10-008", "title": "Rengör vägg och heltäckningsmatta bakom och under elementet", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-10-009", "title": "Kontrollera att värmeelementet har säker friyta och oskadad sladd", "status": "pending", "condition": "if_present", "safety": "fire_and_electricity"},
+        {"id": "office-cinema-10-010", "title": "Starta skärm och element och kontrollera normal funktion", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "office-cinema-11-storage",
+      "order": 11,
+      "title": "Bokhylla, skåp och överskåp",
+      "tasks": [
+        {"id": "office-cinema-11-001", "title": "Töm bokhyllan en hylla i taget", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-002", "title": "Dammsug och torka hyllplanens ovan-, under- och baksidor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-003", "title": "Torka bokhyllans ovansida, sidor, front, baksidans åtkomliga delar och nederkant", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-004", "title": "Damma pärmar, böcker, mappar och förvaringslådor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-005", "title": "Rengör pennställ, kontorsmaterial och andra lösa behållare", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-006", "title": "Töm det nedre träskåpet sektionsvis", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-007", "title": "Dammsug och torka träskåpets insidor, dörrar, kanter och beslag", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-008", "title": "Töm de väggmonterade överskåpen ett i taget", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-009", "title": "Dammsug och torka överskåpens insidor, ovansidor, undersidor och luckor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-010", "title": "Rengör gångjärn, handgrepp och luckkanter", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-11-011", "title": "Dra fram golvstående förvaring och rengör vägg, lister och matta bakom", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "office-cinema-11-012", "title": "Låt hyllor och innehåll torka helt före återställning", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-11-013", "title": "Flytta dokumentgallring och arkivering till en separat organiseringsaktivitet", "status": "pending", "condition": "if_needed", "category": "organization"}
+      ]
+    },
+    {
+      "id": "office-cinema-12-seating-textiles",
+      "order": 12,
+      "title": "Soffa, fåtöljer och lösa textilier",
+      "tasks": [
+        {"id": "office-cinema-12-001", "title": "Ta bort kuddar, filtar och lösa föremål från sittmöblerna", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-12-002", "title": "Kontrollera möbeltygens och textiliernas skötselmärkning", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-12-003", "title": "Dammsug soffans sits, rygg, armstöd, utsidor och springor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-12-004", "title": "Lyft lösa soffdynor och dammsug båda sidor samt stommen under", "status": "pending", "condition": "if_removable"},
+        {"id": "office-cinema-12-005", "title": "Dammsug samtliga fåtöljers sitsar, ryggar, armstöd och sömmar", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-12-006", "title": "Torka fåtöljernas träarmstöd, ben och undersidor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-12-007", "title": "Punktbehandla fläckar enligt respektive tygs rengöringskod", "details": "Prova på en diskret plats och övervät inte stoppningen.", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-12-008", "title": "Tvätta avtagbara kuddfodral och filtar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "office-cinema-12-009", "title": "Rengör kuddarnas innerdelar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "office-cinema-12-010", "title": "Flytta sittmöblerna och dammsug vägg, lister och matta bakom och under", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "office-cinema-12-011", "title": "Kontrollera möblerna efter fukt, lukt, glapp eller tecken på skadedjur", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-12-012", "title": "Låt möbler och textilier torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-13-mattresses",
+      "order": 13,
+      "title": "Madrasser och förvarade sängdelar",
+      "tasks": [
+        {"id": "office-cinema-13-001", "title": "Flytta ut madrasserna från väggen och separera dem", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-13-002", "title": "Ta bort och tvätta avtagbara madrasskydd enligt tvättråden", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-13-003", "title": "Dammsug madrassernas båda sidor, kanter och sömmar", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-13-004", "title": "Punktbehandla fläckar sparsamt och materialsäkert", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-13-005", "title": "Kontrollera madrasserna efter fukt, mögel, lukt och skadedjur", "status": "pending", "condition": "if_present", "safety": "moisture"},
+        {"id": "office-cinema-13-006", "title": "Rengör väggen, golvlisten och heltäckningsmattan bakom och under madrasserna", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-13-007", "title": "Låt madrasserna vädra och torka helt på båda sidor", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-13-008", "title": "Förvara madrasser med luftspalt mot vägg och golv", "status": "pending", "condition": "if_stored_in_room", "safety": "moisture"},
+        {"id": "office-cinema-13-009", "title": "Använd ventilerande överdrag i stället för tät plast vid långtidsförvaring", "status": "pending", "condition": "if_long_term_storage", "safety": "moisture"}
+      ]
+    },
+    {
+      "id": "office-cinema-14-table-loose-items",
+      "order": 14,
+      "title": "Bord och lösa föremål",
+      "tasks": [
+        {"id": "office-cinema-14-001", "title": "Töm det fristående bordet helt", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-002", "title": "Rengör bordsskivans ovansida, kanter och undersida enligt material", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-003", "title": "Torka bordets sarg, ben, stag och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-004", "title": "Tvätta eller dammsug bordsduken eller filten enligt tvättråden", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-005", "title": "Töm och dammsug väskor, korgar och annan mjuk förvaring", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-006", "title": "Rengör väskors och behållares utsidor enligt material", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-007", "title": "Damma och rengör prydnadsföremål, pennställ och kontorsmaterial", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-14-008", "title": "Lägg tillbaka endast rena och torra föremål som ska förvaras i rummet", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "office-cinema-15-doors-electrical-trim",
+      "order": 15,
+      "title": "Dörrar, eldetaljer och lister",
+      "tasks": [
+        {"id": "office-cinema-15-001", "title": "Torka dörren på fram- och baksida", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-15-002", "title": "Rengör dörrens över- och nederkant", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-15-003", "title": "Rengör dörrhandtag, lås, gångjärn och beslag", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-15-004", "title": "Torka dörrkarm, foder och tröskel", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-15-005", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "details": "Spraya aldrig direkt och för in inget i öppningarna.", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-15-006", "title": "Damma vita runda väggdetaljer och andra okända installationer torrt", "details": "Identifiera dem innan våtrengöring eller demontering.", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-15-007", "title": "Torka samtliga golvlister ovanpå och på framsidan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-15-008", "title": "Rengör golvlister bakom alla flyttbara möbler", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-15-009", "title": "Rengör synliga kabelkanaler och byggnadsdetaljer", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "office-cinema-16-carpet",
+      "order": 16,
+      "title": "Heltäckningsmatta",
+      "tasks": [
+        {"id": "office-cinema-16-001", "title": "Plocka bort samtliga lösa föremål från mattan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-002", "title": "Dammsug längs väggar, hörn, tröskel och under element med fogmunstycke", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-003", "title": "Dammsug bakom och under samtliga flyttbara möbler", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-004", "title": "Dammsug hela mattan långsamt i överlappande drag", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-005", "title": "Dammsug mattan i en andra riktning", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-006", "title": "Punktbehandla fläckar enligt mattans fibersort och skötselråd", "details": "Prova på en diskret plats och övervät inte mattan eller undergolvet.", "status": "pending", "condition": "if_needed"},
+        {"id": "office-cinema-16-007", "title": "Djuprengör heltäckningsmattan med godkänd metod", "status": "pending", "condition": "if_due_and_material_allows"},
+        {"id": "office-cinema-16-008", "title": "Kontrollera mattan efter fukt, lukt, lösa kanter, missfärgning eller skadedjur", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-16-009", "title": "Låt mattan och underlaget torka helt med god ventilation", "status": "pending", "condition": "if_cleaned_damp", "safety": "moisture"},
+        {"id": "office-cinema-16-010", "title": "Återställ inte tunga möbler förrän mattan är helt torr", "status": "pending", "condition": "if_cleaned_damp", "safety": "moisture"}
+      ]
+    },
+    {
+      "id": "office-cinema-17-moisture-air",
+      "order": 17,
+      "title": "Fukt, luft och brandsäkerhet",
+      "tasks": [
+        {"id": "office-cinema-17-001", "title": "Lukta efter avvikande källar-, jord- eller mögellukt när rummet varit stängt", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-17-002", "title": "Kontrollera ytterväggarnas nederkanter och hörn efter missfärgning eller fukt", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-17-003", "title": "Kontrollera bakom skåp, soffa, madrasser och elektronik efter kondens eller påväxt", "status": "pending", "condition": "if_accessible"},
+        {"id": "office-cinema-17-004", "title": "Kontrollera heltäckningsmattan efter fukt eller lukt, särskilt längs ytterväggar", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-17-005", "title": "Mät relativ luftfuktighet om hygrometer finns", "status": "pending", "condition": "if_available"},
+        {"id": "office-cinema-17-006", "title": "Kontrollera att projektor, dator, förstärkare och element har fri ventilation", "status": "pending", "condition": "always", "safety": "fire"},
+        {"id": "office-cinema-17-007", "title": "Kontrollera att grenuttag inte är seriekopplade eller överbelastade", "status": "pending", "condition": "always", "safety": "fire_and_electricity"},
+        {"id": "office-cinema-17-008", "title": "Dokumentera återkommande fukt, lukt eller värmeproblem för vidare utredning", "status": "pending", "condition": "if_issue_found"}
+      ]
+    },
+    {
+      "id": "office-cinema-18-finish",
+      "order": 18,
+      "title": "Avslutning och full funktionskontroll",
+      "tasks": [
+        {"id": "office-cinema-18-001", "title": "Återställ skrivbord, kontorsstol, soffa, fåtöljer och bord", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-002", "title": "Sätt tillbaka helt torra kuddar, filtar och andra textilier", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-18-003", "title": "Ställ tillbaka madrasser med god luftspalt", "status": "pending", "condition": "if_stored_in_room"},
+        {"id": "office-cinema-18-004", "title": "Återställ rena och torra dokument, böcker och kontorsmaterial", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-18-005", "title": "Återanslut datorarbetsplatsen enligt dokumenterad kabeldragning", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-18-006", "title": "Återanslut projektor, bildskärmar, ljudsystem och sekundär skärm", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "office-cinema-18-007", "title": "Kontrollera dator, skärmar, nätverk, kamera, mikrofon och skrivbordets motor", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-008", "title": "Kontrollera projektorbildens fokus, geometri och placering på projektionsytan", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-009", "title": "Kontrollera ljud från samtliga högtalare och rätt ingångskälla", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-010", "title": "Kontrollera mörkläggningsgardinens funktion och att den är helt torr", "status": "pending", "condition": "if_present"},
+        {"id": "office-cinema-18-011", "title": "Slå på spotlights och kontrollera samtliga ljuspunkter", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "office-cinema-18-012", "title": "Kontrollera att dörr och fönster öppnar, stänger och låser normalt", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-013", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-014", "title": "Tvätta städdukar och andra återanvändbara redskap", "status": "pending", "condition": "always"},
+        {"id": "office-cinema-18-015", "title": "Vädra rummet en sista gång", "status": "pending", "condition": "if_possible"}
+      ]
+    }
+  ]
+}

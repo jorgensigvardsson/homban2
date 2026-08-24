@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-kallarhall",
+  "title": "Storstädning – källarhall",
+  "roomType": "basement_hallway",
+  "description": "Komplett storstädning av källarhallen, anpassad efter lång gångmatta, hårt plattgolv, många dörrar och trösklar, infällda takspotlights, detektor, väggventiler eller täcklock, hög skåpförvaring, golvlampa, vägglucka, förvarade tavlor samt kattlådestation. Aktiviteterna är ordnade uppifrån och ned och från torra till våta moment.",
+  "definitionOfDone": "Tak, belysning, väggar, ventilation, dörrar, förvaring, lampor, matta, kattlådestation, golv, fogar, lister, trösklar och normalt dolda ytor är rengjorda. Gångstråket är fritt och halksäkert, kattlådan är hygieniskt återställd och eventuella tecken på fukt, lukt, mögel eller skadedjur är noterade för åtgärd.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera hallens ytor och inredning – inte för att bedöma hur den ser ut för stunden.",
+    "Källarhallens anslutande rum ingår inte, men dörrblad, karmar, foder och trösklar som vetter mot hallen gör det.",
+    "Invändig rengöring av skåp utförs där innehållet kan tas ut och återställas säkert.",
+    "Kattlådans redskap hålls helt separerade från övriga städredskap och används inte i kök, badrum eller på andra ytor.",
+    "Utbredd eller återkommande mögelpåväxt, tydlig fuktskada, avloppslukt eller elfel ska utredas och inte bara tvättas bort.",
+    "Väggmonterade runda komponenter behandlas efter identifierad funktion; ventiler, sensorer, doslock och elkomponenter ska inte öppnas på chans.",
+    "Tillverkarens skötselråd, elsäkerhet och materialens tålighet har företräde framför generella instruktioner."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "basement-hall-01-preparation",
+      "order": 1,
+      "title": "Förbered hallen och säkra passagen",
+      "tasks": [
+        {"id": "basement-hall-01-001", "title": "Flytta saker som hör hemma i andra rum", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-01-002", "title": "Ta bort skräp och tomma förpackningar", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-01-003", "title": "Flytta den lösa gångmattan och eventuellt halkskydd", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-01-004", "title": "Flytta golvlampan till en säker arbetsyta", "status": "pending", "condition": "if_possible"},
+        {"id": "basement-hall-01-005", "title": "Flytta kattlåda, ströförpackning och kattredskap till en avgränsad plats", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-01-006", "title": "Flytta förvarade tavlor, ljusslingor och lösa föremål från golvet", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-01-007", "title": "Töm skåpens ovansidor där det kan göras säkert", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-01-008", "title": "Töm en skåpssektion i taget om invändig rengöring ska göras", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-01-009", "title": "Ordna en tillfällig fri gångväg till samtliga dörrar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-01-010", "title": "Skydda känsliga föremål under tak- och väggarbete", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-01-011", "title": "Ta på handskar avsedda för kattlådestationen före det momentet", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-01-012", "title": "Vädra källarhallen genom lämplig öppning eller ventilation", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "basement-hall-02-ceiling-lighting",
+      "order": 2,
+      "title": "Tak och infällda spotlights",
+      "tasks": [
+        {"id": "basement-hall-02-001", "title": "Dammsug eller torrdamma hela innertaket", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-002", "title": "Damma takets samtliga hörn och vägganslutningar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-003", "title": "Ta bort spindelväv från tak och höga hörn", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-02-004", "title": "Släck spotlights och låt dem svalna helt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-005", "title": "Bryt strömmen före fuktig rengöring nära spotlights", "safety": "Vid osäkerhet ska endast torr damning utföras och elektriskt arbete lämnas till behörig person.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-006", "title": "Damma varje spotlight och dess synliga ram", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-007", "title": "Rengör glas eller reflektoryta där den är åtkomlig utan demontering", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-02-008", "title": "Ta bort eventuella insekter från spotlightens synliga delar", "status": "pending", "condition": "if_accessible_without_dismantling"},
+        {"id": "basement-hall-02-009", "title": "Kontrollera taket efter sprickor, missfärgning eller fuktmärken", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-02-010", "title": "Funktionstesta alla spotlights när området är torrt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-03-detectors",
+      "order": 3,
+      "title": "Brandvarnare och takmonterade detektorer",
+      "tasks": [
+        {"id": "basement-hall-03-001", "title": "Identifiera takmonterad brandvarnare eller annan detektor", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-03-002", "title": "Dammsug detektorns utsida försiktigt med mjukt munstycke", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-03-003", "title": "Torka detektorns utsida endast enligt tillverkarens instruktion", "status": "pending", "condition": "if_allowed"},
+        {"id": "basement-hall-03-004", "title": "Funktionstesta brandvarnaren enligt tillverkarens instruktion", "status": "pending", "condition": "if_smoke_alarm"},
+        {"id": "basement-hall-03-005", "title": "Byt batteri om intervall eller varningssignal kräver det", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-03-006", "title": "Kontrollera att detektorn inte är övertäckt, målad eller blockerad", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-03-007", "title": "Notera testdatum och eventuellt bytesdatum", "status": "pending", "condition": "if_smoke_alarm"}
+      ]
+    },
+    {
+      "id": "basement-hall-04-walls",
+      "order": 4,
+      "title": "Väggar, hörn och vägganslutningar",
+      "tasks": [
+        {"id": "basement-hall-04-001", "title": "Torrdamma samtliga väggar uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-002", "title": "Damma väggarnas inner- och ytterhörn", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-003", "title": "Torka handmärken och lokala fläckar med materialanpassad metod", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-04-004", "title": "Rengör väggytor runt strömbrytare och dörrhandtag", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-005", "title": "Damma väggarna bakom lösa föremål och tavlor", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-04-006", "title": "Damma väggen bakom golvlampan", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-04-007", "title": "Damma väggarna längs de höga skåpen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-008", "title": "Rengör försiktigt väggen intill kattlådestationen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-009", "title": "Kontrollera väggarna efter sprickor, färgsläpp och saltutfällning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-010", "title": "Kontrollera nederdelen av väggarna efter fukt eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-04-011", "title": "Kontrollera kalla hörn efter kondens eller ytlig påväxt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-05-wall-components",
+      "order": 5,
+      "title": "Ventiler, runda väggkomponenter och genomföringar",
+      "tasks": [
+        {"id": "basement-hall-05-001", "title": "Identifiera varje rund väggmonterad komponent innan rengöring", "details": "Fastställ om den är ventil, täcklock, sensor, dosa eller annan installation.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-05-002", "title": "Dammsug ventilernas eller täcklockens utsidor med mjukt munstycke", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-05-003", "title": "Torka utsidorna med lätt fuktad duk där materialet tillåter", "status": "pending", "condition": "if_allowed"},
+        {"id": "basement-hall-05-004", "title": "Rengör väggytan runt varje komponent", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-05-005", "title": "Rengör löstagbart ventilgaller enligt ventilationssystemets instruktion", "status": "pending", "condition": "if_user_serviceable"},
+        {"id": "basement-hall-05-006", "title": "Återställ ventilens tidigare inställning efter rengöring", "safety": "Ändra inte injusterade ventilationslägen.", "status": "pending", "condition": "if_vent_position_was_marked"},
+        {"id": "basement-hall-05-007", "title": "Kontrollera ventiler efter blockerande damm", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-05-008", "title": "Kontrollera väggen runt ventiler efter kondens eller smutsstråk", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-05-009", "title": "Kontrollera att inga möbler eller föremål blockerar luftflödet", "status": "pending", "condition": "if_ventilation_component"},
+        {"id": "basement-hall-05-010", "title": "Notera onormalt ljud, svagt luftflöde eller lukt från ventilationen", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "basement-hall-06-doors",
+      "order": 6,
+      "title": "Dörrar, karmar och beslag",
+      "tasks": [
+        {"id": "basement-hall-06-001", "title": "Damma ovankanten på varje dörrblad", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-002", "title": "Torka hallens sida av samtliga dörrblad", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-003", "title": "Torka den andra sidan av dörrbladen där den hör till hallens städgräns", "status": "pending", "condition": "if_in_scope"},
+        {"id": "basement-hall-06-004", "title": "Rengör särskilt runt handtag och lås", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-005", "title": "Rengör samtliga dörrhandtag", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-006", "title": "Rengör låsvred, nyckelhål och synliga beslag", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-06-007", "title": "Damma dörrkarmarnas ovansidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-008", "title": "Torka karmar och foder runt varje dörr", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-009", "title": "Damma och torka gångjärnens utsidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-010", "title": "Dammsug springor vid gångjärn och dörrstopp", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-011", "title": "Rengör dörrarnas nederkanter", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-06-012", "title": "Rengör trösklar och övergångar vid varje dörr", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-013", "title": "Kontrollera dörrar och karmar efter fukt, svällning eller färgsläpp", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-014", "title": "Kontrollera att varje dörr öppnar, stänger och låser korrekt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-06-015", "title": "Kontrollera handtag, gångjärn och dörrstopp efter glapp", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-07-storage",
+      "order": 7,
+      "title": "Höga förvaringsskåp",
+      "tasks": [
+        {"id": "basement-hall-07-001", "title": "Ta ned och damma föremål som förvaras ovanpå skåpen", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-07-002", "title": "Dammsug skåpens ovansidor", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-07-003", "title": "Torka skåpens ovansidor med väl urvriden duk", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-07-004", "title": "Damma och torka samtliga skåpsfronter", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-07-005", "title": "Rengör greppkanter, handtag och beröringszoner", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-07-006", "title": "Rengör skarvarna mellan skåpsluckorna", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-07-007", "title": "Torka skåpens synliga gavlar och socklar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-07-008", "title": "Dammsug springan under skåpen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-07-009", "title": "Töm en skåpssektion i taget", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-010", "title": "Dammsug skåpens invändiga tak, väggar, hyllor och bottnar", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-011", "title": "Torka skåpens invändiga ytor", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-012", "title": "Rengör invändiga gångjärn, stänger och beslag", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-013", "title": "Låt skåpen torka helt före återställning", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-014", "title": "Kontrollera skåpen efter unken lukt, fukt och skadedjursspår", "status": "pending", "condition": "if_interior_cleaning_is_in_scope"},
+        {"id": "basement-hall-07-015", "title": "Kontrollera att luckorna sitter stabilt och stänger korrekt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-08-floor-lamp",
+      "order": 8,
+      "title": "Golvlampa och sladd",
+      "tasks": [
+        {"id": "basement-hall-08-001", "title": "Släck, koppla ur och låt golvlampan svalna", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-002", "title": "Dammsug lampskärmens utsida med låg sugkraft", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-003", "title": "Damma lampskärmens insida", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-004", "title": "Punktbehandla lampskärmen endast om materialet tillåter", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-08-005", "title": "Damma ljuskällan när den är kall", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-08-006", "title": "Torka lampfot och stam uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-007", "title": "Torka sladden med torr duk", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-008", "title": "Rengör golvet under lampfoten", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-009", "title": "Kontrollera sladd, strömbrytare och stickpropp efter skador", "safety": "Använd inte lampan om kabel eller eldelar är skadade.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-010", "title": "Placera sladden så att den inte korsar gångstråket", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-08-011", "title": "Funktionstesta lampan när allt är torrt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-09-runner-rug",
+      "order": 9,
+      "title": "Lång gångmatta och halkskydd",
+      "tasks": [
+        {"id": "basement-hall-09-001", "title": "Kontrollera mattans tvätt- och skötselråd", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-002", "title": "Dammsug mattans ovansida långsamt i båda riktningarna", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-003", "title": "Dammsug mattans kanter och kortsidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-004", "title": "Vänd och dammsug mattans undersida", "status": "pending", "condition": "if_rug_can_be_moved"},
+        {"id": "basement-hall-09-005", "title": "Dammsug och rengör eventuellt halkskydd", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-09-006", "title": "Punktbehandla fläckar enligt mattans skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-09-007", "title": "Tvätta eller lämna in mattan om material och behov motiverar det", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-09-008", "title": "Låt mattan torka helt innan den läggs tillbaka", "status": "pending", "condition": "if_wet_cleaned"},
+        {"id": "basement-hall-09-009", "title": "Kontrollera mattan efter lukt, fukt och missfärgning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-010", "title": "Kontrollera mattans kanter efter slitage och upprullning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-011", "title": "Kontrollera att halkskyddet håller hela mattan plant", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-09-012", "title": "Förvara mattan torrt och skyddat medan golvet rengörs", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-10-litter-station",
+      "order": 10,
+      "title": "Kattlåda, kattsand och hygienzon",
+      "tasks": [
+        {"id": "basement-hall-10-001", "title": "Ta på separata handskar för kattlådestationen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-002", "title": "Ta bort avfall ur kattlådan och förslut det hygieniskt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-003", "title": "Töm återstående kattsand i lämplig behållare", "status": "pending", "condition": "when_deep_cleaning_litter_box"},
+        {"id": "basement-hall-10-004", "title": "Dammsug eller sopa upp lös kattsand runt stationen", "safety": "Använd inte köksredskap eller redskap avsedda för andra hygienzoner.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-005", "title": "Tvätta kattlådans lösa delar med djursäker metod", "status": "pending", "condition": "when_deep_cleaning_litter_box"},
+        {"id": "basement-hall-10-006", "title": "Rengör kattlådans innerhörn och kanter", "status": "pending", "condition": "when_deep_cleaning_litter_box"},
+        {"id": "basement-hall-10-007", "title": "Skölj bort alla produktrester från kattlådan", "status": "pending", "condition": "when_deep_cleaning_litter_box"},
+        {"id": "basement-hall-10-008", "title": "Låt kattlådan torka helt", "status": "pending", "condition": "when_deep_cleaning_litter_box"},
+        {"id": "basement-hall-10-009", "title": "Rengör sandskopan på samtliga sidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-010", "title": "Torka utsidan av kattsandsförpackningen", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-10-011", "title": "Rengör golvet under och bakom kattlådan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-012", "title": "Rengör väggen och golvlisten intill kattlådan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-013", "title": "Rengör eventuell kattlådematta", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-10-014", "title": "Kontrollera kattlådan efter repor, sprickor och kvarvarande lukt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-015", "title": "Fyll på ren sand till lämplig nivå", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-016", "title": "Tvätta händerna efter avslutat kattlådemoment", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-10-017", "title": "Rengör och förvara kattlådans redskap separat", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-11-stored-items",
+      "order": 11,
+      "title": "Förvarade tavlor, ljusslingor och lösa föremål",
+      "tasks": [
+        {"id": "basement-hall-11-001", "title": "Damma tavlornas ramar fram, bak och ovanpå", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-002", "title": "Rengör tavlornas glas eller skyddsskivor", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-003", "title": "Damma tavlornas baksidor utan att skada upphängning eller papper", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-004", "title": "Damma och torka ljusslingans lampor och kabel", "safety": "Ljusslingan ska vara urkopplad och endast torr eller nästan torr metod användas.", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-005", "title": "Kontrollera ljusslingans kabel, lampor och transformator efter skador", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-006", "title": "Rengör andra lösa föremål innan de återställs", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-007", "title": "Kontrollera förvarade föremål efter fukt- eller mögelspår", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-008", "title": "Förvara tavlor och elektriska dekorationer torrt och stabilt", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-11-009", "title": "Placera inget så att dörrar, el eller ventilation blockeras", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-12-access-panel",
+      "order": 12,
+      "title": "Vägglucka och serviceöppningar",
+      "tasks": [
+        {"id": "basement-hall-12-001", "title": "Damma väggluckans utsida och ovankant", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-12-002", "title": "Torka luckans front, karm och handtag", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-12-003", "title": "Dammsug springan runt luckan", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-12-004", "title": "Öppna och damma innanför luckan endast om den är avsedd för användaråtkomst", "status": "pending", "condition": "if_user_serviceable"},
+        {"id": "basement-hall-12-005", "title": "Håll vatten och rengöringsmedel borta från installationer bakom luckan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-12-006", "title": "Kontrollera bakom luckan efter läckage, kondens eller lukt", "status": "pending", "condition": "if_user_serviceable"},
+        {"id": "basement-hall-12-007", "title": "Kontrollera att luckan stänger korrekt och förblir åtkomlig", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "basement-hall-13-electrical",
+      "order": 13,
+      "title": "Strömbrytare, uttag och kablar",
+      "tasks": [
+        {"id": "basement-hall-13-001", "title": "Damma samtliga strömbrytare och vägguttag", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-13-002", "title": "Torka strömbrytarplattor och uttagens utsidor", "safety": "Spraya aldrig direkt på eldetaljer och använd endast lätt fuktad duk.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-13-003", "title": "Rengör väggytorna runt strömbrytarna", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-13-004", "title": "Dammsug runt kabelgenomföringar och uttag", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-13-005", "title": "Torka synliga kablar med torr duk", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-13-006", "title": "Kontrollera uttag och brytare efter glapp, sprickor eller missfärgning", "safety": "Skadade eldetaljer ska inte användas och ska bedömas av behörig elektriker.", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-13-007", "title": "Kontrollera kablar efter kläm- och nötningsskador", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-13-008", "title": "Ordna kablar så att de inte ligger över golv eller trösklar", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "basement-hall-14-baseboards-thresholds",
+      "order": 14,
+      "title": "Golvlister, trösklar och golvkanter",
+      "tasks": [
+        {"id": "basement-hall-14-001", "title": "Dammsug alla golvlister ovanpå", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-002", "title": "Torka golvlisternas fram- och ovansidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-003", "title": "Rengör listernas hörn och skarvar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-004", "title": "Rengör golvlisten bakom golvlampan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-005", "title": "Rengör golvlisten bakom kattlådestationen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-006", "title": "Dammsug springor längs skåpssocklar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-007", "title": "Rengör varje dörrtröskel på alla sidor", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-008", "title": "Rengör golvövergångar och profiler", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-14-009", "title": "Kontrollera lister och trösklar efter fuktskada eller glapp", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-14-010", "title": "Kontrollera tätningen mellan golv och vägg efter sprickor", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-15-floor",
+      "order": 15,
+      "title": "Plattgolv och fogar",
+      "tasks": [
+        {"id": "basement-hall-15-001", "title": "Dammsug hela den fria golvytan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-002", "title": "Dammsug golvet under gångmattan", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-003", "title": "Dammsug längs väggar, skåp och trösklar med fogmunstycke", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-004", "title": "Dammsug bakom och under flyttbara föremål", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-15-005", "title": "Punktbehandla fastsittande smuts med plastskrapa och golvanpassat medel", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-15-006", "title": "Skura särskilt smutsiga fogar med lämplig fogborste", "safety": "Verifiera att medlet passar platta och fog; undvik onödigt stark syra i cementbaserade fogar.", "status": "pending", "condition": "if_needed"},
+        {"id": "basement-hall-15-007", "title": "Fukttorka eller moppa hela golvet med materialanpassat medel", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-008", "title": "Byt städvatten när det blir synligt smutsigt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-009", "title": "Torka manuellt i hörn och längs kanter som moppen inte når", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-010", "title": "Låt golvet torka helt innan mattan läggs tillbaka", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-011", "title": "Kontrollera plattor efter sprickor, bomljud eller lösa partier", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-012", "title": "Kontrollera fogar efter sprickor, missfärgning eller fukt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-15-013", "title": "Kontrollera att golvet inte är halt eller klibbigt efter rengöring", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-16-basement-checks",
+      "order": 16,
+      "title": "Fukt, lukt, mögel och skadedjurskontroll",
+      "tasks": [
+        {"id": "basement-hall-16-001", "title": "Kontrollera hallen efter unken, jordig eller avloppsliknande lukt", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-002", "title": "Kontrollera nederdelar av väggar och lister efter fuktmärken", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-003", "title": "Kontrollera golvet under mattan efter kondens eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-004", "title": "Kontrollera bakom och under skåp efter fukt", "status": "pending", "condition": "if_accessible"},
+        {"id": "basement-hall-16-005", "title": "Kontrollera bakom förvarade tavlor efter kondens och påväxt", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-16-006", "title": "Kontrollera tak och hörn efter mögelliknande prickar", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-007", "title": "Kontrollera skåp, hörn och golvkanter efter skadedjursspår", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-008", "title": "Skilj kattlådelukt från annan kvarvarande lukt genom kontroll efter rengöring och vädring", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-009", "title": "Kontrollera att ventilationens öppningar är fria", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-16-010", "title": "Notera återkommande kondens, fukt eller lukt för vidare utredning", "status": "pending", "condition": "if_found"},
+        {"id": "basement-hall-16-011", "title": "Avbryt ytlig behandling och anlita fackperson vid utbredd eller återkommande mögelpåväxt", "status": "pending", "condition": "if_found"},
+        {"id": "basement-hall-16-012", "title": "Vädra eller ventilera tills rengjorda ytor är helt torra", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "basement-hall-17-reset-final-check",
+      "order": 17,
+      "title": "Återställ och slutkontrollera",
+      "tasks": [
+        {"id": "basement-hall-17-001", "title": "Återställ skåpens innehåll först när ytorna är helt torra", "status": "pending", "condition": "if_interior_cleaning_was_done"},
+        {"id": "basement-hall-17-002", "title": "Ställ tillbaka rengjorda föremål ovanpå skåpen på ett stabilt sätt", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-17-003", "title": "Ställ tillbaka kattlådestationen utan att blockera dörr eller ventilation", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-004", "title": "Placera golvlampan och sladden utanför gångstråket", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-005", "title": "Förvara tavlor och ljusslinga torrt och säkert", "status": "pending", "condition": "if_present"},
+        {"id": "basement-hall-17-006", "title": "Lägg tillbaka halkskydd och helt torr gångmatta", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-007", "title": "Kontrollera att mattan ligger rak och plant genom hela hallen", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-008", "title": "Kontrollera att samtliga dörrar och serviceöppningar är åtkomliga", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-009", "title": "Kontrollera att gångstråket är fritt och halksäkert", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-010", "title": "Gör en slutrunda med både tak- och golvlampa tända", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-011", "title": "Ta bort städutrustning och skyddsmaterial", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-012", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-013", "title": "Rengör kattlåderedskapen separat från övrig städutrustning", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-014", "title": "Tvätta använda dukar och moppar efter städzon", "status": "pending", "condition": "always"},
+        {"id": "basement-hall-17-015", "title": "Markera källarhallens storstädning som slutförd", "status": "pending", "condition": "always"}
+      ]
+    }
+  ]
+}

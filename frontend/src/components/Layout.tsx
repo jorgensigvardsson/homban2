@@ -1,7 +1,11 @@
 import { NavLink, Outlet } from 'react-router';
 import { useLogout, useSession } from '../api/auth';
 
-const links = [{ to: '/', label: 'Översikt' }];
+const links = [
+  { to: '/', label: 'Översikt' },
+  { to: '/rooms', label: 'Rum för rum' },
+  { to: '/equipment', label: 'Städutrustning' },
+];
 
 /** App chrome: header, navigation, the signed-in user, and the routed page. */
 export function Layout() {
@@ -18,7 +22,7 @@ export function Layout() {
               <NavLink
                 key={link.to}
                 to={link.to}
-                end
+                end={link.to === '/'}
                 className={({ isActive }) =>
                   isActive ? 'text-brand font-medium' : 'text-ink-muted hover:text-ink'
                 }

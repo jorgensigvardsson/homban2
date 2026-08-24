@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-sovrum",
+  "title": "Storstädning – master bedroom",
+  "roomType": "bedroom",
+  "description": "Komplett storstädning av master bedroom, anpassad efter rummets synliga inredning och ytor. Aktiviteterna är ordnade uppifrån och ned för att undvika dubbelarbete.",
+  "estimatedActiveMinutes": 480,
+  "definitionOfDone": "Även normalt osynliga ytor ovanpå, bakom, under, inuti, längs kanter och i springor är rengjorda. Gardiner och sängtextilier är omhändertagna, madrasser och sängbottnar är dammsugna, förvaringen under sängen är rengjord och alla väggföremål är dammade.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, möbler och detaljer – inte för att bedöma hur rummet ser ut för stunden.",
+    "Att sortera varje plagg eller ompröva alla förvarade ägodelar räknas som organisering och ingår inte automatiskt i storstädningen.",
+    "Att skruva loss fast elektronik eller demontera möbler ingår inte.",
+    "Alla tillverkarens tvätt- och skötselråd har företräde framför generella instruktioner."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "bedroom-01-preparation",
+      "order": 1,
+      "title": "Förbered rummet",
+      "tasks": [
+        {"id": "bedroom-01-001", "title": "Ta ut tvätt, disk och skräp", "status": "pending", "condition": "always"},
+        {"id": "bedroom-01-002", "title": "Flytta saker som hör hemma i andra rum och plocka bort lösa föremål från golvet", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-01-003", "title": "Töm tillfälligt sänggavelns hyllor och fack, avställningsytor och fönsterbräda", "status": "pending", "condition": "always"},
+        {"id": "bedroom-01-004", "title": "Ta ned avtagbara gardiner och lösa textilier", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-01-005", "title": "Ta av samtliga sängkläder", "status": "pending", "condition": "always"},
+        {"id": "bedroom-01-006", "title": "Flytta fram möbler och lösa föremål där det kan göras säkert", "status": "pending", "condition": "if_possible"},
+        {"id": "bedroom-01-007", "title": "Vädra rummet under städningen", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "bedroom-02-ceiling-high",
+      "order": 2,
+      "title": "Tak och höga ytor",
+      "tasks": [
+        {"id": "bedroom-02-001", "title": "Dammsug eller dammtorka hela paneltaket", "details": "Arbeta längs panelens skarvar och kanter.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-02-002", "title": "Ta bort spindelväv i takvinklar och hörn", "status": "pending", "condition": "always"},
+        {"id": "bedroom-02-003", "title": "Torka taklister och överkanter på dörrfoder", "status": "pending", "condition": "always"},
+        {"id": "bedroom-02-004", "title": "Damma taklampan in- och utvändigt", "details": "Inklusive skärm, sladd, takkopp, upphängning och ljuskälla. Släck, bryt strömmen och låt lampan svalna först.", "status": "pending", "condition": "if_safe", "safety": "electricity"},
+        {"id": "bedroom-02-007", "title": "Damma brandvarnare och ventiler", "details": "Använd torr metod och blöt inte elektronik.", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "bedroom-02-008", "title": "Rengör gardinstång eller gardinskena och beslag", "details": "Ta även ovansidan, ringar och hållare.", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-03-walls-decor",
+      "order": 3,
+      "title": "Väggar och väggdekorationer",
+      "tasks": [
+        {"id": "bedroom-03-001", "title": "Damma väggarna uppifrån och ned", "details": "Ta även bakom sängen, klädhängaren och väggdekorationer där det är säkert och åtkomligt. Använd torr mikrofiberduk eller mjukt dammsugarmunstycke.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-03-002", "title": "Punktbehandla märken och fläckar på väggarna", "details": "Prova först på en diskret plats och använd en metod som väggfärgen tål.", "status": "pending", "condition": "if_needed"},
+        {"id": "bedroom-03-004", "title": "Damma tavlor, ramar och foton på alla åtkomliga sidor", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-03-005", "title": "Rengör glaset i tavlor och fotoramar", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-03-007", "title": "Rengör spegel, kant, ram och upphängning", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-03-008", "title": "Damma krokar, skruvar, beslag och andra väggmonterade detaljer", "details": "Identifiera okända detaljer innan eventuell våtrengöring.", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-04-electronics",
+      "order": 4,
+      "title": "TV, kablar och elektronik",
+      "tasks": [
+        {"id": "bedroom-04-001", "title": "Stäng av och koppla ur TV:n", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "bedroom-04-002", "title": "Damma TV-skärmen med torr skärmduk", "details": "Spraya aldrig rengöringsmedel direkt på skärmen.", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "bedroom-04-003", "title": "Rengör TV:ns utsida och fäste", "details": "Inklusive ram, kanter, baksida, ventilationsöppningar och åtkomliga delar av TV-fästet.", "status": "pending", "condition": "if_accessible", "safety": "electronics"},
+        {"id": "bedroom-04-005", "title": "Damma och ordna kablar och kabelkanaler", "details": "Ta även kontakternas utsidor och undvik att böja eller klämma kablarna.", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "bedroom-04-007", "title": "Rengör fjärrkontroller och övrig elektronik", "status": "pending", "condition": "if_present", "safety": "electronics"}
+      ]
+    },
+    {
+      "id": "bedroom-05-doors-electrical-trim",
+      "order": 5,
+      "title": "Dörrar, eldetaljer och snickerier",
+      "tasks": [
+        {"id": "bedroom-05-001", "title": "Torka dörrbladen på alla sidor", "details": "Inklusive ovan- och nederkanter samt områdena kring handtagen.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-05-003", "title": "Torka dörrhandtag, lås och beslag", "status": "pending", "condition": "always"},
+        {"id": "bedroom-05-004", "title": "Torka dörrkarmar, foder, trösklar och gångjärn", "status": "pending", "condition": "always"},
+        {"id": "bedroom-05-006", "title": "Torka strömbrytare och uttagens utsidor", "details": "Använd en nästan torr duk och spraya aldrig direkt.", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "bedroom-05-008", "title": "Torka alla golvlister, även bakom möbler", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "bedroom-06-window-curtains",
+      "order": 6,
+      "title": "Fönster och gardiner",
+      "tasks": [
+        {"id": "bedroom-06-001", "title": "Dammsug eller tvätta gardinerna", "details": "Följ textiliernas tvättråd.", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-06-003", "title": "Putsa fönsterglaset", "details": "Putsa insidan samt utsidan om den är säkert åtkomlig. Putsa mellan glasen om fönsterkonstruktionen tillåter det.", "status": "pending", "condition": "always", "safety": "height"},
+        {"id": "bedroom-06-006", "title": "Rengör fönstrets karmar och detaljer", "details": "Inklusive bågar, handtag, tätningslister, spår, hörn och springor. Rensa dräneringshål endast om det är lämpligt för fönsterkonstruktionen.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-06-008", "title": "Torka fönsterbrädan ovanpå, undertill och längs kanterna", "status": "pending", "condition": "always"},
+        {"id": "bedroom-06-009", "title": "Rengör föremålen på fönsterbrädan var för sig", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-06-010", "title": "Dammsug insektsnät, persienner eller andra solskydd", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-07-clothing-rack",
+      "order": 7,
+      "title": "Klädhängare och kläder i rummet",
+      "tasks": [
+        {"id": "bedroom-07-001", "title": "Ta ned allt från den väggmonterade klädstången", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-07-002", "title": "Rengör klädhängaren och väggen bakom", "details": "Damma och torka stång, kedjor, krokar, fästen och galgar samt den åtkomliga väggytan bakom.", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-07-005", "title": "Skaka, vädra, tvätta eller rolla av hängande plagg", "details": "Välj metod efter material och behov.", "status": "pending", "condition": "if_needed"},
+        {"id": "bedroom-07-006", "title": "Lägg undan plagg som inte ska förvaras framme", "status": "pending", "condition": "if_needed", "category": "organization"},
+        {"id": "bedroom-07-007", "title": "Häng tillbaka endast rena och torra plagg", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-08-bed-frame",
+      "order": 8,
+      "title": "Sängens fasta delar",
+      "tasks": [
+        {"id": "bedroom-08-002", "title": "Dammsug och torka sänggaveln och sänghyllorna", "details": "Ta gavelns fram- och ovansida, skarvar och kanter samt hyllorna ovanpå, undertill och inuti.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-08-004", "title": "Rengör läslampor, armar, sladdar och reglage", "details": "Bryt strömmen och låt lamporna svalna först.", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "bedroom-08-005", "title": "Rengör sängramen in- och utvändigt", "details": "Ta även hörn, fogar, handtag och beslag.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-08-007", "title": "Dammsug springor mellan madrass och sängram", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "bedroom-09-mattress-textiles",
+      "order": 9,
+      "title": "Madrasser, kuddar och sängtextilier",
+      "tasks": [
+        {"id": "bedroom-09-001", "title": "Tvätta sängkläder och madrasskydd", "details": "Inklusive lakan, örngott och påslakan samt madrasskydd om det finns. Följ textiliernas tvättråd.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-09-002", "title": "Tvätta eller vädra täcken och kuddar", "details": "Följ respektive tvättråd.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-09-004", "title": "Dammsug madrasserna och sängbottnarna", "details": "Ta madrassernas ovan- och undersidor, sidor, sömmar och kanter samt åtkomliga sängbottnar.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-09-005", "title": "Fläckbehandla madrasser sparsamt och materialsäkert", "status": "pending", "condition": "if_needed"},
+        {"id": "bedroom-09-006", "title": "Låt madrasserna vädra och torka helt", "status": "pending", "condition": "always"},
+        {"id": "bedroom-09-007", "title": "Vänd eller rotera madrasserna", "details": "Gör detta endast om tillverkaren rekommenderar det.", "status": "pending", "condition": "if_recommended"},
+        {"id": "bedroom-09-009", "title": "Kontrollera efter fukt, mögel, skadedjur och ovanligt slitage", "status": "pending", "condition": "always"},
+        {"id": "bedroom-09-010", "title": "Rengör filtar, överkast och dekorationskuddar", "details": "Tvätta avtagbara fodral och rengör innerdelar endast när tvättrådet tillåter det.", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-10-underbed-storage",
+      "order": 10,
+      "title": "Förvaring under sängen",
+      "tasks": [
+        {"id": "bedroom-10-001", "title": "Dra ut och töm samtliga förvaringslådor", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-10-002", "title": "Dammsug och torka lådornas insidor, utsidor, bottnar och handtag", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-10-003", "title": "Rengör förvaringens konstruktion och beslag", "details": "Dammsug konstruktionen och torka skenor samt åtkomliga beslag. Golvet bakom och under lådorna ingår i golvmomentet.", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-10-005", "title": "Rengör eller vädra lådornas innehåll efter behov", "status": "pending", "condition": "if_needed"},
+        {"id": "bedroom-10-006", "title": "Lägg tillbaka rena och torra saker luftigt", "details": "Packa inte textilier så tätt att fukt riskerar att stängas inne.", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-11-objects-surfaces",
+      "order": 11,
+      "title": "Övriga föremål och småytor",
+      "tasks": [
+        {"id": "bedroom-11-001", "title": "Töm och rengör små hyllor och avställningsytor", "details": "Torka även burkar, flaskor och andra föremål innan de ställs tillbaka.", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-11-003", "title": "Rengör väskor och andra lösa föremål efter material", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-11-004", "title": "Tvätta eller dammsug kuddar och bäddar på golvet", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-11-006", "title": "Rengör papperskorgar in- och utvändigt", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-11-007", "title": "Damma växter och rengör krukor och fat", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-11-008", "title": "Torka möbelben, kanter, undersidor och handtag", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "bedroom-12-floor",
+      "order": 12,
+      "title": "Golv",
+      "tasks": [
+        {"id": "bedroom-12-004", "title": "Dammsug hela golvet", "details": "Ta längs lister och i hörn samt bakom dörrar, under hängande kläder, sängen, TV:n och andra föremål som normalt står kvar.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-12-005", "title": "Punktbehandla fläckar med golvanpassad metod", "status": "pending", "condition": "if_needed"},
+        {"id": "bedroom-12-006", "title": "Fukttorka golvet", "details": "Ta trösklar och skarvar mot angränsande rum. Följ brädornas riktning med en väl urvriden mopp och golvanpassat medel, och låt golvet torka helt innan saker ställs tillbaka.", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "bedroom-13-finish",
+      "order": 13,
+      "title": "Avslutning",
+      "tasks": [
+        {"id": "bedroom-13-001", "title": "Sätt tillbaka endast rengjorda föremål", "status": "pending", "condition": "always"},
+        {"id": "bedroom-13-002", "title": "Häng upp helt torra gardiner", "status": "pending", "condition": "if_present"},
+        {"id": "bedroom-13-003", "title": "Koppla in elektroniken när allt är helt torrt", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "bedroom-13-004", "title": "Bädda med rena och torra sängkläder", "status": "pending", "condition": "always"},
+        {"id": "bedroom-13-005", "title": "Rengör städutrustningen efteråt", "details": "Töm dammsugaren, rengör använda munstycken och tvätta städdukar och mopp.", "status": "pending", "condition": "always"},
+        {"id": "bedroom-13-007", "title": "Vädra rummet en sista gång", "status": "pending", "condition": "if_possible"}
+      ]
+    }
+  ]
+}

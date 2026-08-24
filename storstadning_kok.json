@@ -1,0 +1,404 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-kok",
+  "title": "Storstädning – kök",
+  "roomType": "kitchen",
+  "description": "Komplett storstädning av köket med skivtak och flera belysningsskenor, målade väggar, fönster med gardiner, över- och underskåp, lådor, fristående kyl och frys, diskmaskin, diskho, fläkt, häll, inbyggnadsugn, kompaktugn eller mikrovågsugn, kaffestation, köksö med massiv träskiva och öppna hyllor, barstolar samt husdjursstation.",
+  "definitionOfDone": "Tak, belysning, väggar, fönster, gardiner, skåp, lådor, arbetsytor, diskzon, vitvaror, småapparater, köksö, sittplatser och golv är rengjorda även ovanpå, bakom, under och inuti där det är avsett att nås av användaren. Livsmedel och köksredskap har återställts hygieniskt och alla apparater fungerar utan synliga läckage eller blockerad ventilation.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, apparater och detaljer – inte för att bedöma rummets tillfälliga skick.",
+    "Följ alltid apparatens och ytmaterialets skötselråd. Ugnsrengöring, avkalkning och filterrengöring varierar mellan modeller.",
+    "Blanda aldrig klorbaserade produkter med syror, ättika, ammoniak eller andra rengöringsmedel.",
+    "Spraya aldrig rengöringsmedel direkt på eluttag, belysning, skärmar, reglage eller elektriska apparater.",
+    "Träbänkar och träskivor ska rengöras sparsamt och torkas direkt; stående vatten kan skada träet.",
+    "Släng mat som är förstörd eller osäker. Gallring av användbara livsmedel och köksredskap räknas som organisering.",
+    "Demontering av fasta el- eller VVS-installationer, köksskåp och inbyggda vitvaror ingår inte. Flytta endast vitvaror om tillverkaren medger det och det kan göras utan att skada anslutningar eller golv."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "kitchen-01-preparation",
+      "order": 1,
+      "title": "Förbered köket och säkra livsmedlen",
+      "tasks": [
+        {"id": "kitchen-01-001", "title": "Ta ut skräp, disk och föremål som hör hemma i andra rum", "status": "pending", "condition": "always"},
+        {"id": "kitchen-01-002", "title": "Töm arbetsbänkar, köksö och fönsterbräda tillfälligt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-01-003", "title": "Töm skåp, lådor och hyllor en sektion i taget", "status": "pending", "condition": "always"},
+        {"id": "kitchen-01-004", "title": "Förvara kyl- och frysvaror i kylväskor eller annan säker kylförvaring under rengöringen", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-01-005", "title": "Kassera mat som är möglig, läcker eller bedöms osäker", "status": "pending", "condition": "if_needed", "safety": "food"},
+        {"id": "kitchen-01-006", "title": "Sortera livsmedel med passerat bäst före-datum separat för bedömning", "details": "Bäst före är inte automatiskt samma sak som farligt; använd lukt, utseende och produktens förvaringshistorik.", "status": "pending", "condition": "if_needed", "category": "organization"},
+        {"id": "kitchen-01-007", "title": "Stäng av och koppla ur flyttbara småapparater", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-01-008", "title": "Låt ugn, häll, kaffemaskin och andra varma apparater svalna helt", "status": "pending", "condition": "always", "safety": "heat"},
+        {"id": "kitchen-01-009", "title": "Använd separata dukar för livsmedelsytor, golv och särskilt smutsiga områden", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-01-010", "title": "Vädra köket under städningen", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "kitchen-02-ceiling-lighting",
+      "order": 2,
+      "title": "Tak och belysningsskenor",
+      "tasks": [
+        {"id": "kitchen-02-001", "title": "Damma eller dammsug hela skivtaket", "details": "Arbeta systematiskt längs skarvarna med mjukt munstycke.", "status": "pending", "condition": "always"},
+        {"id": "kitchen-02-002", "title": "Ta bort spindelväv i takvinklar och ovanför skåp", "status": "pending", "condition": "always"},
+        {"id": "kitchen-02-003", "title": "Torka taklister och övergångar mellan tak och vägg", "status": "pending", "condition": "always"},
+        {"id": "kitchen-02-004", "title": "Kontrollera taket efter fettfilm, missfärgning eller fuktfläckar", "status": "pending", "condition": "always"},
+        {"id": "kitchen-02-005", "title": "Bryt strömmen och låt samtliga spotlights svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-02-006", "title": "Damma belysningsskenorna längs hela deras längd", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-02-007", "title": "Damma varje spotlight, fäste och led", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-02-008", "title": "Rengör spotlightarnas utsidor med nästan torr duk", "details": "Spraya aldrig direkt och vrid dem inte med våld.", "status": "pending", "condition": "if_needed", "safety": "electricity"},
+        {"id": "kitchen-02-009", "title": "Damma ljuskällor eller skyddsglas när de är kalla", "status": "pending", "condition": "if_safe", "safety": "electricity"},
+        {"id": "kitchen-02-010", "title": "Kontrollera skenor, lampor och takkåpor efter glapp eller missfärgning", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "kitchen-03-walls-art-details",
+      "order": 3,
+      "title": "Väggar, konst och väggdetaljer",
+      "tasks": [
+        {"id": "kitchen-03-001", "title": "Damma målade väggar uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "kitchen-03-002", "title": "Avfetta försiktigt väggytor nära häll, kaffestation och diskho", "details": "Använd metod som väggfärgen tål och prova på en diskret plats.", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-03-003", "title": "Punktbehandla stänk, märken och fingeravtryck", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-03-004", "title": "Rengör hörn och väggytor bakom flyttbara föremål", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-03-005", "title": "Damma tavlor och ramar på samtliga åtkomliga sidor", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-03-006", "title": "Rengör glaset i inglasade bilder", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-03-007", "title": "Damma bakom tavlor och rengör väggen där", "status": "pending", "condition": "if_safe"},
+        {"id": "kitchen-03-008", "title": "Damma högt placerade sensorer, larm eller okända detaljer torrt", "details": "Identifiera dem innan våtrengöring eller demontering.", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-03-009", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-03-010", "title": "Damma synliga kablar, nätadaptrar och kabelkanaler", "status": "pending", "condition": "if_present", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "kitchen-04-window-curtains-plants",
+      "order": 4,
+      "title": "Fönster, gardiner och växter",
+      "tasks": [
+        {"id": "kitchen-04-001", "title": "Ta ned gardinerna", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-04-002", "title": "Tvätta eller dammsug gardinerna enligt tvättråden", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-04-003", "title": "Rengör gardinstång, ringar, hållare och beslag", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-04-004", "title": "Töm fönsterbrädan", "status": "pending", "condition": "always"},
+        {"id": "kitchen-04-005", "title": "Putsa fönsterglaset på insidan", "status": "pending", "condition": "always"},
+        {"id": "kitchen-04-006", "title": "Putsa fönsterglaset på utsidan där det är säkert åtkomligt", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "kitchen-04-007", "title": "Putsa mellan glasen", "status": "pending", "condition": "if_supported_by_window"},
+        {"id": "kitchen-04-008", "title": "Rengör spröjs, karmar, bågar, handtag och tätningslister", "status": "pending", "condition": "always"},
+        {"id": "kitchen-04-009", "title": "Rengör fönsterspår, hörn, beslag och dräneringskanaler", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-04-010", "title": "Torka fönsterbrädan ovanpå, undertill och längs kanterna", "status": "pending", "condition": "always"},
+        {"id": "kitchen-04-011", "title": "Damma eller torka växternas blad", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-04-012", "title": "Rengör krukor, fat och amplar och kontrollera efter stående vatten", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-04-013", "title": "Rengör växtupphängningar och väggen eller golvet under växterna", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "kitchen-05-cabinet-exteriors",
+      "order": 5,
+      "title": "Skåpens utsidor och socklar",
+      "tasks": [
+        {"id": "kitchen-05-001", "title": "Damma och avfetta ovansidan av samtliga överskåp", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-05-002", "title": "Rengör lösa föremål som förvaras ovanpå skåpen", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-05-003", "title": "Torka alla skåpsluckor uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-004", "title": "Rengör särskilt områden runt handtag och luckornas nederkanter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-005", "title": "Rengör samtliga handtag på alla sidor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-006", "title": "Rengör skåpstommarnas synliga sidor, gavlar och undersidor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-007", "title": "Rengör glasluckor på in- och utsida", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-05-008", "title": "Rengör luckornas kanter, gångjärn och skarvar", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-009", "title": "Torka lådfronter och kanter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-010", "title": "Rengör kökssocklar och ventilationsöppningar", "status": "pending", "condition": "always"},
+        {"id": "kitchen-05-011", "title": "Ta loss och rengör avtagbara socklar", "details": "Gör detta endast om de är avsedda att lossas av användaren.", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-05-012", "title": "Dammsug utrymmet under skåpen bakom avtagbara socklar", "status": "pending", "condition": "if_accessible"}
+      ]
+    },
+    {
+      "id": "kitchen-06-cabinet-drawer-interiors",
+      "order": 6,
+      "title": "Skåp, lådor och torrvaruförvaring invändigt",
+      "tasks": [
+        {"id": "kitchen-06-001", "title": "Töm ett skåp eller en låda i taget", "status": "pending", "condition": "always"},
+        {"id": "kitchen-06-002", "title": "Dammsug smulor och löst skräp ur skåp och lådor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-06-003", "title": "Torka hyllor, lådbottnar, väggar, tak och kanter invändigt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-06-004", "title": "Rengör hyllbärare, gångjärn, skenor och åtkomliga beslag", "status": "pending", "condition": "always"},
+        {"id": "kitchen-06-005", "title": "Rengör bestickinsatser och andra förvaringsinsatser", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-06-006", "title": "Torka burkar, flaskor och matförpackningar innan de ställs tillbaka", "status": "pending", "condition": "if_present", "safety": "food"},
+        {"id": "kitchen-06-007", "title": "Kontrollera torrvaror efter skadedjur, fukt, läckage och förstörd mat", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-06-008", "title": "Rengör kryddburkar och kryddförvaring", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-06-009", "title": "Rengör kastruller, lock och redskap som har dammiga eller kladdiga utsidor", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-06-010", "title": "Låt skåp, lådor och innehåll torka helt före återställning", "status": "pending", "condition": "always"},
+        {"id": "kitchen-06-011", "title": "Placera livsmedel så att äldre öppnade varor används först", "status": "pending", "condition": "if_helpful", "category": "organization"},
+        {"id": "kitchen-06-012", "title": "Lägg undan dubbletter eller sällan använda redskap i en separat organiseringsaktivitet", "status": "pending", "condition": "if_needed", "category": "organization"}
+      ]
+    },
+    {
+      "id": "kitchen-07-counters-backsplash",
+      "order": 7,
+      "title": "Arbetsbänkar, väggskydd och hörn",
+      "tasks": [
+        {"id": "kitchen-07-001", "title": "Töm samtliga arbetsbänkar helt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-002", "title": "Ta bort smulor och löst skräp från bänkar och hörn", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-003", "title": "Rengör träbänkar med väl urvriden duk och träanpassat medel", "status": "pending", "condition": "if_wood"},
+        {"id": "kitchen-07-004", "title": "Torka träbänkar helt torra direkt efter rengöring", "status": "pending", "condition": "if_wood"},
+        {"id": "kitchen-07-005", "title": "Rengör övriga bänkskivor med materialanpassad metod", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-07-006", "title": "Rengör bänkskivornas framkanter och åtkomliga undersidor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-007", "title": "Rengör hörnskarvar och anslutningar mellan bänk, vägg och skåp", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-008", "title": "Avfetta väggskydd eller väggytor bakom arbetsbänkarna", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-009", "title": "Rengör fogar, lister och silikonanslutningar längs bänkarna", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-07-010", "title": "Kontrollera bänkar efter sprickor, svällning, brännmärken eller sliten ytbehandling", "status": "pending", "condition": "always"},
+        {"id": "kitchen-07-011", "title": "Desinficera livsmedelsytor med livsmedelssäker metod vid behov", "details": "Följ produktens kontakttid och eftertorkningskrav.", "status": "pending", "condition": "if_needed", "safety": "food"}
+      ]
+    },
+    {
+      "id": "kitchen-08-sink-faucet-drains",
+      "order": 8,
+      "title": "Diskho, blandare och avlopp",
+      "tasks": [
+        {"id": "kitchen-08-001", "title": "Töm diskho och diskställ", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-002", "title": "Rengör båda diskhoarnas bottnar, sidor och kanter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-003", "title": "Rengör hoarnas övergång mot bänkskivan", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-004", "title": "Rengör blandarens fot, pip, handtag och undersida", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-005", "title": "Avkalka blandaren med ytfinish-anpassad metod", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-08-006", "title": "Rengör eller avkalka strålsamlaren enligt blandarens anvisningar", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-08-007", "title": "Rengör silar, proppar och bottenventiler", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-008", "title": "Ta bort matrester och beläggningar ur åtkomliga avloppsdelar", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "kitchen-08-009", "title": "Spola igenom båda avloppen och kontrollera avrinningen", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-010", "title": "Rengör diskställ, droppbricka, diskborstar och svamphållare", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-08-011", "title": "Byt diskborstar eller svampar som inte går att få hygieniskt rena", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-08-012", "title": "Polera diskho och blandare torra", "status": "pending", "condition": "always"},
+        {"id": "kitchen-08-013", "title": "Kontrollera skåpet under diskhon efter dropp, lukt, fukt eller skadedjur", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-09-dishwasher",
+      "order": 9,
+      "title": "Diskmaskin",
+      "tasks": [
+        {"id": "kitchen-09-001", "title": "Töm diskmaskinen och stäng av den enligt tillverkarens anvisningar", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-09-002", "title": "Ta ut och rengör filtret", "status": "pending", "condition": "if_supported", "safety": "hygiene"},
+        {"id": "kitchen-09-003", "title": "Rengör filterbrunnen och området under filtret", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "kitchen-09-004", "title": "Ta loss och rengör spolarmarna", "details": "Gör detta endast om tillverkaren anger att de är användaravtagbara.", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-09-005", "title": "Rensa spolarmarnas hål försiktigt", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-09-006", "title": "Rengör diskmaskinens korgar, bestickhållare och skenor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-09-007", "title": "Torka maskinens innerväggar, botten och luckans insida", "status": "pending", "condition": "always"},
+        {"id": "kitchen-09-008", "title": "Rengör luckans kanter, gångjärn och gummitätning", "status": "pending", "condition": "always"},
+        {"id": "kitchen-09-009", "title": "Torka front, handtag och reglage med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-09-010", "title": "Fyll på salt och spolglans om modellen använder det", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-09-011", "title": "Kör maskinens rengöringsprogram med godkänd produkt", "status": "pending", "condition": "if_recommended"},
+        {"id": "kitchen-09-012", "title": "Kontrollera efter läckage, ovanliga ljud och normal avrinning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-10-fridge-freezer",
+      "order": 10,
+      "title": "Kyl och frys",
+      "tasks": [
+        {"id": "kitchen-10-001", "title": "Flytta kylvaror och frysvaror till säker temperaturförvaring", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-10-002", "title": "Stäng av apparaten enligt tillverkarens anvisningar", "status": "pending", "condition": "if_required", "safety": "electricity"},
+        {"id": "kitchen-10-003", "title": "Ta ut löstagbara hyllor, lådor och dörrfack", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-10-004", "title": "Låt kalla glasdelar temperaturutjämnas före diskning", "details": "Snabba temperaturväxlingar kan spräcka glas.", "status": "pending", "condition": "if_glass_present", "safety": "temperature"},
+        {"id": "kitchen-10-005", "title": "Diska och torka hyllor, lådor och dörrfack", "status": "pending", "condition": "always"},
+        {"id": "kitchen-10-006", "title": "Torka kylens innerväggar, tak, botten och hörn", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-10-007", "title": "Rengör kondensränna och dräneringshål enligt manualen", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-10-008", "title": "Frosta av frysen enligt tillverkarens anvisningar", "details": "Hacka aldrig bort is med vassa föremål.", "status": "pending", "condition": "if_needed", "safety": "electricity"},
+        {"id": "kitchen-10-009", "title": "Torka frysens innerväggar, hyllor, lådor och hörn", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-10-010", "title": "Rengör dörrarnas gummilister och veck", "status": "pending", "condition": "always"},
+        {"id": "kitchen-10-011", "title": "Rengör dörrarnas insidor, kanter och gångjärnsområden", "status": "pending", "condition": "always"},
+        {"id": "kitchen-10-012", "title": "Ta bort magneter, lappar och bilder och rengör dörrfronterna", "status": "pending", "condition": "always"},
+        {"id": "kitchen-10-013", "title": "Rengör handtag, ovansida och synliga sidor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-10-014", "title": "Damma ventilationsgaller, kondensorslingor eller kompressorutrymme enligt manualen", "status": "pending", "condition": "if_accessible", "safety": "electricity"},
+        {"id": "kitchen-10-015", "title": "Rengör golv, vägg och golvlister bakom och under apparaten", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "kitchen-10-016", "title": "Rengör apparatens droppskål enligt manualen", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-10-017", "title": "Torka allt helt, starta apparaten och invänta säker temperatur", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-10-018", "title": "Torka av förpackningar och återställ maten hygieniskt", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-10-019", "title": "Kontrollera att dörrarna sluter tätt och att temperaturerna återgår till normala nivåer", "status": "pending", "condition": "always", "safety": "food"}
+      ]
+    },
+    {
+      "id": "kitchen-11-compact-appliance",
+      "order": 11,
+      "title": "Inbyggd kompaktugn eller mikrovågsugn",
+      "tasks": [
+        {"id": "kitchen-11-001", "title": "Identifiera apparattypen och följ rätt rengöringsprogram eller manual", "status": "pending", "condition": "always"},
+        {"id": "kitchen-11-002", "title": "Stäng av apparaten och låt den svalna helt", "status": "pending", "condition": "always", "safety": "heat_and_electricity"},
+        {"id": "kitchen-11-003", "title": "Ta ut löstagbara galler, plåtar eller glastallrikar", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-11-004", "title": "Diska och torka löstagbara delar enligt manualen", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-11-005", "title": "Rengör apparatens innerväggar, tak, botten och hörn", "status": "pending", "condition": "always"},
+        {"id": "kitchen-11-006", "title": "Rengör luckans insida, glas och tätning", "status": "pending", "condition": "always"},
+        {"id": "kitchen-11-007", "title": "Rengör front, handtag och reglage med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-11-008", "title": "Rengör ventilationsöppningar försiktigt", "status": "pending", "condition": "if_accessible", "safety": "electricity"},
+        {"id": "kitchen-11-009", "title": "Låt apparaten torka och kontrollera funktionen", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-12-cooktop",
+      "order": 12,
+      "title": "Häll och kokzon",
+      "tasks": [
+        {"id": "kitchen-12-001", "title": "Stäng av hällen och kontrollera att den är helt kall", "status": "pending", "condition": "always", "safety": "heat_and_electricity"},
+        {"id": "kitchen-12-002", "title": "Ta bort lösa smulor och matrester", "status": "pending", "condition": "always"},
+        {"id": "kitchen-12-003", "title": "Lös upp fett och fastbrända rester med hällanpassat medel", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-12-004", "title": "Använd hällskrapa endast om tillverkaren tillåter det", "status": "pending", "condition": "if_supported", "safety": "sharp_tool"},
+        {"id": "kitchen-12-005", "title": "Rengör hela hällens yta och kanter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-12-006", "title": "Rengör skarven mellan häll och bänkskiva", "status": "pending", "condition": "always"},
+        {"id": "kitchen-12-007", "title": "Torka reglage och display med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-12-008", "title": "Polera hällen torr utan att lämna medelrester", "status": "pending", "condition": "always"},
+        {"id": "kitchen-12-009", "title": "Kontrollera hällen efter sprickor eller skador innan användning", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "kitchen-13-oven",
+      "order": 13,
+      "title": "Inbyggnadsugn",
+      "tasks": [
+        {"id": "kitchen-13-001", "title": "Stäng av ugnen och låt den svalna helt", "status": "pending", "condition": "always", "safety": "heat_and_electricity"},
+        {"id": "kitchen-13-002", "title": "Ta ut galler, plåtar och löstagbara ugnsskenor", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-13-003", "title": "Blötlägg och rengör galler och plåtar enligt materialets skötselråd", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-13-004", "title": "Rengör ugnsskenor och fästen", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-13-005", "title": "Kör pyrolys eller annat självrengöringsprogram enligt manualen", "details": "Ta först ut delar som inte tål programmet och vädra väl.", "status": "pending", "condition": "if_supported", "safety": "heat"},
+        {"id": "kitchen-13-006", "title": "Rengör ugnens innerväggar, tak, botten och hörn manuellt", "details": "Använd inte ugnsrengöring på katalytiska eller andra känsliga ytor.", "status": "pending", "condition": "if_manual_cleaning"},
+        {"id": "kitchen-13-007", "title": "Rengör ugnsluckans insida och glas", "status": "pending", "condition": "always"},
+        {"id": "kitchen-13-008", "title": "Rengör mellan luckans glas", "status": "pending", "condition": "if_user_accessible"},
+        {"id": "kitchen-13-009", "title": "Rengör luckans tätning varsamt utan att dra eller blöta den", "status": "pending", "condition": "always"},
+        {"id": "kitchen-13-010", "title": "Rengör gångjärn och kanter kring lucköppningen", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-13-011", "title": "Torka front, handtag, reglage och display med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-13-012", "title": "Rengör förvaringslådan under ugnen och dess innehåll", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-13-013", "title": "Återmontera torra delar och kontrollera ugnens funktion", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-14-range-hood",
+      "order": 14,
+      "title": "Köksfläkt",
+      "tasks": [
+        {"id": "kitchen-14-001", "title": "Stäng av fläkten och bryt strömmen enligt manualen", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-14-002", "title": "Torka damm och fett från kåpans ovansida", "status": "pending", "condition": "if_accessible"},
+        {"id": "kitchen-14-003", "title": "Avfetta kåpans utsida, undersida och kanter", "details": "Använd medel som tål ytfinishen.", "status": "pending", "condition": "always"},
+        {"id": "kitchen-14-004", "title": "Rengör knappar, reglage och lampglas med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-14-005", "title": "Ta loss fettfiltren enligt manualen", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-14-006", "title": "Diska eller maskindiska fettfiltren enligt tillverkarens anvisningar", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-14-007", "title": "Torka rent filterutrymmet och åtkomliga fläktytor", "details": "För inte in vätska eller redskap i motorutrymmet.", "status": "pending", "condition": "if_accessible", "safety": "electricity"},
+        {"id": "kitchen-14-008", "title": "Byt eller regenerera kolfilter enligt manualen", "status": "pending", "condition": "if_present_and_due"},
+        {"id": "kitchen-14-009", "title": "Låt filtren torka helt och återmontera dem korrekt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-14-010", "title": "Kontrollera fläktens belysning, ljud och luftflöde", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-15-coffee-small-appliances",
+      "order": 15,
+      "title": "Kaffestation och småapparater",
+      "tasks": [
+        {"id": "kitchen-15-001", "title": "Koppla ur kaffebryggare, kvarn och övriga småapparater", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-15-002", "title": "Töm kaffesump, filter, bönbehållare och droppbrickor", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-15-003", "title": "Diska löstagbara delar enligt apparatens manual", "status": "pending", "condition": "if_supported"},
+        {"id": "kitchen-15-004", "title": "Rengör kaffebryggarens utsida, varmhållningsplatta och kanna", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-15-005", "title": "Avkalka kaffebryggare eller kaffemaskin enligt manualen", "status": "pending", "condition": "if_due"},
+        {"id": "kitchen-15-006", "title": "Rengör kaffekvarnens bönbehållare och åtkomliga delar enligt manualen", "details": "Använd inte vatten i malverket om tillverkaren inte uttryckligen tillåter det.", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-15-007", "title": "Rengör mixer, matberedare, våg och andra småapparater ut- och invändigt där manualen tillåter", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-15-008", "title": "Rengör apparaternas sladdar och kontakternas utsidor torrt", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-15-009", "title": "Rengör ytan under och bakom varje apparat", "status": "pending", "condition": "always"},
+        {"id": "kitchen-15-010", "title": "Låt alla delar torka helt före montering och inkoppling", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-15-011", "title": "Kontrollera apparaterna efter skadade sladdar, sprickor eller ovanliga ljud", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "kitchen-16-island",
+      "order": 16,
+      "title": "Köksö och öppna hyllor",
+      "tasks": [
+        {"id": "kitchen-16-001", "title": "Töm köksöns bänkskiva och hyllor helt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-002", "title": "Ta bort smulor från den massiva ändträskivan", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-003", "title": "Rengör träskivan med väl urvriden duk och träanpassat medel", "details": "Blötlägg inte ändträ och använd inte starka kemikalier.", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-004", "title": "Rengör träskivans kanter och undersida", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-005", "title": "Torka träskivan helt torr direkt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-006", "title": "Kontrollera träskivan efter sprickor, uttorkning, missfärgning eller behov av underhållsolja", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-007", "title": "Dammsug och torka köksöns öppna hyllor på alla sidor", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-008", "title": "Torka köksöns ram, gavlar, stag, ben och fötter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-16-009", "title": "Rengör hushållsmaskiner, formar och kärl innan de ställs tillbaka på hyllorna", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-16-010", "title": "Damma och ordna apparatsladdar så att de inte kläms eller ligger mot våta ytor", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-16-011", "title": "Flytta köksön och rengör golvet under", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "kitchen-16-012", "title": "Återställ endast rena och torra föremål", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-17-stools",
+      "order": 17,
+      "title": "Barstolar och trappstolar",
+      "tasks": [
+        {"id": "kitchen-17-001", "title": "Dammsug stoppade stolsitsar", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-17-002", "title": "Punktbehandla textil- eller vinylsitsar enligt materialets skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-17-003", "title": "Torka hårda sitsar på ovan- och undersida", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-17-004", "title": "Rengör samtliga ben, fotstöd, stag och fötter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-17-005", "title": "Rengör trappstegens ovansidor, undersidor och halkskydd", "status": "pending", "condition": "if_step_stool"},
+        {"id": "kitchen-17-006", "title": "Rengör gångjärn och låsmekanismer på hopfällbara stolar", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-17-007", "title": "Kontrollera stolarna efter glapp, vassa kanter eller slitna halkskydd", "status": "pending", "condition": "always"},
+        {"id": "kitchen-17-008", "title": "Låt stolarna torka helt innan de används", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-18-open-shelves-tools",
+      "order": 18,
+      "title": "Öppna hyllor, kokböcker och köksredskap",
+      "tasks": [
+        {"id": "kitchen-18-001", "title": "Töm den väggmonterade hyllan", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-002", "title": "Damma och torka hyllans ovansida, insidor, kanter och undersida", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-003", "title": "Damma kokböcker och torka av tvättbara pärmar", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-004", "title": "Rengör högtalare eller annan elektronik med torr metod", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "kitchen-18-005", "title": "Ta ned och rengör kalender, klämmor och upphängning", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-006", "title": "Rengör knivblock, redskapshållare och utensilier", "status": "pending", "condition": "if_present", "safety": "sharp_tools"},
+        {"id": "kitchen-18-007", "title": "Rengör skärbrädor på alla sidor och kontrollera efter djupa sprickor", "status": "pending", "condition": "if_present", "safety": "food"},
+        {"id": "kitchen-18-008", "title": "Rengör salt-, peppar- och kryddkvarnar utvändigt och enligt manual invändigt", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-009", "title": "Rengör flaskor, oljor och behållare och kontrollera efter kladd eller läckage", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-18-010", "title": "Låt hylla och föremål torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-19-waste-pet-station",
+      "order": 19,
+      "title": "Avfall och husdjursstation",
+      "tasks": [
+        {"id": "kitchen-19-001", "title": "Töm samtliga sopkärl och återvinningsbehållare", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "kitchen-19-002", "title": "Rengör sopkärl och lock in- och utvändigt", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "kitchen-19-003", "title": "Rengör skåp, utdrag och golv där avfall förvaras", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "kitchen-19-004", "title": "Låt avfallsbehållarna torka helt och sätt i rena påsar", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-19-005", "title": "Töm och diska husdjurets mat- och vattenskålar", "status": "pending", "condition": "if_present", "safety": "pet_food"},
+        {"id": "kitchen-19-006", "title": "Rengör mat- och vattenautomat enligt tillverkarens anvisningar", "status": "pending", "condition": "if_present", "safety": "electricity_and_pet_food"},
+        {"id": "kitchen-19-007", "title": "Rengör matbehållaren in- och utvändigt och kontrollera fodrets skick", "status": "pending", "condition": "if_present", "safety": "pet_food"},
+        {"id": "kitchen-19-008", "title": "Rengör golv och vägg kring husdjursstationen", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-19-009", "title": "Låt alla delar torka helt innan rent vatten och foder fylls på", "status": "pending", "condition": "if_present", "safety": "pet_food"}
+      ]
+    },
+    {
+      "id": "kitchen-20-floor-trim",
+      "order": 20,
+      "title": "Golv, lister och trösklar",
+      "tasks": [
+        {"id": "kitchen-20-001", "title": "Flytta undan lösa föremål, stolar och husdjursstation från golvet", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-002", "title": "Dammsug längs golvlister, socklar, hörn och trösklar med fogmunstycke", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-003", "title": "Dammsug bakom och under flyttbara apparater och möbler", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "kitchen-20-004", "title": "Dammsug hela den fria golvytan", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-005", "title": "Punktbehandla fett, spill och fastsittande fläckar med golvanpassat medel", "status": "pending", "condition": "if_needed"},
+        {"id": "kitchen-20-006", "title": "Fukttorka golvet med väl urvriden mopp", "details": "Följ golvtillverkarens råd och undvik att vatten tränger in i skarvar.", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-007", "title": "Rengör golvytan särskilt noga framför diskho, häll, kyl och husdjursstation", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-008", "title": "Rengör samtliga golvlister och sockelfronter", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-009", "title": "Rengör trösklar och övergångar mot angränsande rum", "status": "pending", "condition": "always"},
+        {"id": "kitchen-20-010", "title": "Låt golvet torka helt innan stolar, köksö och andra föremål återställs", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "kitchen-21-finish",
+      "order": 21,
+      "title": "Avslutning och funktionskontroll",
+      "tasks": [
+        {"id": "kitchen-21-001", "title": "Ställ tillbaka endast rena, torra och hela köksföremål", "status": "pending", "condition": "always"},
+        {"id": "kitchen-21-002", "title": "Häng upp helt torra gardiner", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-21-003", "title": "Sätt tillbaka rena handdukar och disktextilier", "status": "pending", "condition": "if_present"},
+        {"id": "kitchen-21-004", "title": "Koppla in småapparater när alla delar och ytor är helt torra", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "kitchen-21-005", "title": "Kontrollera kyl- och frystemperatur", "status": "pending", "condition": "always", "safety": "food"},
+        {"id": "kitchen-21-006", "title": "Kontrollera att diskhoar och diskmaskin rinner undan utan läckage", "status": "pending", "condition": "always"},
+        {"id": "kitchen-21-007", "title": "Kontrollera att ugn, kompaktapparat, häll och fläkt fungerar", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-21-008", "title": "Kontrollera att skåpluckor, lådor och vitvarudörrar öppnar och stänger normalt", "status": "pending", "condition": "always"},
+        {"id": "kitchen-21-009", "title": "Kontrollera att inga ventilationsöppningar eller apparatsladdar är blockerade", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-21-010", "title": "Slå på belysningen och kontrollera samtliga spotlights", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "kitchen-21-011", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "kitchen-21-012", "title": "Tvätta städdukar, moppar och återanvändbara svampar", "status": "pending", "condition": "always"},
+        {"id": "kitchen-21-013", "title": "Vädra köket en sista gång", "status": "pending", "condition": "if_possible"}
+      ]
+    }
+  ]
+}

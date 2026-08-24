@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-gillestuga",
+  "title": "Storstädning – gillestuga",
+  "roomType": "recreation_room",
+  "description": "Komplett storstädning av gillestugan med lågt innertak och infällda spotlights, målade väggar, vitmålad tegelvägg, bärande pelare och balkar, trätrappa, flera fönster, luftvärmepump, eldstad, stor tygsoffa med schäslong, läderfåtölj, glasbord, naturfibermatta, TV och mediamöbel, digitalpiano samt växter och dekorationer.",
+  "definitionOfDone": "Tak, belysning, väggar, tegel, pelare, balkar, trappa, fönster, klimatutrustning, eldstad, möbler, textilier, matta, elektronik, instrument, dekorationer och golv är rengjorda även ovanpå, bakom, under, inuti och i springor där ytorna är avsedda att nås. Rummet är kontrollerat efter källarrelaterad fukt, lukt och kondens.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, installationer och detaljer – inte för att bedöma rummets tillfälliga skick.",
+    "Följ skötselråden för möbeltextil, läder, naturfibermatta, trätrappa, elektronikinstrument, luftvärmepump och eldstad.",
+    "Naturfibermattor som jute eller sisal ska normalt inte genomblötas eller ångtvättas.",
+    "Eldstaden ska vara helt kall innan rengöring. Aska kan hålla glöd i flera dygn och ska hanteras i obrännbart kärl med lock.",
+    "Spraya aldrig rengöringsmedel direkt på TV, piano, luftvärmepump, spotlights, eluttag eller annan elektronik.",
+    "Synlig mögelpåväxt, återkommande kondens eller tydlig källarlukt ska utredas som fuktproblem och inte enbart döljas med rengöring.",
+    "Demontering av fasta elinstallationer, värmepump, eldstad, skorsten, byggnadsdelar eller trappa ingår inte."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "recreation-room-01-preparation",
+      "order": 1,
+      "title": "Förbered rummet",
+      "tasks": [
+        {"id": "recreation-room-01-001", "title": "Ta ut disk, skräp och föremål som hör hemma i andra rum", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-01-002", "title": "Töm tillfälligt bord, fönsterbrädor, mediamöbel och pianots ovansida", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-01-003", "title": "Ta bort lösa soffkuddar, plädar och andra tvättbara textilier", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-01-004", "title": "Flytta fram lättare möbler och dekorationer där det kan göras säkert", "status": "pending", "condition": "if_possible"},
+        {"id": "recreation-room-01-005", "title": "Fotografera kabeldragning innan elektronik kopplas ur", "status": "pending", "condition": "if_helpful"},
+        {"id": "recreation-room-01-006", "title": "Stäng av och koppla ur TV, piano och flyttbar elektronik", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-01-007", "title": "Stäng av luftvärmepumpen enligt tillverkarens anvisningar", "status": "pending", "condition": "if_required", "safety": "electricity"},
+        {"id": "recreation-room-01-008", "title": "Kontrollera att eldstaden är helt kall", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "recreation-room-01-009", "title": "Vädra rummet under städningen", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "recreation-room-02-ceiling-lighting",
+      "order": 2,
+      "title": "Tak, spotlights och takdetaljer",
+      "tasks": [
+        {"id": "recreation-room-02-001", "title": "Damma eller dammsug hela innertaket", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-02-002", "title": "Ta bort spindelväv i takvinklar, nischer och kring balkar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-02-003", "title": "Torka takets kanter och övergångar mot väggarna", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-02-004", "title": "Kontrollera taket efter fuktfläckar, sprickor eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-02-005", "title": "Bryt strömmen och låt samtliga spotlights svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-02-006", "title": "Damma spotlightarnas ramar och skyddsglas", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-02-007", "title": "Rengör spotlightarnas utsidor med nästan torr duk", "status": "pending", "condition": "if_needed", "safety": "electricity"},
+        {"id": "recreation-room-02-008", "title": "Damma takmonterade brandvarnare eller sensorer torrt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-02-009", "title": "Testa brandvarnaren med testknappen enligt tillverkarens anvisningar", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "recreation-room-02-010", "title": "Kontrollera spotlights och takdetaljer efter glapp eller skador", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-03-walls-art-mirror",
+      "order": 3,
+      "title": "Målade väggar, konst och spegel",
+      "tasks": [
+        {"id": "recreation-room-03-001", "title": "Damma målade väggar uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-03-002", "title": "Punktbehandla märken och fläckar med metod som väggfärgen tål", "details": "Prova först på en diskret plats.", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-03-003", "title": "Rengör väggytor bakom soffa, TV, piano och fåtölj", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-03-004", "title": "Damma tavlor och ramar på fram-, ovan-, under- och sidor", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-03-005", "title": "Rengör glaset i inglasade tavlor", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-03-006", "title": "Damma bakom tavlor och rengör väggen där", "status": "pending", "condition": "if_safe"},
+        {"id": "recreation-room-03-007", "title": "Putsa den runda spegeln", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-03-008", "title": "Rengör spegelns kant, ram, upphängning och åtkomliga baksida", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-03-009", "title": "Damma okända väggdetaljer torrt innan eventuell våtrengöring", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "recreation-room-04-brick-wall",
+      "order": 4,
+      "title": "Vitmålad tegelvägg",
+      "tasks": [
+        {"id": "recreation-room-04-001", "title": "Dammsug tegelväggen uppifrån och ned med mjukt borstmunstycke", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-04-002", "title": "Borsta försiktigt bort damm ur tegelstruktur och fogar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-04-003", "title": "Rengör väggens överkant och anslutning mot taket", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-04-004", "title": "Rengör nederkant och anslutning mot golvet", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-04-005", "title": "Punktbehandla märken med nästan torr metod som färgen och teglet tål", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-04-006", "title": "Undvik att genomväta tegel eller fogar", "status": "pending", "condition": "always", "safety": "moisture"},
+        {"id": "recreation-room-04-007", "title": "Kontrollera tegel och fogar efter sprickor, saltutfällning eller fuktmissfärgning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-05-columns-beams-stairs",
+      "order": 5,
+      "title": "Pelare, balkar och trappa",
+      "tasks": [
+        {"id": "recreation-room-05-001", "title": "Damma samtliga bärande pelare uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-05-002", "title": "Torka pelarnas alla sidor, hörn och nederkanter", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-05-003", "title": "Damma balkarnas ovansidor, undersidor och kanter", "status": "pending", "condition": "if_safely_accessible"},
+        {"id": "recreation-room-05-004", "title": "Punktbehandla märken på målade pelare och balkar", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-05-005", "title": "Dammsug trätrappan uppifrån och ned", "details": "Använd fogmunstycke längs kanter och mellan steg och vangstycken.", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-05-006", "title": "Torka varje trappstegs ovansida med träanpassad metod", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-05-007", "title": "Torka varje trappstegs framkant och undersida", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-05-008", "title": "Rengör trappans målade vangstycken, sidoytor och anslutningar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-05-009", "title": "Rengör utrymmet under och bakom trappan", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-05-010", "title": "Kontrollera trappsteg och konstruktion efter glapp, sprickor eller hala ytor", "status": "pending", "condition": "always", "safety": "fall"},
+        {"id": "recreation-room-05-011", "title": "Låt trappan torka helt innan den används", "status": "pending", "condition": "always", "safety": "fall"}
+      ]
+    },
+    {
+      "id": "recreation-room-06-windows",
+      "order": 6,
+      "title": "Fönster och fönsterbrädor",
+      "tasks": [
+        {"id": "recreation-room-06-001", "title": "Töm samtliga fönsterbrädor", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-06-002", "title": "Dammsug löst damm och insekter från karmar och bågar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-06-003", "title": "Putsa alla fönsterglas på insidan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-06-004", "title": "Putsa säkert åtkomliga fönsterglas på utsidan", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "recreation-room-06-005", "title": "Putsa mellan glasen", "status": "pending", "condition": "if_supported_by_window"},
+        {"id": "recreation-room-06-006", "title": "Rengör spröjs, karmar, bågar, handtag och tätningslister", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-06-007", "title": "Rengör fönsterspår, hörn, beslag och dräneringskanaler", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-06-008", "title": "Torka samtliga fönsterbrädor ovanpå, undertill och längs kanterna", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-06-009", "title": "Kontrollera fönstren efter kondens, mögelpåväxt, skadade lister eller trög funktion", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-07-heat-pump",
+      "order": 7,
+      "title": "Luftvärmepump",
+      "tasks": [
+        {"id": "recreation-room-07-001", "title": "Stäng av luftvärmepumpen och bryt strömmen enligt manualen", "status": "pending", "condition": "if_required", "safety": "electricity"},
+        {"id": "recreation-room-07-002", "title": "Damma enhetens ovansida, front, sidor och undersida", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-07-003", "title": "Öppna frontpanelen enligt tillverkarens anvisningar", "status": "pending", "condition": "if_user_accessible", "safety": "electricity"},
+        {"id": "recreation-room-07-004", "title": "Ta ut och dammsug eller tvätta filtren enligt manualen", "status": "pending", "condition": "if_supported"},
+        {"id": "recreation-room-07-005", "title": "Låt tvättade filter torka helt före återmontering", "status": "pending", "condition": "if_washed", "safety": "electricity"},
+        {"id": "recreation-room-07-006", "title": "Dammsug åtkomligt damm bakom filtren med låg sugkraft", "details": "Rör inte värmeväxlarens tunna lameller och spraya inte vätska in i enheten.", "status": "pending", "condition": "if_accessible", "safety": "electricity"},
+        {"id": "recreation-room-07-007", "title": "Rengör luftutblås, lameller och spjäll med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-07-008", "title": "Rengör fjärrkontroll och väggfäste", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-07-009", "title": "Kontrollera kondensslangens synliga del efter läckage eller blockering", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-07-010", "title": "Rengör väggen och fönsterområdet kring enheten", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-07-011", "title": "Återmontera torra filter och kontrollera drift, ljud och luftflöde", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-07-012", "title": "Boka fackservice om enheten luktar, läcker eller har synlig smuts bakom användaråtkomliga delar", "status": "pending", "condition": "if_needed"}
+      ]
+    },
+    {
+      "id": "recreation-room-08-fireplace",
+      "order": 8,
+      "title": "Eldstad och murstock",
+      "tasks": [
+        {"id": "recreation-room-08-001", "title": "Bekräfta att eldstad och aska är helt kalla", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "recreation-room-08-002", "title": "Skydda golvet framför eldstaden innan aska hanteras", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "recreation-room-08-003", "title": "Ta bort kall aska med askdammsugare eller eldstadsredskap", "details": "Använd inte vanlig dammsugare om den inte uttryckligen är avsedd för aska.", "status": "pending", "condition": "if_needed", "safety": "fire"},
+        {"id": "recreation-room-08-004", "title": "Förvara aska i obrännbart kärl med lock utomhus", "status": "pending", "condition": "if_ash_removed", "safety": "fire"},
+        {"id": "recreation-room-08-005", "title": "Borsta eller dammsug eldstadens användaråtkomliga innerytor enligt manualen", "status": "pending", "condition": "if_supported", "safety": "fire"},
+        {"id": "recreation-room-08-006", "title": "Rengör eldstadens glas med avsedd metod", "status": "pending", "condition": "if_glass_present"},
+        {"id": "recreation-room-08-007", "title": "Torka eldstadens utsida, handtag och reglage", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-08-008", "title": "Dammsug och torka murstockens eller kåpans utsida", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-08-009", "title": "Rengör sockel, vedhylla och golvytan kring eldstaden", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-08-010", "title": "Kontrollera lucka, tätningar och synliga delar efter sprickor eller skador", "status": "pending", "condition": "always", "safety": "fire"},
+        {"id": "recreation-room-08-011", "title": "Kontrollera att sotning och brandskyddskontroll inte är försenade", "status": "pending", "condition": "if_applicable", "safety": "fire"}
+      ]
+    },
+    {
+      "id": "recreation-room-09-plants-decor",
+      "order": 9,
+      "title": "Växter, vas och dekorationer",
+      "tasks": [
+        {"id": "recreation-room-09-001", "title": "Damma eller torka bladen på samtliga levande växter", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-09-002", "title": "Ta bort torra blad och synligt växtskräp", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-09-003", "title": "Rengör innerkrukor, ytterkrukor och fat", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-09-004", "title": "Kontrollera att inget bevattningsvatten står kvar eller har skadat fönsterbrädan", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-09-005", "title": "Dammsug torkade strån och blomsterarrangemang försiktigt", "details": "Använd låg sugkraft genom ett skyddande nät om materialet är skört.", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-09-006", "title": "Töm och rengör den stora glasvasen in- och utvändigt", "status": "pending", "condition": "if_safe"},
+        {"id": "recreation-room-09-007", "title": "Rengör brickor, koppar, ljuslyktor och andra prydnadsföremål", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-09-008", "title": "Låt vas, krukor och underlag torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-10-sofa-textiles",
+      "order": 10,
+      "title": "Tygsoffa, schäslong och textilier",
+      "tasks": [
+        {"id": "recreation-room-10-001", "title": "Ta bort alla lösa kuddar, plädar och föremål från soffan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-002", "title": "Kontrollera soffans och textiliernas skötselmärkning", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-003", "title": "Dammsug sitsar, rygg, schäslong, armstöd och utsidor med möbelmunstycke", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-004", "title": "Dammsug manchestertyget i luggens riktning och mellan ribborna", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-005", "title": "Dammsug springor mellan dynor, ryggstöd och stomme", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-006", "title": "Lyft lösa dynor och dammsug båda sidor", "status": "pending", "condition": "if_removable"},
+        {"id": "recreation-room-10-007", "title": "Dammsug soffans stomme under dynorna", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-10-008", "title": "Dammsug soffans baksida, nederkant och ben", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-009", "title": "Punktbehandla fläckar enligt sofftygets rengöringskod", "details": "Prova på en diskret plats och övervät inte stoppningen.", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-10-010", "title": "Tvätta avtagbara kuddfodral och plädar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "recreation-room-10-011", "title": "Rengör kuddarnas innerdelar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "recreation-room-10-012", "title": "Flytta soffan och rengör vägg, golvlister och golv bakom och under", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "recreation-room-10-013", "title": "Kontrollera soffan efter lukt, fukt, glapp eller tecken på skadedjur", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-10-014", "title": "Låt soffan och textilierna torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-11-leather-chair",
+      "order": 11,
+      "title": "Läderfåtölj",
+      "tasks": [
+        {"id": "recreation-room-11-001", "title": "Dammsug läderfåtöljen med mjukt möbelmunstycke", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-11-002", "title": "Dammsug sömmar, veck, knappar och springor", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-11-003", "title": "Torka lädret med produkt och metod avsedd för lädertypen", "details": "Prova först på en dold yta och övervät inte lädret.", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-11-004", "title": "Applicera lädervård om tillverkaren rekommenderar det", "status": "pending", "condition": "if_due"},
+        {"id": "recreation-room-11-005", "title": "Torka armstödens, sitsens och ryggens undersidor", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-11-006", "title": "Rengör snurrfot, ben, reglage och mekanism utvändigt", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-11-007", "title": "Flytta fåtöljen och rengör golv och vägg bakom och under", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "recreation-room-11-008", "title": "Kontrollera läder, fot och mekanism efter sprickor, glapp eller skador", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "recreation-room-12-coffee-table-rug",
+      "order": 12,
+      "title": "Soffbord och naturfibermatta",
+      "tasks": [
+        {"id": "recreation-room-12-001", "title": "Töm soffbordets ovansida och hyllor", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-002", "title": "Putsa glasbordets ovansida och undersida", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-003", "title": "Rengör glasets kanter och stödytor", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-004", "title": "Torka bordets nederhylla, ram, ben och fötter", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-005", "title": "Rengör brickor, korgar och dekorationer innan de återställs", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-12-006", "title": "Flytta soffbordet och dammsug mattans ovansida långsamt i flera riktningar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-007", "title": "Dammsug mattans kanter, hörn och området under soffans framkant", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-008", "title": "Lyft mattan och dammsug undersidan", "status": "pending", "condition": "if_possible"},
+        {"id": "recreation-room-12-009", "title": "Rengör golvet under hela mattan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-010", "title": "Punktbehandla fläckar enligt mattans material och skötselråd", "details": "Jute och sisal ska normalt inte genomblötas eller ångtvättas.", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-12-011", "title": "Kontrollera mattan efter fukt, lukt, slitage eller skadedjur", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-12-012", "title": "Låt matta och golv torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-13-tv-media",
+      "order": 13,
+      "title": "TV, soundbar och mediamöbel",
+      "tasks": [
+        {"id": "recreation-room-13-001", "title": "Stäng av, koppla ur och låt TV och soundbar svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-13-002", "title": "Damma TV-skärmen med ren, torr skärmduk", "details": "Spraya aldrig direkt på skärmen.", "status": "pending", "condition": "always", "safety": "electronics"},
+        {"id": "recreation-room-13-003", "title": "Rengör TV:ns ram, kanter, fot, baksida och ventilationsöppningar försiktigt", "status": "pending", "condition": "always", "safety": "electronics"},
+        {"id": "recreation-room-13-004", "title": "Damma soundbarens ovansida, front, baksida och anslutningar", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-13-005", "title": "Rengör fjärrkontroller och reglage", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-13-006", "title": "Töm mediamöbelns skåp och lådor", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-13-007", "title": "Dammsug och torka mediamöbelns insidor", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-13-008", "title": "Torka mediamöbelns ovansida, fronter, sidor, undersida och ben", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-13-009", "title": "Rengör luckkanter, gångjärn och handgrepp", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-13-010", "title": "Dra fram möbeln och rengör vägg, golvlister, golv och kablar bakom", "status": "pending", "condition": "if_safely_possible"},
+        {"id": "recreation-room-13-011", "title": "Damma grenuttag, nätadaptrar och kabelkontakter med torr metod", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-13-012", "title": "Ordna kablar utan skarpa böjar eller klämrisk", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-13-013", "title": "Låt allt torka helt innan elektroniken kopplas in och testas", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "recreation-room-14-digital-piano",
+      "order": 14,
+      "title": "Digitalpiano och pianopall",
+      "tasks": [
+        {"id": "recreation-room-14-001", "title": "Stäng av och koppla ur digitalpianot", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-14-002", "title": "Damma tangenterna med torr, mjuk duk", "details": "För inte in fukt mellan tangenterna.", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-14-003", "title": "Rengör pianots ovansida, front, sidor och undersida med nästan torr duk", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-14-004", "title": "Damma kontrollpanel, display, högtalargaller och anslutningar torrt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "recreation-room-14-005", "title": "Rengör notställ och noter eller böcker", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-14-006", "title": "Torka pianots stativ, pedal, tvärstag och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-14-007", "title": "Rengör pianopallens sits, ben och fotstöd enligt material", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-14-008", "title": "Rengör sladdar och kontakternas utsidor torrt", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-14-009", "title": "Flytta pianot endast om tillverkaren och konstruktionen medger det", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "recreation-room-14-010", "title": "Rengör tegelvägg, golv och golvlister bakom och under pianot", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-14-011", "title": "Koppla in och kontrollera tangenter, pedal och ljud när allt är torrt", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "recreation-room-15-doors-electrical-trim",
+      "order": 15,
+      "title": "Dörrar, eldetaljer och lister",
+      "tasks": [
+        {"id": "recreation-room-15-001", "title": "Torka rummets dörrar på fram- och baksida", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-15-002", "title": "Rengör dörrarnas över- och nederkanter", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-15-003", "title": "Rengör dörrhandtag, lås, gångjärn och övriga beslag", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-15-004", "title": "Torka dörrkarmar, foder och trösklar", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-15-005", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "details": "Spraya aldrig direkt och för in inget i öppningarna.", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-15-006", "title": "Damma synliga kablar, kabelkanaler och nätadaptrar", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-15-007", "title": "Kontrollera kablar och kontakter efter klämskador eller missfärgning", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-15-008", "title": "Torka samtliga golvlister ovanpå och på framsidan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-15-009", "title": "Rengör golvlister bakom alla flyttbara möbler", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-15-010", "title": "Rengör övergången och tröskeln mot hallen", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-16-moisture-check",
+      "order": 16,
+      "title": "Källarrelaterad fukt- och klimatkontroll",
+      "tasks": [
+        {"id": "recreation-room-16-001", "title": "Lukta efter avvikande källar-, jord- eller mögellukt när rummet varit stängt", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-16-002", "title": "Kontrollera ytterväggarnas nederkanter och hörn efter missfärgning eller fukt", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-16-003", "title": "Kontrollera bakom soffa, fåtölj, TV-möbel och piano efter kondens eller påväxt", "status": "pending", "condition": "if_accessible"},
+        {"id": "recreation-room-16-004", "title": "Kontrollera fönstersmygar och fönsterbrädor efter kondens eller mögelpåväxt", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-16-005", "title": "Kontrollera mattans undersida och golvet under mattan efter fukt eller lukt", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-16-006", "title": "Kontrollera trätrappans nederdel och anslutningar mot golvet efter fuktpåverkan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-16-007", "title": "Mät relativ luftfuktighet om hygrometer finns", "status": "pending", "condition": "if_available"},
+        {"id": "recreation-room-16-008", "title": "Dokumentera återkommande fukt, lukt eller påväxt för vidare utredning", "status": "pending", "condition": "if_issue_found"}
+      ]
+    },
+    {
+      "id": "recreation-room-17-floor",
+      "order": 17,
+      "title": "Golv",
+      "tasks": [
+        {"id": "recreation-room-17-001", "title": "Flytta undan återstående lösa föremål från golvet", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-002", "title": "Dammsug längs samtliga golvlister, hörn, pelarfötter och trösklar", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-003", "title": "Dammsug bakom och under samtliga flyttbara möbler", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-004", "title": "Dammsug runt eldstad, piano och trappa med lämpligt munstycke", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-005", "title": "Dammsug hela den fria golvytan", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-006", "title": "Punktbehandla fläckar med medel anpassat för golvtypen", "status": "pending", "condition": "if_needed"},
+        {"id": "recreation-room-17-007", "title": "Fukttorka golvet med väl urvriden mopp", "details": "Följ golvtillverkarens råd och undvik att vatten tränger in i skarvar.", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-008", "title": "Rengör övergångar mot hall, trappa och angränsande ytor", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-17-009", "title": "Låt golvet torka helt innan matta och möbler återställs", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "recreation-room-18-finish",
+      "order": 18,
+      "title": "Avslutning och funktionskontroll",
+      "tasks": [
+        {"id": "recreation-room-18-001", "title": "Lägg tillbaka den helt torra mattan plant och i rätt läge", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-002", "title": "Återställ soffa, fåtölj, soffbord och övriga möbler", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-003", "title": "Sätt tillbaka helt torra kuddar, kuddfodral och plädar", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-18-004", "title": "Ställ tillbaka endast rena och torra dekorationer och växter", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-005", "title": "Koppla in TV, soundbar och piano utan att kablar kläms", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "recreation-room-18-006", "title": "Starta elektroniken och kontrollera bild, ljud och pianofunktion", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-18-007", "title": "Starta luftvärmepumpen och kontrollera drift och luftflöde", "status": "pending", "condition": "if_present"},
+        {"id": "recreation-room-18-008", "title": "Slå på spotlights och kontrollera samtliga ljuspunkter", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "recreation-room-18-009", "title": "Kontrollera att fönster och dörrar öppnar, stänger och låser normalt", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-010", "title": "Kontrollera att inga fuktiga textilier eller möbler står tätt mot yttervägg", "status": "pending", "condition": "always", "safety": "moisture"},
+        {"id": "recreation-room-18-011", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-012", "title": "Tvätta städdukar och mopp", "status": "pending", "condition": "always"},
+        {"id": "recreation-room-18-013", "title": "Vädra rummet en sista gång", "status": "pending", "condition": "if_possible"}
+      ]
+    }
+  ]
+}

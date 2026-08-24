@@ -1,0 +1,319 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-badrum-nere",
+  "title": "Storstädning – badrummet nere",
+  "roomType": "bathroom",
+  "description": "Komplett storstädning av badrummet på nedervåningen med kaklade väggar och klinkergolv, vägghängd toalett med installationsvägg, fristående handfat på träbänkskiva, rund väggspegel, flytande kommod, öppna hyllor samt inglasad dusch med takdusch, handdusch, nisch, sittbänk och golvbrunn.",
+  "definitionOfDone": "Alla sanitetsytor är hygieniskt rengjorda, kalk och tvålrester är borttagna så långt materialen tillåter, kakel och fogar är rena, duschglas och beslag är avtorkade, golvbrunn och ventilation är omhändertagna, träytor är skonsamt rengjorda och torra samt alla åtkomliga ytor ovanpå, bakom, under och inuti inredningen är rengjorda.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, installationer och detaljer – inte för att bedöma rummets tillfälliga skick.",
+    "Kontrollera om plattorna är keramiska eller av natursten innan sur kalklösare används. Syra kan skada natursten, cementbaserade fogar, metaller och vissa ytbehandlingar.",
+    "Träbänkskivor och trädetaljer ska rengöras sparsamt och torkas direkt; stående vatten kan skada träet.",
+    "Blanda aldrig klorbaserade produkter med syror, ättika, ammoniak eller andra rengöringsmedel.",
+    "Spraya aldrig rengöringsmedel direkt på eluttag, reglage, spotlights, ventilation eller annan elektronik.",
+    "Demontering av fast VVS, elinstallationer, takdusch, duschväggar eller den inbyggda cisternen ingår inte.",
+    "Gallring av hygienprodukter är organisering; rengöring av förvaringen ingår. Läkemedel lämnas till apotek och spolas aldrig ned."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "downstairs-bathroom-01-preparation",
+      "order": 1,
+      "title": "Förbered badrummet",
+      "tasks": [
+        {"id": "downstairs-bathroom-01-001", "title": "Ta ut tvätt, skräp och föremål som hör hemma i andra rum", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-01-002", "title": "Töm handfat, träbänkskiva, duschnisch och duschbänk", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-01-003", "title": "Töm installationsväggens avställningsyta och öppna hyllor", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-01-004", "title": "Ta ned handdukar och andra tvättbara textilier", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-01-005", "title": "Töm kommodens lådor och lösa förvaringskorgar tillfälligt", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-01-006", "title": "Ta ut papperskorg, toalettborste och andra lösa tillbehör", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-01-007", "title": "Identifiera ytmaterial och kontrollera skötselråd före kalkbehandling", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-01-008", "title": "Sätt på ventilationen och håll dörren öppen under arbetet", "status": "pending", "condition": "if_possible"},
+        {"id": "downstairs-bathroom-01-009", "title": "Använd separata dukar och redskap för toaletten och övriga badrummet", "status": "pending", "condition": "always", "safety": "hygiene"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-02-ceiling-lighting",
+      "order": 2,
+      "title": "Tak och infälld belysning",
+      "tasks": [
+        {"id": "downstairs-bathroom-02-001", "title": "Damma eller torka hela taket", "details": "Använd en metod som takfärgen och våtrumskonstruktionen tål.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-02-002", "title": "Ta bort spindelväv och damm i takvinklar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-02-003", "title": "Rengör takets kanter och anslutningar mot väggarna", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-02-004", "title": "Kontrollera taket efter fuktfläckar, sprickor eller mögelpåväxt", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-02-005", "title": "Bryt strömmen och låt spotlights svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "downstairs-bathroom-02-006", "title": "Damma spotlightarnas ramar och skyddsglas med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "downstairs-bathroom-02-007", "title": "Ta bort damm kring spotlightarnas takanslutningar", "status": "pending", "condition": "if_accessible", "safety": "electricity"},
+        {"id": "downstairs-bathroom-02-008", "title": "Kontrollera att spotlightarnas tätningar och ramar sitter fast", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-03-ventilation",
+      "order": 3,
+      "title": "Ventilation",
+      "tasks": [
+        {"id": "downstairs-bathroom-03-001", "title": "Stäng av eventuell elektrisk fläkt enligt tillverkarens anvisningar", "status": "pending", "condition": "if_required", "safety": "electricity"},
+        {"id": "downstairs-bathroom-03-002", "title": "Dammsug ventilens utsida och takytan runt den", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-03-003", "title": "Ta loss och rengör ventilkåpan", "details": "Gör detta endast om kåpan är avsedd att tas loss av användaren.", "status": "pending", "condition": "if_supported"},
+        {"id": "downstairs-bathroom-03-004", "title": "Rengör åtkomligt damm innanför ventilöppningen", "details": "För inte in föremål djupt i kanalen och ändra inte ventilens injusterade läge.", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-03-005", "title": "Torka och återmontera ventilkåpan helt torr", "status": "pending", "condition": "if_removed"},
+        {"id": "downstairs-bathroom-03-006", "title": "Kontrollera att ventilationen har märkbart luftflöde", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-04-wall-tiles-grout",
+      "order": 4,
+      "title": "Kaklade väggar och fogar utanför duschen",
+      "tasks": [
+        {"id": "downstairs-bathroom-04-001", "title": "Damma väggarna uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-002", "title": "Rengör samtliga kakelplattor utanför duschen", "details": "Använd rengöringsmedel anpassat för plattornas material.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-003", "title": "Punktbehandla stänk, fingeravtryck och produktrester", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-04-004", "title": "Rengör vertikala och horisontella kakelfogar med mjuk borste", "details": "Undvik att nöta bort fogmassan.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-005", "title": "Skölj eller eftertorka väggarna så att inga medelrester lämnas kvar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-006", "title": "Torka kaklet torrt för att undvika nya kalkfläckar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-007", "title": "Rengör hörn och kanter kring fast inredning", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-008", "title": "Kontrollera kakel och fogar efter sprickor, bomljud eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-04-009", "title": "Kontrollera mjukfogar efter släpp, sprickor eller svart påväxt", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-04-010", "title": "Rengör mindre ytlig påväxt med materialsäker metod", "details": "Mjukfog som är angripen på djupet eller har släppt ska normalt bytas, inte skrubbas sönder.", "status": "pending", "condition": "if_needed"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-05-mirror",
+      "order": 5,
+      "title": "Rund väggspegel",
+      "tasks": [
+        {"id": "downstairs-bathroom-05-001", "title": "Putsa spegelglaset utan att spraya direkt mot kanterna", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-05-002", "title": "Rengör spegelns kant eller ram runt hela omkretsen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-05-003", "title": "Damma spegelns ovansida och åtkomliga baksida", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-05-004", "title": "Rengör spegelns upphängning utan att lossa den", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-05-005", "title": "Rengör kaklet bakom och kring spegeln", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-05-006", "title": "Torka spegeln helt torr och kontrollera efter ränder", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-06-basin-wall-faucet",
+      "order": 6,
+      "title": "Fristående handfat, väggblandare och avlopp",
+      "tasks": [
+        {"id": "downstairs-bathroom-06-001", "title": "Avlägsna lösa föremål runt handfatet", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-002", "title": "Rengör handfatets insida, kant och utsida", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-003", "title": "Rengör handfatets undersida och kontaktyta mot bänkskivan", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-06-004", "title": "Rengör väggblandarens platta och skarven mot kaklet", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-005", "title": "Rengör blandarens reglage, pip, undersida och kanter", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-006", "title": "Avkalka blandaren med metod som tål krom och angränsande fogar", "details": "Låt inte sura medel ligga kvar eller rinna in bakom täckplattan.", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-06-007", "title": "Rengör eller avkalka strålsamlaren", "details": "Demontera endast om blandarens anvisningar tillåter det.", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-06-008", "title": "Rengör propp, sil och synliga delar av bottenventilen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-009", "title": "Ta bort hår och beläggningar i handfatsavloppet", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-06-010", "title": "Spola igenom avloppet och kontrollera avrinningen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-011", "title": "Polera handfat och blandare torra", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-06-012", "title": "Kontrollera synligt vattenlås och anslutningar efter dropp eller missfärgning", "status": "pending", "condition": "if_accessible"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-07-wood-counter-vanity",
+      "order": 7,
+      "title": "Träbänkskiva och flytande kommod",
+      "tasks": [
+        {"id": "downstairs-bathroom-07-001", "title": "Torka bort löst damm och smulor från träbänkskivan", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-07-002", "title": "Rengör träbänkskivan sparsamt med träanpassad metod", "details": "Använd väl urvriden duk och undvik stående vatten.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-07-003", "title": "Rengör bänkskivans framkant, undersida och vägganslutning", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-07-004", "title": "Torka träbänkskivan helt torr direkt efter rengöring", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-07-005", "title": "Kontrollera träet efter mörka fläckar, svällning, sprickor eller sliten ytbehandling", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-07-006", "title": "Töm kommodens lådor helt", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-07-007", "title": "Dammsug och torka lådornas insidor, kanter och undersidor", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-07-008", "title": "Torka kommodens fronter, sidor, ovansida och nederkant", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-07-009", "title": "Rengör lådgrepp, skenor och åtkomliga beslag", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-07-010", "title": "Rengör kaklet och golvet under och bakom den flytande kommoden", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-07-011", "title": "Torka av förvarade produkter innan de ställs tillbaka", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-07-012", "title": "Låt lådor och innehåll torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-08-decor-plants",
+      "order": 8,
+      "title": "Växter och dekorationsföremål",
+      "tasks": [
+        {"id": "downstairs-bathroom-08-001", "title": "Flytta växt och dekorationsföremål från bänkskivan", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-08-002", "title": "Damma eller torka växtens blad skonsamt", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-08-003", "title": "Rengör ytterkruka, innerkruka och fat", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-08-004", "title": "Kontrollera att inget vatten står kvar i ytterkrukan", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-08-005", "title": "Rengör ljuslyktor, brickor, korgar och andra dekorationer", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-08-006", "title": "Ställ tillbaka endast torra föremål på den torra träytan", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-09-wall-hung-toilet",
+      "order": 9,
+      "title": "Vägghängd toalett och spolplatta",
+      "tasks": [
+        {"id": "downstairs-bathroom-09-001", "title": "Spola och applicera toalettrengöring under spolranden", "details": "Följ produktens verkningstid och blanda aldrig olika kemikalier.", "status": "pending", "condition": "always", "safety": "chemicals"},
+        {"id": "downstairs-bathroom-09-002", "title": "Skrubba toalettskålen, vattenlinjen och under spolranden", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-003", "title": "Avlägsna kalkbeläggningar i skålen med porslinsanpassad metod", "status": "pending", "condition": "if_needed", "safety": "chemicals"},
+        {"id": "downstairs-bathroom-09-004", "title": "Rengör sits och lock på över- och undersida", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-005", "title": "Rengör sitsens fästen, gångjärn och skarvar", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-006", "title": "Rengör toalettens utsida och undersida", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-007", "title": "Rengör toalettens bakkant och infästning mot installationsväggen", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-008", "title": "Rengör kaklet och golvet under, bakom och runt toaletten", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-009", "title": "Rengör spolplattans knappar, ram och kanter", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-010", "title": "Ta loss och rengör spolplattan", "details": "Gör detta endast om tillverkaren anger att den kan tas loss av användaren; öppna inte den inbyggda cisternen för städning.", "status": "pending", "condition": "if_supported", "safety": "plumbing"},
+        {"id": "downstairs-bathroom-09-011", "title": "Kontrollera toalettens infästning och anslutning efter glapp, läckage eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-09-012", "title": "Rengör toalettborste och behållare och låt dem torka helt", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-09-013", "title": "Byt toalettborste om den är sliten eller inte går att få hygieniskt ren", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-09-014", "title": "Tvätta händerna och byt rengöringsduk efter toalettmomentet", "status": "pending", "condition": "always", "safety": "hygiene"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-10-cistern-wall-shelves",
+      "order": 10,
+      "title": "Installationsvägg och öppna hyllor",
+      "tasks": [
+        {"id": "downstairs-bathroom-10-001", "title": "Töm ovansidan av installationsväggen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-10-002", "title": "Rengör installationsväggens ovansida, framkant och sidor", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-10-003", "title": "Rengör kakelfogar och hörn kring installationsväggen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-10-004", "title": "Töm samtliga öppna hyllor vid toaletten", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-10-005", "title": "Damma och torka hyllornas ovansidor, undersidor, kanter och hörn", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-10-006", "title": "Rengör hyllornas trädelar sparsamt och torka dem direkt", "status": "pending", "condition": "if_wood", "safety": "moisture"},
+        {"id": "downstairs-bathroom-10-007", "title": "Torka av reservrullar, behållare och produkter före återställning", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-10-008", "title": "Kassera fuktskadade pappersprodukter", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-10-009", "title": "Ställ tillbaka endast rena och torra föremål", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-11-shower-enclosure",
+      "order": 11,
+      "title": "Duschglas, dörrar och profiler",
+      "tasks": [
+        {"id": "downstairs-bathroom-11-001", "title": "Skölj eller torka bort lös smuts från duschglasets båda sidor", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-002", "title": "Lös upp tvålrester och kalk på duschglaset", "details": "Använd medel som är godkänt för glas, fogar och metallprofiler.", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-11-003", "title": "Rengör samtliga glasytor från överkant till nederkant på båda sidor", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-004", "title": "Rengör glasens över-, sido- och nederkanter", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-005", "title": "Rengör båda dörrhandtagen och deras infästningar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-006", "title": "Rengör aluminiumprofiler, gångjärn och väggfästen", "details": "Undvik slipmedel och lång kontakttid med syror.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-007", "title": "Rengör dörrarnas nederlister, tätningslister och droppskydd", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-11-008", "title": "Rengör skenor, spår, skarvar och hörn med mjuk borste", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-11-009", "title": "Rengör tröskelprofilen och anslutningen mot golvet", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-010", "title": "Kontrollera glas, infästningar, lister och gångjärn efter sprickor, glapp eller skador", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-011", "title": "Skölj utan att lämna rengöringsmedel i profiler eller skarvar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-11-012", "title": "Skrapa glaset och polera profiler och beslag torra", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-12-shower-fixtures",
+      "order": 12,
+      "title": "Takdusch, handdusch och reglage",
+      "tasks": [
+        {"id": "downstairs-bathroom-12-001", "title": "Rengör den takmonterade duschens ovansida, undersida och kanter", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "downstairs-bathroom-12-002", "title": "Rengör och massera takduschens gummimunstycken", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-12-003", "title": "Avkalka takduschen med metod som är godkänd för ytfinishen", "details": "Demontera den inte om tillverkaren inte uttryckligen medger det.", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-12-004", "title": "Rengör de inbyggda duschreglagen och väggplattan", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-12-005", "title": "Rengör reglagens skarvar, undersidor och anslutning mot kaklet", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-12-006", "title": "Avkalka reglage och täckplatta med krom- och fogsäker metod", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-12-007", "title": "Rengör handduschens handtag, munstycken och hållare", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-12-008", "title": "Rengör duschslangen längs hela längden och vid kopplingarna", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-12-009", "title": "Rengör den nedre vattenutkastaren eller anslutningen", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-12-010", "title": "Skölj armaturerna noggrant och torka dem helt torra", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-12-011", "title": "Kontrollera duscharmatur, kopplingar och vägggenomföringar efter dropp eller läckage", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-13-shower-surfaces-niche-bench-drain",
+      "order": 13,
+      "title": "Duschens kakel, nisch, sittbänk och golvbrunn",
+      "tasks": [
+        {"id": "downstairs-bathroom-13-001", "title": "Ta ut samtliga produkter ur duschnischen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-002", "title": "Torka av duschprodukterna och kontrollera efter läckage", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-13-003", "title": "Blöt duschens kakel och fogar sparsamt före rengöring", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-004", "title": "Rengör duschväggarna uppifrån och ned", "details": "Använd rengöringsmedel anpassat för plattor, fogar och eventuella naturstensytor.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-005", "title": "Behandla kalk- och tvålrester med materialsäker metod", "details": "Använd inte sur produkt på natursten eller andra syrakänsliga ytor.", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-13-006", "title": "Rengör kakelfogarna med mjuk borste utan att nöta bort fogmassan", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-007", "title": "Rengör duschnischens ovansida, sidor, bakkant, botten och hörn", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-008", "title": "Rengör och kontrollera fogarna runt duschnischen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-009", "title": "Rengör sittbänkens ovansida, framkant, undersida och vägganslutningar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-010", "title": "Kontrollera sittbänkens fogar och fall så att vatten inte blir stående", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-011", "title": "Rengör duschgolvet och golvfogarna med icke-repande redskap", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-012", "title": "Rengör mötet mellan duschgolv, väggar, bänk och glasprofiler", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-013", "title": "Lyft golvbrunnens fyrkantiga lock eller sil", "details": "Gör detta enligt brunnens konstruktion och använd handskar.", "status": "pending", "condition": "if_supported", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-13-014", "title": "Ta bort hår och avlagringar från golvbrunn och vattenlås", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-13-015", "title": "Rengör brunnslock, sil, insats och åtkomliga innerväggar", "status": "pending", "condition": "if_supported", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-13-016", "title": "Återmontera golvbrunnens delar korrekt", "status": "pending", "condition": "if_removed", "safety": "plumbing"},
+        {"id": "downstairs-bathroom-13-017", "title": "Spola igenom golvbrunnen och kontrollera avrinningen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-018", "title": "Skölj duschytorna tills alla produktrester är borta", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-019", "title": "Skrapa och torka duschväggar, nisch, bänk och golv", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-13-020", "title": "Kontrollera duschgolvets fall och att inget vatten blir stående", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-14-doors-hooks-controls",
+      "order": 14,
+      "title": "Dörrar, krokar och reglage",
+      "tasks": [
+        {"id": "downstairs-bathroom-14-001", "title": "Torka badrumsdörren på fram- och baksida", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-14-002", "title": "Rengör dörrens över- och nederkant", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-14-003", "title": "Rengör dörrhandtag, lås, beslag och gångjärn", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-14-004", "title": "Torka dörrkarm, foder och tröskel", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-14-005", "title": "Ta ned textilier och rengör samtliga väggkrokar", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-14-006", "title": "Rengör toalettpappershållaren på alla sidor", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-14-007", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "details": "Spraya aldrig direkt och för in inget i öppningarna.", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "downstairs-bathroom-14-008", "title": "Rengör golvvärmetermostat eller annan kontrollpanel enligt tillverkarens råd", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "downstairs-bathroom-14-009", "title": "Rengör den väggmonterade digitala panelens ram och utsida", "details": "Använd nästan torr duk och spraya aldrig direkt.", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "downstairs-bathroom-14-010", "title": "Damma okända vita väggdetaljer torrt", "details": "Identifiera dem innan våtrengöring eller demontering.", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-14-011", "title": "Rengör övriga synliga väggbeslag och genomföringar", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-15-bench-accessories-textiles",
+      "order": 15,
+      "title": "Träbänk, tillbehör och textilier",
+      "tasks": [
+        {"id": "downstairs-bathroom-15-001", "title": "Töm träbänken utanför duschen", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-15-002", "title": "Damma och rengör träbänkens ovansida, framsida, sidor och kanter", "details": "Använd en väl urvriden duk och träanpassat medel.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-15-003", "title": "Rengör åtkomliga springor och golvet kring träbänken", "status": "pending", "condition": "if_accessible"},
+        {"id": "downstairs-bathroom-15-004", "title": "Torka träbänken helt torr och kontrollera efter fuktskador", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-15-005", "title": "Tvätta handdukar och tvättlappar enligt tvättråden", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-15-006", "title": "Tvätta badrumsmatta och andra badrumstextilier enligt tvättråden", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-15-007", "title": "Rengör tvålpumpar, brickor, korgar och hygienbehållare in- och utvändigt", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-15-008", "title": "Töm och rengör papperskorgen in- och utvändigt", "status": "pending", "condition": "if_present", "safety": "hygiene"},
+        {"id": "downstairs-bathroom-15-009", "title": "Rengör fristående toalettpappersställ och andra golvstående tillbehör", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-15-010", "title": "Torka av alla produkter innan de återställs", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-15-011", "title": "Lägg tillbaka endast rena och helt torra textilier och föremål", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-16-floor",
+      "order": 16,
+      "title": "Klinkergolv och golvfogar",
+      "tasks": [
+        {"id": "downstairs-bathroom-16-001", "title": "Dammsug eller torrmoppa hela golvet", "details": "Arbeta även under kommoden, under toaletten, bakom papperskorgen och längs väggarna.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-002", "title": "Ta bort hår och damm ur hörn och golvfogar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-003", "title": "Rengör klinkerplattorna med materialanpassat medel", "details": "Identifiera natursten innan sur produkt används.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-004", "title": "Rengör golvfogarna med mjuk borste", "details": "Undvik att nöta eller fräta bort fogmassan.", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-005", "title": "Punktbehandla fläckar och beläggningar med icke-repande redskap", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-16-006", "title": "Rengör golvet under vägghängd inredning och längs alla kanter", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-007", "title": "Rengör golvets anslutningar mot duschprofil, installationsvägg och träbänk", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-008", "title": "Rengör tröskeln och övergången till rummet utanför", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-009", "title": "Eftertorka golvet så att inga rengöringsmedelsrester blir kvar", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-16-010", "title": "Torka golvet och låt det lufttorka helt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "downstairs-bathroom-17-finish",
+      "order": 17,
+      "title": "Avslutning och funktionskontroll",
+      "tasks": [
+        {"id": "downstairs-bathroom-17-001", "title": "Ställ tillbaka endast rena och torra produkter", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-002", "title": "Häng upp rena och helt torra handdukar", "status": "pending", "condition": "if_present"},
+        {"id": "downstairs-bathroom-17-003", "title": "Fyll på toalettpapper, tvål och andra förbrukningsvaror", "status": "pending", "condition": "if_needed"},
+        {"id": "downstairs-bathroom-17-004", "title": "Kontrollera att handfat och dusch rinner undan normalt", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-005", "title": "Kontrollera att toaletten spolar och slutar fylla normalt", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-006", "title": "Kontrollera att blandare, dusch och synliga anslutningar inte läcker", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-007", "title": "Kontrollera att duschdörrarna löper, stänger och tätar normalt", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-008", "title": "Slå på belysning och elektriska funktioner först när allt är torrt", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "downstairs-bathroom-17-009", "title": "Kontrollera att ventilationen fungerar och lämna den igång för uttorkning", "status": "pending", "condition": "if_possible"},
+        {"id": "downstairs-bathroom-17-010", "title": "Rengör och torka alla använda städredskap", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-011", "title": "Tvätta återanvändbara dukar och moppar i lämplig temperatur", "status": "pending", "condition": "always"},
+        {"id": "downstairs-bathroom-17-012", "title": "Kassera engångsmaterial och tvätta händerna noggrant", "status": "pending", "condition": "always", "safety": "hygiene"}
+      ]
+    }
+  ]
+}

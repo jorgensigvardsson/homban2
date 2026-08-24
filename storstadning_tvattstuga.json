@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-tvattstuga",
+  "title": "Storstädning – tvättstuga",
+  "roomType": "laundry_room",
+  "description": "Komplett storstädning av tvättstugan med lågt tak och infälld belysning, synliga rör, målade väggar, mosaikskydd, arbetsbänkar, tvättho, under- och högskåp, vägghylla, tvättmaskin, torktumlare, torkskåp, mangel, tak- och väggmonterade torkställningar, galgar, trådkorgar, rullbara tvättsorterare samt klinkergolv.",
+  "definitionOfDone": "Tak, väggar, rör, torksystem, skåp, hyllor, arbetsbänkar, tvättho, avlopp, samtliga maskiner, mangel, korgar, förvaring och golv är rengjorda även ovanpå, bakom, under, inuti och i springor där ytorna är avsedda att nås. Ludd och produktrester är borttagna, vatten- och avloppsanslutningar är kontrollerade och maskinerna är torra och funktionstestade.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera rummets ytor, maskiner och detaljer – inte för att bedöma rummets tillfälliga skick.",
+    "Följ alltid manualen för tvättmaskin, torktumlare, torkskåp och mangel. Filter, kondensorer, rengöringsprogram och användaråtkomliga delar skiljer sig mellan modeller.",
+    "Spraya aldrig rengöringsmedel direkt på eluttag, reglage, skärmar, motorer eller elektriska apparater.",
+    "Blanda aldrig klorbaserade produkter med syror, ättika, ammoniak eller andra rengöringsmedel.",
+    "Flytta inte tunga maskiner ensam och dra aldrig i elsladdar, vatten- eller avloppsslangar. Rör inte fasta eller okända ventiler.",
+    "Torktumlarludd är brandfarligt. Filter, luftvägar och området bakom maskinen ska hållas fria enligt manualen.",
+    "Demontering av fasta el-, VVS- eller ventilationsinstallationer ingår inte."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "laundry-room-01-preparation",
+      "order": 1,
+      "title": "Förbered tvättstugan",
+      "tasks": [
+        {"id": "laundry-room-01-001", "title": "Ta ut skräp och föremål som hör hemma i andra rum", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-01-002", "title": "Sortera smutstvätt, ren tvätt och textilier som väntar på åtgärd", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-01-003", "title": "Töm arbetsbänkar, tvättho, hylla och torkställningar tillfälligt", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-01-004", "title": "Töm skåp, trådkorgar och tvättsorterare sektionsvis", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-01-005", "title": "Stäng av och koppla ur maskiner där manualen kräver det", "status": "pending", "condition": "if_required", "safety": "electricity"},
+        {"id": "laundry-room-01-006", "title": "Låt nyligen använda maskiner och mangel svalna", "status": "pending", "condition": "if_needed", "safety": "heat"},
+        {"id": "laundry-room-01-007", "title": "Fotografera slang- och kabeldragning innan något flyttas", "status": "pending", "condition": "if_helpful"},
+        {"id": "laundry-room-01-008", "title": "Använd separata dukar för tvättho, maskiner och golv", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "laundry-room-01-009", "title": "Sätt på ventilationen och håll dörren öppen under arbetet", "status": "pending", "condition": "if_possible"}
+      ]
+    },
+    {
+      "id": "laundry-room-02-ceiling-lighting-ventilation",
+      "order": 2,
+      "title": "Tak, balkar, belysning och ventilation",
+      "tasks": [
+        {"id": "laundry-room-02-001", "title": "Damma eller dammsug hela taket", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-02-002", "title": "Ta bort spindelväv i takvinklar och kring rör", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-02-003", "title": "Torka balkars och nischers undersidor, sidor och kanter", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-02-004", "title": "Kontrollera tak och balkar efter fuktfläckar, sprickor eller mögelpåväxt", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-02-005", "title": "Bryt strömmen och låt infällda lampor svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-02-006", "title": "Damma lampornas ramar och skyddsglas", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-02-007", "title": "Rengör lampornas utsidor med nästan torr duk", "status": "pending", "condition": "if_needed", "safety": "electricity"},
+        {"id": "laundry-room-02-008", "title": "Dammsug ventilens eller frånluftsdonets utsida", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-02-009", "title": "Ta loss och rengör ventilkåpan enligt ventilens anvisningar", "details": "Ändra inte injusterad ventilposition.", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-02-010", "title": "Kontrollera att ventilationen har märkbart luftflöde", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-03-walls-mosaic-pipes",
+      "order": 3,
+      "title": "Väggar, mosaik och synliga rör",
+      "tasks": [
+        {"id": "laundry-room-03-001", "title": "Damma målade väggar uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-03-002", "title": "Torka målade väggar med metod som färgen tål", "status": "pending", "condition": "if_needed"},
+        {"id": "laundry-room-03-003", "title": "Punktbehandla tvättmedelsstänk, märken och smuts", "status": "pending", "condition": "if_needed"},
+        {"id": "laundry-room-03-004", "title": "Rengör mosaikens plattor från överkant till bänk", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-03-005", "title": "Rengör mosaikfogar med mjuk borste utan att nöta bort fogmassan", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-03-006", "title": "Rengör hörn, kanter och anslutningar mellan mosaik, bänk och skåp", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-03-007", "title": "Damma synliga rör, kopplingar och rörfästen", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-03-008", "title": "Torka rörens utsidor utan att vrida ventiler eller kopplingar", "status": "pending", "condition": "if_present", "safety": "plumbing"},
+        {"id": "laundry-room-03-009", "title": "Kontrollera rör och kopplingar efter dropp, korrosion eller missfärgning", "status": "pending", "condition": "if_present", "safety": "plumbing"},
+        {"id": "laundry-room-03-010", "title": "Rengör väggskyltar och andra dekorationer", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-03-011", "title": "Kontrollera väggar och fogar efter fukt, sprickor eller svart påväxt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-04-drying-racks",
+      "order": 4,
+      "title": "Torkställningar, linor och galgar",
+      "tasks": [
+        {"id": "laundry-room-04-001", "title": "Ta ned all tvätt från torkställningar och galgar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-002", "title": "Damma det takmonterade torkställets ovansida, ribbor och linor", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-003", "title": "Torka varje ribba och stång på det takmonterade torkstället", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-004", "title": "Rengör takfästen, upphängningar och linmekanism", "status": "pending", "condition": "if_accessible", "safety": "height"},
+        {"id": "laundry-room-04-005", "title": "Rengör vägghängda utdragbara torkstänger på alla sidor", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-006", "title": "Rengör torkstängernas väggfästen, ändstopp och leder", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-007", "title": "Rengör klädstången och dess fästen", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-008", "title": "Torka samtliga galgar på båda sidor", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-04-009", "title": "Kontrollera torkställningar, linor och fästen efter glapp, rost eller skador", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-04-010", "title": "Låt alla torkytor torka helt innan ren tvätt hängs upp", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-05-cabinets-storage",
+      "order": 5,
+      "title": "Skåp och fast förvaring",
+      "tasks": [
+        {"id": "laundry-room-05-001", "title": "Töm ett skåp i taget", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-05-002", "title": "Dammsug ludd, damm och löst skräp ur skåpen", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-05-003", "title": "Torka skåpens hyllor, väggar, tak, bottnar och kanter invändigt", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-05-004", "title": "Torka skåpsluckor, fronter, sidor och nederkanter", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-05-005", "title": "Rengör handtag, gångjärn och luckkanter", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-05-006", "title": "Rengör skåpens ovansidor där de är åtkomliga", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-05-007", "title": "Rengör socklar och utrymmet bakom avtagbara socklar", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-05-008", "title": "Torka tvättmedelsförpackningar och andra behållare innan återställning", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-05-009", "title": "Kontrollera produkter efter läckage, fuktskador eller oläslig märkning", "status": "pending", "condition": "if_present", "safety": "chemicals"},
+        {"id": "laundry-room-05-010", "title": "Förvara kemikalier upprätt, stängda och utom räckhåll för barn och djur", "status": "pending", "condition": "if_present", "safety": "chemicals"},
+        {"id": "laundry-room-05-011", "title": "Låt skåp och innehåll torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-06-shelf-counter",
+      "order": 6,
+      "title": "Vägghylla och arbetsbänkar",
+      "tasks": [
+        {"id": "laundry-room-06-001", "title": "Töm vägghyllan helt", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-06-002", "title": "Damma och torka hyllans ovansida, undersida, framkant och sidor", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-06-003", "title": "Rengör hyllkonsoler, skruvar och vägganslutningar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-06-004", "title": "Töm samtliga arbetsbänkar", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-06-005", "title": "Dammsug ludd och löst skräp från bänkar och hörn", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-06-006", "title": "Rengör bänkskivornas ovansidor med materialanpassad metod", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-06-007", "title": "Rengör bänkskivornas framkanter, undersidor och vägganslutningar", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-06-008", "title": "Rengör hörnskarvar och silikonanslutningar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-06-009", "title": "Kontrollera bänkar efter svällning, sprickor eller fuktpåverkan", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-06-010", "title": "Låt hylla och arbetsbänkar torka helt innan saker ställs tillbaka", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-07-sink-drain",
+      "order": 7,
+      "title": "Tvättho, blandare och avlopp",
+      "tasks": [
+        {"id": "laundry-room-07-001", "title": "Töm tvätthon och avlägsna lösa föremål", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-002", "title": "Rengör tvätthons botten, sidor, kanter och utsida", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-003", "title": "Rengör tvätthons övergång mot bänkskivan", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-004", "title": "Rengör blandarens fot, pip, handtag och undersida", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-005", "title": "Avkalka blandare och ho med materialanpassad metod", "status": "pending", "condition": "if_needed"},
+        {"id": "laundry-room-07-006", "title": "Rengör eller avkalka strålsamlaren enligt blandarens anvisningar", "status": "pending", "condition": "if_needed"},
+        {"id": "laundry-room-07-007", "title": "Rengör propp, sil och bottenventil", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-008", "title": "Ta bort ludd, hår och beläggningar ur åtkomliga avloppsdelar", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "laundry-room-07-009", "title": "Spola igenom avloppet och kontrollera avrinningen", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-07-010", "title": "Rengör skåpet under tvätthon och kontrollera efter läckage", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-07-011", "title": "Polera tvättho och blandare torra", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-08-washing-machine",
+      "order": 8,
+      "title": "Tvättmaskin",
+      "tasks": [
+        {"id": "laundry-room-08-001", "title": "Töm tvättmaskinen och stäng av den enligt manualen", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-08-002", "title": "Ta ut och rengör tvättmedelsfacket", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-08-003", "title": "Rengör fackets kanal och munstycken med mjuk borste", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-08-004", "title": "Rengör luckans glas på in- och utsida", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-08-005", "title": "Rengör luckans ram, gångjärn och handtag", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-08-006", "title": "Vik undan gummibälgen och ta bort ludd, hår och föremål", "status": "pending", "condition": "always", "safety": "hygiene"},
+        {"id": "laundry-room-08-007", "title": "Rengör gummibälgens veck och dräneringshål", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-08-008", "title": "Torka trummans insida och trumvalkar", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-08-009", "title": "Öppna och rengör pumpfiltret enligt manualen", "details": "Placera handduk och låg behållare framför eftersom restvatten kan rinna ut.", "status": "pending", "condition": "if_supported", "safety": "water_and_electricity"},
+        {"id": "laundry-room-08-010", "title": "Rengör filterutrymmet och återmontera filtret korrekt", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-08-011", "title": "Rengör maskinens front, ovansida, sidor och reglage", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-08-012", "title": "Kontrollera synliga inlopps- och avloppsslangar efter sprickor, veck eller läckage", "status": "pending", "condition": "if_accessible", "safety": "plumbing"},
+        {"id": "laundry-room-08-013", "title": "Rengör golv, vägg och lister bakom och under maskinen", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "laundry-room-08-014", "title": "Kör maskinens trumrengöringsprogram med godkänd produkt", "status": "pending", "condition": "if_recommended"},
+        {"id": "laundry-room-08-015", "title": "Lämna lucka och tvättmedelsfack öppna efteråt för uttorkning", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-08-016", "title": "Kontrollera att maskinen fyller, värmer, tömmer och centrifugerar normalt utan läckage", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-09-dryer",
+      "order": 9,
+      "title": "Torktumlare",
+      "tasks": [
+        {"id": "laundry-room-09-001", "title": "Töm torktumlaren och stäng av den enligt manualen", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-09-002", "title": "Ta ut och rensa luddfiltret", "status": "pending", "condition": "always", "safety": "fire"},
+        {"id": "laundry-room-09-003", "title": "Tvätta luddfiltret enligt manualen om det är belagt", "status": "pending", "condition": "if_recommended"},
+        {"id": "laundry-room-09-004", "title": "Låt filtret torka helt före återmontering", "status": "pending", "condition": "if_washed", "safety": "fire"},
+        {"id": "laundry-room-09-005", "title": "Dammsug filterhuset och åtkomliga luftkanaler försiktigt", "status": "pending", "condition": "if_accessible", "safety": "fire"},
+        {"id": "laundry-room-09-006", "title": "Ta ut och rengör kondensor eller värmeväxlarfilter enligt manualen", "status": "pending", "condition": "if_user_accessible", "safety": "electricity"},
+        {"id": "laundry-room-09-007", "title": "Töm och rengör kondensvattenbehållaren", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-09-008", "title": "Torka trummans insida och trumvalkar", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-09-009", "title": "Rengör fuktsensorer enligt manualen", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-09-010", "title": "Rengör luckans glas, ram, tätning, gångjärn och handtag", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-09-011", "title": "Rengör maskinens front, ovansida, sidor och reglage", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-09-012", "title": "Kontrollera synlig avloppsslang eller ventilationskanal efter veck, ludd och läckage", "status": "pending", "condition": "if_accessible", "safety": "fire_and_plumbing"},
+        {"id": "laundry-room-09-013", "title": "Rengör golv, vägg och lister bakom och under tumlaren", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "laundry-room-09-014", "title": "Kontrollera att tumlaren roterar, värmer och tömmer kondens normalt", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-09-015", "title": "Kontrollera efter ovanligt ljud, lukt eller överhettning", "status": "pending", "condition": "always", "safety": "fire"}
+      ]
+    },
+    {
+      "id": "laundry-room-10-drying-cabinet",
+      "order": 10,
+      "title": "Torkskåp",
+      "tasks": [
+        {"id": "laundry-room-10-001", "title": "Töm torkskåpet och stäng av det enligt manualen", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "laundry-room-10-002", "title": "Låt torkskåpet svalna helt", "status": "pending", "condition": "if_recently_used", "safety": "heat"},
+        {"id": "laundry-room-10-003", "title": "Damma och torka skåpets innerväggar, tak och botten", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-10-004", "title": "Rengör samtliga invändiga stänger, krokar och utdragbara delar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-10-005", "title": "Rengör dörrens insida, kanter, tätning och gångjärn", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-10-006", "title": "Rengör luftintag, utblås och användaråtkomliga filter enligt manualen", "status": "pending", "condition": "if_supported", "safety": "fire_and_electricity"},
+        {"id": "laundry-room-10-007", "title": "Kontrollera kondensbehållare, avlopp eller ventilationsslang enligt modell", "status": "pending", "condition": "if_accessible", "safety": "plumbing"},
+        {"id": "laundry-room-10-008", "title": "Rengör skåpets front, ovansida, sidor, nederkant och reglage", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "laundry-room-10-009", "title": "Rengör vägg, rör, golv och lister bakom och under skåpet", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "laundry-room-10-010", "title": "Låt skåpet och eventuella filter torka helt före återstart", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-10-011", "title": "Kontrollera värme, luftflöde, ljud och eventuell kondensavledning", "status": "pending", "condition": "if_present"}
+      ]
+    },
+    {
+      "id": "laundry-room-11-mangle",
+      "order": 11,
+      "title": "Mangel",
+      "tasks": [
+        {"id": "laundry-room-11-001", "title": "Stäng av, koppla ur och låt mangeln svalna helt", "status": "pending", "condition": "if_present", "safety": "electricity_and_heat"},
+        {"id": "laundry-room-11-002", "title": "Ta bort löst ludd och damm med mjuk borste eller dammsugare", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-11-003", "title": "Rengör mangelduk eller valsöverdrag enligt tillverkarens anvisningar", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-11-004", "title": "Rengör valsens åtkomliga yta utan att föra in fingrar mellan valsarna", "status": "pending", "condition": "if_supported", "safety": "pinch"},
+        {"id": "laundry-room-11-005", "title": "Torka inmatningsbord, skydd och utmatningsyta", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-11-006", "title": "Rengör hölje, sidor, handtag och reglage med nästan torr duk", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "laundry-room-11-007", "title": "Rengör sladd och kontaktens utsida torrt", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "laundry-room-11-008", "title": "Rengör arbetsbänken, väggen och golvet kring mangeln", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-11-009", "title": "Kontrollera valsar, skydd, nödöppning och sladd efter skador", "status": "pending", "condition": "if_present", "safety": "pinch_and_electricity"},
+        {"id": "laundry-room-11-010", "title": "Testa mangeln utan textil enligt manualen när allt är torrt", "status": "pending", "condition": "if_supported", "safety": "pinch"}
+      ]
+    },
+    {
+      "id": "laundry-room-12-baskets-sorters",
+      "order": 12,
+      "title": "Tvättkorgar och rullbara sorterare",
+      "tasks": [
+        {"id": "laundry-room-12-001", "title": "Töm samtliga trådkorgar och tvättsorterare", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-12-002", "title": "Dammsug trådkorgar, hörn och skarvar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-12-003", "title": "Torka trådkorgar, handtag och ramverk", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-12-004", "title": "Tvätta avtagbara tygpåsar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "laundry-room-12-005", "title": "Rengör sorterarstativens stolpar, hyllor och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-12-006", "title": "Ta bort hår och trådar från hjul och axlar", "status": "pending", "condition": "if_wheeled"},
+        {"id": "laundry-room-12-007", "title": "Torka hjulen och kontrollera att de rullar normalt", "status": "pending", "condition": "if_wheeled"},
+        {"id": "laundry-room-12-008", "title": "Kontrollera metallkorgar efter rost, vassa kanter eller skador", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-12-009", "title": "Låt korgar och tygpåsar torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-13-supplies-textiles",
+      "order": 13,
+      "title": "Tvättmedel, städredskap och textilier",
+      "tasks": [
+        {"id": "laundry-room-13-001", "title": "Torka flaskor och förpackningar med tvätt- och rengöringsmedel", "status": "pending", "condition": "if_present", "safety": "chemicals"},
+        {"id": "laundry-room-13-002", "title": "Kontrollera att korkar och pumpar är täta och att etiketter är läsbara", "status": "pending", "condition": "if_present", "safety": "chemicals"},
+        {"id": "laundry-room-13-003", "title": "Kassera okända eller felmärkta kemikalier enligt kommunens regler", "status": "pending", "condition": "if_needed", "safety": "chemicals"},
+        {"id": "laundry-room-13-004", "title": "Rengör mått, doseringsbollar och tvättmedelsbehållare", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-13-005", "title": "Rengör moppar, skaft, borstar och andra städredskap", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-13-006", "title": "Tvätta återanvändbara mopphuvuden och städdukar", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-13-007", "title": "Låt städredskap torka helt innan de förvaras", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-13-008", "title": "Tvätta eller rengör textilier som används i tvättstugan", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-13-009", "title": "Förvara rena och smutsiga textilier åtskilda", "status": "pending", "condition": "always", "safety": "hygiene"}
+      ]
+    },
+    {
+      "id": "laundry-room-14-doors-electrical",
+      "order": 14,
+      "title": "Dörr, eldetaljer och lister",
+      "tasks": [
+        {"id": "laundry-room-14-001", "title": "Torka dörren på fram- och baksida", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-14-002", "title": "Rengör dörrens över- och nederkant", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-14-003", "title": "Rengör dörrhandtag, lås, gångjärn och beslag", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-14-004", "title": "Torka dörrkarm, foder och tröskel", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-14-005", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "details": "Spraya aldrig direkt och för in inget i öppningarna.", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-14-006", "title": "Damma synliga sladdar, kontakter och kabelkanaler", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "laundry-room-14-007", "title": "Kontrollera elsladdar och kontakter efter klämskador eller missfärgning", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-14-008", "title": "Torka samtliga golvlister och sockelfronter", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-14-009", "title": "Rengör lister bakom flyttbara korgar och maskiner", "status": "pending", "condition": "if_accessible"}
+      ]
+    },
+    {
+      "id": "laundry-room-15-floor-drain",
+      "order": 15,
+      "title": "Klinkergolv och golvbrunn",
+      "tasks": [
+        {"id": "laundry-room-15-001", "title": "Flytta undan lösa föremål, korgar och sorterare från golvet", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-002", "title": "Dammsug ludd, hår och damm längs kanter, hörn och under skåp", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-003", "title": "Dammsug bakom och under samtliga säkert flyttbara maskiner", "status": "pending", "condition": "if_safely_movable"},
+        {"id": "laundry-room-15-004", "title": "Dammsug hela den fria golvytan", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-005", "title": "Rengör klinkerplattorna med materialanpassat medel", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-006", "title": "Rengör golvfogar med mjuk borste", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-007", "title": "Punktbehandla tvättmedel, sköljmedel, kalk och andra spill", "status": "pending", "condition": "if_needed"},
+        {"id": "laundry-room-15-008", "title": "Lokalisera golvbrunnen och lyft sil eller lock enligt konstruktionen", "status": "pending", "condition": "if_present_and_supported", "safety": "hygiene"},
+        {"id": "laundry-room-15-009", "title": "Ta bort ludd, hår och avlagringar ur golvbrunn och vattenlås", "status": "pending", "condition": "if_accessible", "safety": "hygiene"},
+        {"id": "laundry-room-15-010", "title": "Rengör brunnslock, sil, insats och åtkomliga innerväggar", "status": "pending", "condition": "if_supported", "safety": "hygiene"},
+        {"id": "laundry-room-15-011", "title": "Återmontera golvbrunnens delar korrekt och fyll vattenlåset", "status": "pending", "condition": "if_removed", "safety": "plumbing"},
+        {"id": "laundry-room-15-012", "title": "Kontrollera att vatten rinner mot brunnen och inte blir stående", "status": "pending", "condition": "if_floor_drain_present"},
+        {"id": "laundry-room-15-013", "title": "Rengör tröskeln och övergången mot angränsande rum", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-15-014", "title": "Låt golv och fogar torka helt", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "laundry-room-16-moisture-leak-safety",
+      "order": 16,
+      "title": "Fukt-, läckage- och brandsäkerhetskontroll",
+      "tasks": [
+        {"id": "laundry-room-16-001", "title": "Kontrollera under tvättho och bänkar efter fukt, lukt eller missfärgning", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-16-002", "title": "Kontrollera golvet under och bakom maskiner efter läckagespår", "status": "pending", "condition": "if_accessible"},
+        {"id": "laundry-room-16-003", "title": "Kontrollera vattenkranar, slangar och kopplingar efter dropp eller korrosion", "status": "pending", "condition": "if_accessible", "safety": "plumbing"},
+        {"id": "laundry-room-16-004", "title": "Kontrollera avloppsslangar efter sprickor, veck och säker infästning", "status": "pending", "condition": "if_accessible", "safety": "plumbing"},
+        {"id": "laundry-room-16-005", "title": "Kontrollera väggar, tak, skåp och golvfogar efter mögel eller återkommande fukt", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-16-006", "title": "Kontrollera att torkutrustningens luftvägar och filter är fria från ludd", "status": "pending", "condition": "always", "safety": "fire"},
+        {"id": "laundry-room-16-007", "title": "Kontrollera att grenuttag inte används olämpligt till tvätt- eller torkmaskiner", "status": "pending", "condition": "always", "safety": "fire_and_electricity"},
+        {"id": "laundry-room-16-008", "title": "Kontrollera att kemikalier inte står nära värmekällor eller på maskiner", "status": "pending", "condition": "always", "safety": "chemicals_and_fire"},
+        {"id": "laundry-room-16-009", "title": "Dokumentera och åtgärda återkommande läckage, lukt eller fukt som separat underhåll", "status": "pending", "condition": "if_issue_found"}
+      ]
+    },
+    {
+      "id": "laundry-room-17-finish",
+      "order": 17,
+      "title": "Avslutning och funktionskontroll",
+      "tasks": [
+        {"id": "laundry-room-17-001", "title": "Ställ tillbaka endast rena och torra produkter, korgar och redskap", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-002", "title": "Återställ rena, torra torkställningar och galgar", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-003", "title": "Återanslut maskiner enligt dokumenterad kabel- och slangdragning", "status": "pending", "condition": "if_disconnected", "safety": "electricity_and_plumbing"},
+        {"id": "laundry-room-17-004", "title": "Öppna vattenkranar enligt normal driftposition och kontrollera omedelbart efter läckage", "status": "pending", "condition": "if_closed", "safety": "plumbing"},
+        {"id": "laundry-room-17-005", "title": "Provkör tvättmaskinen och kontrollera fyllning, tömning, centrifugering och täthet", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-006", "title": "Provkör torktumlaren och kontrollera rotation, värme, luftflöde och kondenshantering", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-007", "title": "Provkör torkskåpet och kontrollera värme, luftflöde och kondenshantering", "status": "pending", "condition": "if_present"},
+        {"id": "laundry-room-17-008", "title": "Provkör mangeln enligt manualen och kontrollera säkerhetsfunktionerna", "status": "pending", "condition": "if_present", "safety": "pinch_and_heat"},
+        {"id": "laundry-room-17-009", "title": "Slå på belysningen och kontrollera samtliga ljuspunkter", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "laundry-room-17-010", "title": "Kontrollera att ventilationen fungerar och lämna den igång för uttorkning", "status": "pending", "condition": "if_possible"},
+        {"id": "laundry-room-17-011", "title": "Kontrollera att dörren öppnar, stänger och låser normalt", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-012", "title": "Töm dammsugaren och rengör använda munstycken", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-013", "title": "Tvätta och torka städdukar, moppar och andra redskap", "status": "pending", "condition": "always"},
+        {"id": "laundry-room-17-014", "title": "Vädra rummet en sista gång", "status": "pending", "condition": "if_possible"}
+      ]
+    }
+  ]
+}

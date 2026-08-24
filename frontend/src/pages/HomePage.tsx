@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { buildPlan, cooldownFor, householdMembers, householdRooms, type Assignment, type Task as EngineTask } from '../domain/taskEngine';
-import { householdTasks } from '../domain/taskBank';
+import { allPlanningTasks } from '../domain/allPlanningTasks';
 import { addTaskCompletion, isTaskOnCooldown, latestTaskCompletion, loadTaskHistory, saveTaskHistory, type TaskCompletion } from '../domain/taskHistory';
-import { professionalTasks } from '../domain/professionalTaskBank';
-import { declutterTasks } from '../domain/declutterTaskBank';
-import { microTasks } from '../domain/microTaskBank';
 import { taskForDate } from '../domain/seasonality';
 import { loadOrCreateTaskSchedule } from '../domain/taskSchedule';
 import { getWeeklyRecommendations, recurrenceLabel } from '../domain/weeklyRecommendation';
@@ -61,8 +58,6 @@ const modes: ModeInfo[] = [
 const homeModes = modes.filter((mode) => !isIncidentMode(mode.id));
 
 const weeklyMode: ModeInfo = { id: 'weekend', title: 'Veckans rekommendation', duration: 30, description: 'En mogen sällanuppgift som håller hemmet i professionellt skick.', accent: 'sun', eyebrow: 'Återkommande' };
-const allPlanningTasks = [...householdTasks, ...microTasks, ...declutterTasks, ...professionalTasks];
-
 const cleaningAreas: CleaningArea[] = [
   { id: 'kitchen', label: 'Kök', roomIds: ['kitchen'] },
   { id: 'upstairs-bathroom', label: 'Badrum uppe', roomIds: ['upstairs-bathroom'] },
@@ -70,7 +65,7 @@ const cleaningAreas: CleaningArea[] = [
   { id: 'living-room', label: 'Vardagsrum', roomIds: ['living-room'] },
   { id: 'laundry-room', label: 'Tvättstuga', roomIds: ['laundry-room'] },
   { id: 'halls', label: 'Hallar & trappor', roomIds: ['upstairs-hall', 'middle-hall', 'basement-hall'] },
-  { id: 'bedrooms', label: 'Sovrum', roomIds: ['bedroom-1', 'bedroom-2', 'bedroom-3', 'bedroom-4'] },
+  { id: 'bedrooms', label: 'Sovrum', roomIds: ['bedroom-1'] },
   { id: 'basement', label: 'Källarplan', roomIds: ['basement-lounge', 'basement-hall', 'downstairs-bathroom'] },
   { id: 'cinema-office', label: 'Biorum & kontor', roomIds: ['cinema-office'] },
 ];

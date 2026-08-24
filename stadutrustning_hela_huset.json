@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "stadutrustning-hela-huset",
+  "title": "Städutrustning för hela huset",
+  "listType": "inventory_checklist",
+  "description": "En samlad och deduplicerad utrustningslista för storstädning av samtliga genomgångna rum: sovrum, två badrum, vardagsrum, kök, gillestuga, kontor/biorum, tvättstuga och inglasad altan.",
+  "definitionOfDone": "All utrustning har markerats som tillgänglig, behöver köpas, behöver ersättas eller inte är aktuell. Förbrukningsvaror är påfyllda och redskap är hela, rena och märkta för rätt städzon.",
+  "statusValues": ["pending", "have", "buy", "replace", "skip"],
+  "priorityValues": ["essential", "recommended", "specialist"],
+  "zoneColorGuide": [
+    {"color": "röd", "zone": "toalett och de smutsigaste badrumsytorna"},
+    {"color": "gul", "zone": "övriga badrumsytor"},
+    {"color": "grön", "zone": "kök och livsmedelsnära ytor"},
+    {"color": "blå", "zone": "allrum, sovrum, glas och övriga ytor"}
+  ],
+  "buyingStrategy": [
+    "Börja med allt som har priority essential.",
+    "Köp recommended när en faktisk uppgift kräver det eller när det sparar tydligt med tid.",
+    "Hyr specialistutrustning om den bara används någon gång per år.",
+    "Välj få, tydligt märkta rengöringsmedel framför många överlappande specialsprayer.",
+    "Kontrollera alltid tillverkarens skötselråd före behandling av trä, natursten, elektronik, målade ytor och textilier."
+  ],
+  "sections": [
+    {
+      "id": "organisation",
+      "order": 1,
+      "title": "Organisation och transport",
+      "tasks": [
+        {"id": "gear-caddy", "title": "Städkorg eller städvagn", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Ska rymma dukar, flaskor, borstar och skyddsutrustning utan att läcka."},
+        {"id": "gear-spray-bottles", "title": "Märkta sprayflaskor", "quantity": "4–6", "priority": "essential", "status": "pending", "condition": "always", "details": "Etikettera med innehåll, blandning och användningsområde. Blanda aldrig kemikalier på måfå."},
+        {"id": "gear-labels-marker", "title": "Vattentåliga etiketter och permanent märkpenna", "quantity": "1 uppsättning", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-storage-box", "title": "Ventilerad förvaringslåda för rena redskap", "quantity": "1–2", "priority": "recommended", "status": "pending", "condition": "always"},
+        {"id": "gear-dirty-textile-bag", "title": "Tvättbar påse för använda dukar och moppar", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Förvara använda textilier separat från rena."},
+        {"id": "gear-small-parts-tray", "title": "Liten bricka eller burk för skruvar och smådelar", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "Praktisk när filter, brunnsdelar eller beslag tas loss."}
+      ]
+    },
+    {
+      "id": "personal-protection",
+      "order": 2,
+      "title": "Personlig skyddsutrustning",
+      "tasks": [
+        {"id": "gear-reusable-gloves", "title": "Återanvändbara städhandskar, färgkodade", "quantity": "3–4 par", "priority": "essential", "status": "pending", "condition": "always", "details": "Separata par för toalett, badrum, kök och övrigt."},
+        {"id": "gear-nitrile-gloves", "title": "Engångshandskar av nitril", "quantity": "1 ask", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För avlopp, filter, mögelmisstanke och mycket smutsiga moment."},
+        {"id": "gear-safety-glasses", "title": "Skyddsglasögon", "quantity": "1", "priority": "essential", "status": "pending", "condition": "when_needed", "details": "Använd vid arbete ovanför huvudet, avkalkning och stänkande rengöring."},
+        {"id": "gear-dust-mask", "title": "Partikelfiltrerande mask, minst FFP2", "quantity": "några stycken", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För mycket damm, filterrengöring och torrt skräp. Inte ett skydd mot kemiska ångor."},
+        {"id": "gear-apron", "title": "Tvättbart städförkläde eller arbetskläder", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "always"},
+        {"id": "gear-knee-pads", "title": "Knäskydd eller knädyna", "quantity": "1 par", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För golvbrunnar, socklar, ugn och låga skåp."},
+        {"id": "gear-nonslip-shoes", "title": "Halksäkra inneskor", "quantity": "1 par", "priority": "essential", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "cloths",
+      "order": 3,
+      "title": "Dukar, svampar och förbrukningstextilier",
+      "tasks": [
+        {"id": "gear-microfiber-cloths", "title": "Mikrofiberdukar i fyra färger", "quantity": "16–24", "priority": "essential", "status": "pending", "condition": "always", "details": "Minst fyra per städzon så att rena dukar kan bytas ofta."},
+        {"id": "gear-glass-cloths", "title": "Luddfria glas- och polerdukar", "quantity": "4–6", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-dusting-mitts", "title": "Mikrofibervantar för damning", "quantity": "2", "priority": "recommended", "status": "pending", "condition": "always", "details": "Bra för spjälor, lampor, stolsben och ojämna ytor."},
+        {"id": "gear-nonscratch-sponges", "title": "Repfri rengöringssvamp", "quantity": "4–6", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-scrub-pads", "title": "Skurpad i olika hårdheter", "quantity": "1 liten uppsättning", "priority": "recommended", "status": "pending", "condition": "when_needed", "safety": "Testa alltid på undanskymd yta; grova pads kan repa glas, metall, målade ytor och sanitetsporslin."},
+        {"id": "gear-melamine-sponges", "title": "Melaminsvamp", "quantity": "2–4", "priority": "recommended", "status": "pending", "condition": "when_needed", "safety": "Använd sparsamt och testa först; fungerar som ett fint slipmedel och kan matta färg, lack och plast."},
+        {"id": "gear-disposable-rags", "title": "Kasserbara trasor", "quantity": "10", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För fett, avloppssmuts och annat som inte bör gå i tvättmaskinen."},
+        {"id": "gear-paper-towels", "title": "Hushållspapper", "quantity": "1–2 rullar", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För hygienisk upptorkning och kontroll av om en yta fortfarande släpper smuts."}
+      ]
+    },
+    {
+      "id": "vacuum-and-dusting",
+      "order": 4,
+      "title": "Dammsugning och torr damning",
+      "tasks": [
+        {"id": "gear-hepa-vacuum", "title": "Dammsugare med bra finfilter eller HEPA-filter", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Påse eller behållare ska ha kapacitet för en hel storstädning."},
+        {"id": "gear-vacuum-bags-filters", "title": "Reservpåsar och reservfilter till dammsugaren", "quantity": "minst 2 påsar och 1 filterset", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-crevice-tool", "title": "Fogmunstycke till dammsugaren", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-soft-brush-nozzle", "title": "Mjukt dammborstmunstycke", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "För lister, ventiler, lampor, elektronikens utsidor och inredning."},
+        {"id": "gear-upholstery-nozzle", "title": "Möbelmunstycke", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-mattress-turbo-tool", "title": "Madrass- eller miniturbomunstycke", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "Bra för säng, soffor, fåtöljer och djurhår."},
+        {"id": "gear-vacuum-extension", "title": "Förlängningsrör eller lång flexibel slang", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För tak, balkar, skåpöversidor och bakom möbler."},
+        {"id": "gear-radiator-brush", "title": "Lång element- och springborste", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-telescopic-duster", "title": "Teleskopisk dammvippa med tvättbart huvud", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "För tak, hörn, spotlights, skenor och höga skåp."},
+        {"id": "gear-lint-roller", "title": "Klädvårdsrulle eller återanvändbar hårborttagare", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För lampskärmar, stolar och textilier efter dammsugning."},
+        {"id": "gear-ash-vacuum", "title": "Asksugare med metallbehållare", "quantity": "1 eller hyr", "priority": "specialist", "status": "pending", "condition": "if_fireplace_used", "safety": "Endast för helt kall aska och enligt maskinens instruktion. Använd aldrig vanlig dammsugare till aska."}
+      ]
+    },
+    {
+      "id": "wet-cleaning",
+      "order": 5,
+      "title": "Våtrengöring och golv",
+      "tasks": [
+        {"id": "gear-buckets", "title": "Stabila hinkar", "quantity": "2 × 8–12 liter", "priority": "essential", "status": "pending", "condition": "always", "details": "En för rengöringslösning och en för sköljvatten."},
+        {"id": "gear-small-bucket", "title": "Liten detaljhink", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För badrum, fönster och arbete på stege."},
+        {"id": "gear-flat-mop", "title": "Plattmopp med vridbart skaft", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-mop-pads", "title": "Tvättbara mopphuvuden", "quantity": "4–6", "priority": "essential", "status": "pending", "condition": "always", "details": "Ha separata moppar för badrum och övriga golv."},
+        {"id": "gear-spray-mop", "title": "Spraymopp", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "Praktisk på stora lättsmutsade golv men ersätter inte hinkmetoden vid storstädning."},
+        {"id": "gear-soft-floor-brush", "title": "Mjuk golv- och trallborste", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Ska kunna användas på altantrall utan att rugga upp träet."},
+        {"id": "gear-hand-scrub-brush", "title": "Ergonomisk handskurborste", "quantity": "2", "priority": "essential", "status": "pending", "condition": "always", "details": "En för badrum och en för övrigt."},
+        {"id": "gear-detail-brushes", "title": "Smala detaljborstar", "quantity": "3–5", "priority": "essential", "status": "pending", "condition": "always", "details": "För fogar, blandare, beslag, fönsterspår och apparatkanter."},
+        {"id": "gear-old-toothbrushes", "title": "Uttjänta tandborstar märkta för städning", "quantity": "2–4", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-plastic-scrapers", "title": "Repfri plastskrapa", "quantity": "2", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-razor-scraper", "title": "Glasskrapa med rakblad och skydd", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "safety": "Endast på godkänt, vått och plant glas. Aldrig på plast, belagd ugnslucka, spegel, tonat glas eller okänd yta."},
+        {"id": "gear-step-stool", "title": "Stabil trappall", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "safety": "Använd på plant underlag och sträck dig inte utanför stödytan."},
+        {"id": "gear-step-ladder", "title": "Stabil stege för högre arbete", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "safety": "Arbeta helst två personer vid höga lampor och altantak. Gå aldrig på glastak eller kanalplasttak."}
+      ]
+    },
+    {
+      "id": "windows-and-glass",
+      "order": 6,
+      "title": "Fönster, speglar och glaspartier",
+      "tasks": [
+        {"id": "gear-window-washer", "title": "Fönsterpäls eller fönsterinwaschare", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-window-squeegee", "title": "Professionell fönsterskrapa", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Cirka 30–35 cm är en bra allroundbredd."},
+        {"id": "gear-small-window-squeegee", "title": "Liten fönsterskrapa", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För små rutor, speglar och trånga glaspartier."},
+        {"id": "gear-extension-pole", "title": "Teleskopskaft för fönsterverktyg", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För altanens höga glas och svåråtkomliga fönster."},
+        {"id": "gear-window-track-vacuum-tool", "title": "Smal borste för fönster- och skjutdörrsspår", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-absorbent-towels", "title": "Absorberande skyddshanddukar", "quantity": "2–3", "priority": "essential", "status": "pending", "condition": "always", "details": "Skyddar golv, fönsterbrädor och elektronik från rinnande vatten."}
+      ]
+    },
+    {
+      "id": "bathroom-and-drains",
+      "order": 7,
+      "title": "Badrum, toaletter och avlopp",
+      "tasks": [
+        {"id": "gear-toilet-brushes", "title": "Toalettborste för varje toalett", "quantity": "2", "priority": "essential", "status": "pending", "condition": "always", "details": "Ersätt slitna eller svårdiskade borstar."},
+        {"id": "gear-shower-squeegee", "title": "Duschskrapa", "quantity": "2", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-grout-brush", "title": "Styv fogborste", "quantity": "1–2", "priority": "essential", "status": "pending", "condition": "always", "safety": "Använd inte metallborste på fogar, tätskiktsnära ytor eller sanitetsporslin."},
+        {"id": "gear-drain-hook", "title": "Avloppskrok eller hårfångarverktyg", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-drain-plunger", "title": "Vaskrensare", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-small-parts-brush", "title": "Liten diskborste för golvbrunnsdelar", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "Märk och använd endast för avlopp."},
+        {"id": "gear-drain-basin", "title": "Diskbalja för löstagbara brunns- och ventilationsdelar", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "Använd inte samma balja för köksredskap."},
+        {"id": "gear-flashlight", "title": "Stark ficklampa eller pannlampa", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always", "details": "För golvbrunnar, under skåp, bakom maskiner och vid fuktkontroll."}
+      ]
+    },
+    {
+      "id": "kitchen-and-appliances",
+      "order": 8,
+      "title": "Kök och vitvaror",
+      "tasks": [
+        {"id": "gear-hob-scraper", "title": "Hällskrapa för glaskeramikhäll", "quantity": "1", "priority": "essential", "status": "pending", "condition": "if_compatible_hob", "safety": "Använd endast om hälltillverkaren tillåter det och med bladet plant mot ytan."},
+        {"id": "gear-bottle-brush", "title": "Flask- och termosborste", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-appliance-brush", "title": "Lång smal vitvaru- och kondensorsborste", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För kylens baksida, ventilationsgaller och trånga utrymmen när manualen tillåter."},
+        {"id": "gear-oven-tray", "title": "Stor balja eller tät påse för blötläggning av ugnsgaller", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-cooler-bags", "title": "Kylväskor med kylklampar", "quantity": "tillräckligt för kylens innehåll", "priority": "recommended", "status": "pending", "condition": "when_cleaning_fridge"},
+        {"id": "gear-food-safe-brush", "title": "Separat liten borste för kyl och livsmedelsytor", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"}
+      ]
+    },
+    {
+      "id": "textiles-and-furniture",
+      "order": 9,
+      "title": "Textilier, möbler och specialytor",
+      "tasks": [
+        {"id": "gear-upholstery-extractor", "title": "Textiltvätt eller möbeltvätt", "quantity": "1 eller hyr", "priority": "specialist", "status": "pending", "condition": "if_wet_cleaning_allowed", "details": "Hyr vid behov för soffor, stolar, madrass och vissa mattor. Kontrollera tvättråd och torkmöjlighet först."},
+        {"id": "gear-carpet-beater", "title": "Mattpiska", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "if_rug_allows", "details": "För lösa mattor som tål att piskas utomhus."},
+        {"id": "gear-fabric-brush", "title": "Mjuk textil- och klädborste", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "gear-leather-cloths", "title": "Separata mjuka dukar för lädervård", "quantity": "2", "priority": "recommended", "status": "pending", "condition": "if_leather_furniture"},
+        {"id": "gear-furniture-sliders", "title": "Möbeltassar eller möbelflyttare", "quantity": "1 set", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "För att komma åt bakom soffor, skåp och säng utan att skada golv eller rygg."},
+        {"id": "gear-protective-tarp", "title": "Skyddsplast eller tvättbar täckduk", "quantity": "1–2", "priority": "essential", "status": "pending", "condition": "always", "details": "Skyddar möbler och elektronik vid tak-, lamp- och altanarbete."}
+      ]
+    },
+    {
+      "id": "patio-and-utility",
+      "order": 10,
+      "title": "Altan, tvättstuga och grovrengöring",
+      "tasks": [
+        {"id": "gear-garden-hose", "title": "Trädgårdsslang med mjukt reglerbart munstycke", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed", "safety": "Använd lågt tryck och håll vatten borta från el, TV, armaturer, fogar och husets känsliga anslutningar."},
+        {"id": "gear-wet-dry-vacuum", "title": "Våt- och grovdammsugare", "quantity": "1 eller hyr", "priority": "specialist", "status": "pending", "condition": "when_needed", "details": "Praktisk för altan, tvättstuga och större spill; ersätter inte asksugare."},
+        {"id": "gear-washing-machine-brush", "title": "Smal borste för maskinfack, gummibälg och filterhus", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-lint-filter-brush", "title": "Luddfilterborste", "quantity": "1", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "gear-drip-tray", "title": "Låg uppsamlingsbricka och absorberande duk", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_opening_filters", "details": "För vatten som kommer ur tvättmaskinsfilter och slanganslutningar."},
+        {"id": "gear-crystal-cleaning-gloves", "title": "Mjuka bomullshandskar för kristall och känslig dekor", "quantity": "1 par", "priority": "recommended", "status": "pending", "condition": "when_cleaning_chandelier"},
+        {"id": "gear-parts-drying-mat", "title": "Torkmatta för rengjorda filter och lösa delar", "quantity": "1", "priority": "recommended", "status": "pending", "condition": "when_needed"}
+      ]
+    },
+    {
+      "id": "cleaning-agents",
+      "order": 11,
+      "title": "Rengöringsmedel och vårdprodukter",
+      "tasks": [
+        {"id": "chem-neutral-allpurpose", "title": "Neutralt allrengöringsmedel", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always", "details": "För de flesta avtorkningsbara ytor när materialets skötselråd tillåter."},
+        {"id": "chem-dish-soap", "title": "Handdiskmedel", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always", "details": "Bra som milt fettlösande medel och i liten dos till fönsterputs."},
+        {"id": "chem-bathroom-descaler", "title": "Surt badrums- och kalkrengöringsmedel", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always", "safety": "Använd inte på natursten, cementbaserade ytor, känslig metall eller där tillverkaren avråder. Blanda aldrig med klor."},
+        {"id": "chem-toilet-cleaner", "title": "Toalettrengöring", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always"},
+        {"id": "chem-kitchen-degreaser", "title": "Köksavfettning", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always", "safety": "Kontrollera kompatibilitet med målade luckor, aluminium, trä och andra känsliga ytor."},
+        {"id": "chem-glass-cleaner", "title": "Glas- och spegelrengöring", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "when_needed", "details": "Kan ofta ersättas av vatten med mycket liten mängd diskmedel."},
+        {"id": "chem-floor-cleaner", "title": "Lågskummande golvrengöring anpassad till golvtypen", "quantity": "1 flaska", "priority": "essential", "status": "pending", "condition": "always", "details": "Verifiera kompatibilitet med husets behandlade trä-, laminat-, vinyl-, klinker- och betongliknande golv."},
+        {"id": "chem-oven-cleaner", "title": "Ugnsrengöring", "quantity": "1 förpackning", "priority": "recommended", "status": "pending", "condition": "if_manual_allows", "safety": "Följ ugnens manual. Undvik katalytiska paneler, värmeelement, fläkt och aluminium om produkten inte uttryckligen är godkänd."},
+        {"id": "chem-hob-cleaner", "title": "Hällrengöring för aktuell hälltyp", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "if_compatible_hob"},
+        {"id": "chem-stainless-cleaner", "title": "Rengöring eller polish för rostfritt stål", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "when_needed"},
+        {"id": "chem-wood-cleaner", "title": "Milt rengöringsmedel för behandlat trä", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "if_wood_surfaces_require", "details": "För träbänkar, bord och altanträ enligt respektive ytbehandling."},
+        {"id": "chem-wood-care", "title": "Träolja eller annan vårdprodukt enligt befintlig behandling", "quantity": "vid behov", "priority": "specialist", "status": "pending", "condition": "if_surface_needs_reconditioning", "safety": "Oljetrasor kan självantända. Hantera och kassera dem exakt enligt produktens säkerhetsanvisningar."},
+        {"id": "chem-leather-care", "title": "pH-anpassad läderrengöring och läderbalsam", "quantity": "1 set", "priority": "recommended", "status": "pending", "condition": "if_leather_furniture"},
+        {"id": "chem-textile-spot-cleaner", "title": "Textilanpassad fläckborttagning", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "if_textile_label_allows", "safety": "Testa färgäkthet och materialreaktion på dold yta först."},
+        {"id": "chem-washing-machine-cleaner", "title": "Maskinrengöring för tvättmaskin", "quantity": "1 dos", "priority": "recommended", "status": "pending", "condition": "according_to_manual"},
+        {"id": "chem-dishwasher-cleaner", "title": "Maskinrengöring för diskmaskin", "quantity": "1 dos", "priority": "recommended", "status": "pending", "condition": "according_to_manual"},
+        {"id": "chem-appliance-descaler", "title": "Avkalkningsmedel godkänt för aktuella apparater", "quantity": "vid behov", "priority": "recommended", "status": "pending", "condition": "according_to_manual", "details": "Till exempel kaffebryggare eller andra vattenförande apparater."},
+        {"id": "chem-targeted-disinfectant", "title": "Ytdesinfektion för riktad användning", "quantity": "1 flaska", "priority": "recommended", "status": "pending", "condition": "when_hygienically_needed", "details": "Behövs normalt inte på alla ytor. Rengör först och använd endast på material som tål produkten."},
+        {"id": "chem-mold-product", "title": "Materialgodkänd produkt mot ytlig mögelpåväxt", "quantity": "köp först vid konstaterat behov", "priority": "specialist", "status": "pending", "condition": "if_minor_surface_growth_confirmed", "safety": "Utred och åtgärda fuktkällan. Vid utbredd, återkommande eller dold påväxt ska fackperson anlitas."}
+      ]
+    }
+  ],
+  "avoidByDefault": [
+    {"item": "Klorbaserade produkter", "reason": "Behövs sällan för normal storstädning, kan skada material och får aldrig blandas med syror eller ammoniak."},
+    {"item": "Starka kemiska propplösare", "reason": "Mekanisk rensning är normalt förstahandsval och starka produkter kan innebära stänk-, rör- och miljörisk."},
+    {"item": "Högtryckstvätt på den inglasade altanen", "reason": "Kan pressa in vatten i fogar, vägganslutningar, el och träkonstruktioner."},
+    {"item": "Ångtvätt som universalverktyg", "reason": "Värme och fukt kan skada trä, laminat, lim, tätningar, elektroniknära ytor och vissa textilier."},
+    {"item": "Grova skursvampar och stålull", "reason": "Repar lätt glas, sanitetsporslin, rostfritt, målade ytor och vitvaror."},
+    {"item": "En separat specialspray för varje föremål", "reason": "Överlappande produkter ökar kostnad, kemikaliebelastning och risken för felanvändning utan att huset blir märkbart renare."}
+  ]
+}

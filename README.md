@@ -47,6 +47,24 @@ certificates. You are up when you see all three of these:
 
 Leave this running and use a second terminal for everything else.
 
+#### Windows with Node 25 on this workstation
+
+Node `v25.2.1` currently fails in `tsx` on this machine with
+`uv_os_get_passwd returned ENOMEM`. This is a Node/Windows user-info error, not
+an indication that the app has run out of memory. Check the version first with
+`node --version`. When it reports Node 25, start the stack with:
+
+```powershell
+npm run dev:node25
+```
+
+That command still starts the backend, frontend and HTTPS proxy together. It
+first compiles the proxy to ignored `proxy/build/` JavaScript and therefore
+avoids the broken `tsx` startup path. Frontend hot reload still works; restart
+the command after editing proxy source files. Use ordinary `npm run dev` again
+after Node has been upgraded or downgraded to a version where `os.userInfo()`
+works.
+
 ### 3. Trust the local certificate (once per machine)
 
 The proxy serves HTTPS with a certificate it issued itself, which browsers
@@ -130,6 +148,7 @@ npm run dev        # backend + frontend + proxy, all in one terminal
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Runs all three processes with colour-coded, prefixed logs |
+| `npm run dev:node25` | Windows/Node 25 fallback: runs all three with a precompiled proxy |
 | `npm run build` | Production build: frontend to `frontend/dist`, backend to `backend/bin/server` |
 | `npm test` | Runs the Go tests |
 | `npm run check` | Typechecks the frontend and proxy, and runs `go vet` |
@@ -386,6 +405,11 @@ concrete database.
   setup, and the same binary is configured differently in Azure.
 
 ## Troubleshooting
+
+**`uv_os_get_passwd returned ENOMEM` while starting the proxy.** On this
+Windows workstation, Node `v25.2.1` has a broken `os.userInfo()` call used by
+`tsx`. Run `npm run dev:node25` from the repository root. Despite the wording,
+freeing memory does not fix this particular error.
 
 **"Port 443 is already in use."** Something else (often IIS or another dev
 proxy) holds it. Either stop it, or run with a different port:

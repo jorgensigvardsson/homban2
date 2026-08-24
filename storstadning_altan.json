@@ -1,0 +1,286 @@
+{
+  "schemaVersion": "1.0",
+  "language": "sv-SE",
+  "listId": "storstadning-altan",
+  "title": "Storstädning – inglasad altan",
+  "roomType": "glazed_patio",
+  "description": "Komplett storstädning av den inglasade altanen med transparent tak, målade takbalkar, flera pendellampor inklusive kristallkrona, tegel- och träfasader, husfönster och dörr, skjutbara glaspartier, väggventil, väggmonterad TV, matgrupp, loungefåtöljer, träbänk, dynor och plädar, glasbord, torkställning, staplade extrastolar, dekorationer samt trallgolv med trappsteg.",
+  "definitionOfDone": "Takets säkert åtkomliga ytor, balkar, belysning, fasader, fönster, dörr, glaspartier, spår, ventilation, elektronik, möbler, textilier, torkutrustning, dekorationer, trappsteg och hela trallgolvet är rengjorda. Pollen, insekter, spindelväv, alger och organiskt skräp är borttagna så långt materialen tillåter, dräneringsvägar är fria och väderskador är kontrollerade.",
+  "scopeNotes": [
+    "Bilderna används för att identifiera altanens ytor, installationer och möbler – inte för att bedöma hur den ser ut för stunden.",
+    "Gå aldrig på glastak eller kanalplasttak. Utsidan rengörs endast från säker arbetsposition med godkänt redskap eller av fackperson.",
+    "Kontrollera skötselråd för takmaterial, målat trä, tegel, trall, glaspartier, möbeltextil, TV och belysning.",
+    "Använd inte högtryckstvätt nära träskarvar, fasad, el, fönstertätningar eller skjutglasspår om konstruktionens tillverkare inte uttryckligen tillåter det.",
+    "Spraya aldrig rengöringsmedel direkt på TV, lampor, eluttag, reglage eller andra elektriska delar.",
+    "Textilier ska vara helt torra innan de läggs tillbaka eller förvaras, annars kan uterummet mycket snabbt starta en egen mögelmyndighet.",
+    "Demontering av fasta glaspartier, tak, fasad, elinstallationer eller TV-fäste ingår inte."
+  ],
+  "statusValues": ["pending", "in_progress", "completed", "skipped"],
+  "sections": [
+    {
+      "id": "patio-01-preparation",
+      "order": 1,
+      "title": "Förbered altanen",
+      "tasks": [
+        {"id": "patio-01-001", "title": "Ta in tvätt, lösa textilier och föremål som inte tål rengöring eller väta", "status": "pending", "condition": "always"},
+        {"id": "patio-01-002", "title": "Ta ut skräp och föremål som hör hemma på annan plats", "status": "pending", "condition": "always"},
+        {"id": "patio-01-003", "title": "Töm bord, bänk, fönsterbleck och andra avställningsytor", "status": "pending", "condition": "always"},
+        {"id": "patio-01-004", "title": "Ta bort samtliga lösa dynor, kuddar och plädar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-01-005", "title": "Stäng av och koppla ur flyttbar elektronik", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "patio-01-006", "title": "Stäng av TV och belysning och låt lampor svalna", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-01-007", "title": "Flytta möbler sektionsvis så att golv och väggar blir åtkomliga", "status": "pending", "condition": "if_possible"},
+        {"id": "patio-01-008", "title": "Välj en torr dag med måttlig temperatur för tak-, glas- och trallrengöring", "status": "pending", "condition": "if_possible"},
+        {"id": "patio-01-009", "title": "Öppna glaspartierna för ventilation utan att skapa fall- eller klämrisk", "status": "pending", "condition": "if_possible", "safety": "glass_and_pinch"}
+      ]
+    },
+    {
+      "id": "patio-02-roof-beams",
+      "order": 2,
+      "title": "Transparent tak, balkar och anslutningar",
+      "tasks": [
+        {"id": "patio-02-001", "title": "Ta bort spindelväv, insekter och löst skräp från takets insida", "status": "pending", "condition": "always"},
+        {"id": "patio-02-002", "title": "Damma eller tvätta takets insida med metod som takmaterialet tål", "details": "Använd mjukt redskap och undvik slipmedel och starka lösningsmedel.", "status": "pending", "condition": "always"},
+        {"id": "patio-02-003", "title": "Rengör takskivornas eller glasens skarvar och profiler invändigt", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-02-004", "title": "Rengör takets utsida från säker position med teleskopredskap", "details": "Gå aldrig på taket; anlita fackperson om utsidan inte nås säkert.", "status": "pending", "condition": "if_safely_accessible", "safety": "height_and_roof"},
+        {"id": "patio-02-005", "title": "Ta bort löv, barr, pollen och fågelspillning från takets utsida", "status": "pending", "condition": "if_safely_accessible", "safety": "height_and_roof"},
+        {"id": "patio-02-006", "title": "Damma målade takbalkar på ovansida, undersida och sidor", "status": "pending", "condition": "always"},
+        {"id": "patio-02-007", "title": "Tvätta takbalkar och bärverk med färganpassad metod", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-02-008", "title": "Rengör anslutningar mellan tak, balkar och fasad", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-02-009", "title": "Kontrollera takskivor eller glas efter sprickor, grumling eller skador", "status": "pending", "condition": "always"},
+        {"id": "patio-02-010", "title": "Kontrollera profiler, tätningar och skruvar efter glapp, rost eller läckagespår", "status": "pending", "condition": "always"},
+        {"id": "patio-02-011", "title": "Kontrollera träbalkar efter färgsläpp, röta eller fuktmissfärgning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "patio-03-lighting",
+      "order": 3,
+      "title": "Pendellampor och kristallkrona",
+      "tasks": [
+        {"id": "patio-03-001", "title": "Bryt strömmen och kontrollera att alla lampor är kalla", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-03-002", "title": "Damma takkåpor, sladdar, kedjor och upphängningar", "status": "pending", "condition": "always", "safety": "electricity_and_height"},
+        {"id": "patio-03-003", "title": "Rengör den stora vita lampskärmen på in- och utsida", "status": "pending", "condition": "if_present", "safety": "electricity_and_height"},
+        {"id": "patio-03-004", "title": "Rengör den mindre vita lampskärmen på in- och utsida", "status": "pending", "condition": "if_present", "safety": "electricity_and_height"},
+        {"id": "patio-03-005", "title": "Damma kristallkronans stomme, armar och hållare", "status": "pending", "condition": "if_present", "safety": "electricity_and_height"},
+        {"id": "patio-03-006", "title": "Rengör kristallkronans prismor en och en", "details": "Stöd delarna och använd endast metod som prismor och metall tål.", "status": "pending", "condition": "if_safe", "safety": "electricity_and_height"},
+        {"id": "patio-03-007", "title": "Damma kalla ljuskällor med torr duk", "status": "pending", "condition": "if_safe", "safety": "electricity"},
+        {"id": "patio-03-008", "title": "Kontrollera lampor, sladdar och upphängningar efter fukt, korrosion eller glapp", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-03-009", "title": "Låt all belysning torka helt innan strömmen slås på", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "patio-04-brick-wood-walls",
+      "order": 4,
+      "title": "Tegelfasad och träpanel",
+      "tasks": [
+        {"id": "patio-04-001", "title": "Borsta eller dammsug tegelväggarna uppifrån och ned", "status": "pending", "condition": "always"},
+        {"id": "patio-04-002", "title": "Ta bort spindelväv, pollen och insektsrester ur tegelstruktur och fogar", "status": "pending", "condition": "always"},
+        {"id": "patio-04-003", "title": "Tvätta tegel med skonsam metod anpassad för tegel och fog", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-04-004", "title": "Punktbehandla alg- eller mögelpåväxt med fasadanpassad produkt", "status": "pending", "condition": "if_needed", "safety": "chemicals"},
+        {"id": "patio-04-005", "title": "Kontrollera tegel och fogar efter sprickor, saltutfällning eller frostsprängning", "status": "pending", "condition": "always"},
+        {"id": "patio-04-006", "title": "Damma eller borsta träpanelens liggande brädor och skarvar", "status": "pending", "condition": "always"},
+        {"id": "patio-04-007", "title": "Tvätta träpanelen nedifrån och upp och skölj uppifrån och ned", "details": "Använd fasadtvätt som färgsystemet tål och undvik högtryck nära skarvar.", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-04-008", "title": "Rengör panelens hörn, lister och anslutningar", "status": "pending", "condition": "always"},
+        {"id": "patio-04-009", "title": "Kontrollera träpanel efter sprickor, färgsläpp, röta eller fukt", "status": "pending", "condition": "always"},
+        {"id": "patio-04-010", "title": "Rengör väggytor bakom alla flyttbara möbler", "status": "pending", "condition": "if_accessible"}
+      ]
+    },
+    {
+      "id": "patio-05-house-windows-door",
+      "order": 5,
+      "title": "Husets fönster och altandörr",
+      "tasks": [
+        {"id": "patio-05-001", "title": "Töm fönsterbleck och avställningsytor", "status": "pending", "condition": "always"},
+        {"id": "patio-05-002", "title": "Putsa husfönstrens glas mot altanen", "status": "pending", "condition": "always"},
+        {"id": "patio-05-003", "title": "Putsa motsatt sida av glaset om den inte ingår i vardagsrummets städning", "status": "pending", "condition": "if_not_already_cleaned"},
+        {"id": "patio-05-004", "title": "Rengör spröjs, karmar, bågar, handtag och tätningslister", "status": "pending", "condition": "always"},
+        {"id": "patio-05-005", "title": "Rengör fönsterspår, hörn och beslag", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-05-006", "title": "Torka fönsterbleck ovanpå, undertill och längs kanterna", "status": "pending", "condition": "always"},
+        {"id": "patio-05-007", "title": "Rengör altandörrens glas på båda sidor", "status": "pending", "condition": "always"},
+        {"id": "patio-05-008", "title": "Torka dörrblad, karm, handtag, lås och gångjärn", "status": "pending", "condition": "always"},
+        {"id": "patio-05-009", "title": "Rengör dörrens tröskel, nederkant och dräneringsspår", "status": "pending", "condition": "always"},
+        {"id": "patio-05-010", "title": "Kontrollera fönster och dörr efter skadade tätningar, trög funktion eller röta", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "patio-06-glass-enclosure",
+      "order": 6,
+      "title": "Skjutbara glaspartier",
+      "tasks": [
+        {"id": "patio-06-001", "title": "Märk glaspartiernas ordning om de behöver skjutas omlott under rengöringen", "status": "pending", "condition": "if_helpful"},
+        {"id": "patio-06-002", "title": "Dammsug spår och skenor innan våtrengöring", "status": "pending", "condition": "always"},
+        {"id": "patio-06-003", "title": "Ta bort löv, jord, insekter och småsten ur spåren", "status": "pending", "condition": "always"},
+        {"id": "patio-06-004", "title": "Rengör varje glasparti på in- och utsida", "status": "pending", "condition": "always"},
+        {"id": "patio-06-005", "title": "Rengör glasens kanter och mellan överlappande partier", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-06-006", "title": "Torka ramar, profiler, handtag och lås", "status": "pending", "condition": "always"},
+        {"id": "patio-06-007", "title": "Rengör borsthår, tätningslister och ändstopp", "status": "pending", "condition": "if_present"},
+        {"id": "patio-06-008", "title": "Rengör övre skenor och vägganslutningar", "status": "pending", "condition": "if_safely_accessible"},
+        {"id": "patio-06-009", "title": "Rensa dräneringshål och vattenvägar enligt systemets konstruktion", "status": "pending", "condition": "if_supported"},
+        {"id": "patio-06-010", "title": "Smörj hjul eller skenor endast med produkt som tillverkaren rekommenderar", "status": "pending", "condition": "if_recommended"},
+        {"id": "patio-06-011", "title": "Kontrollera glas efter sprickor och ramar efter glapp eller korrosion", "status": "pending", "condition": "always", "safety": "glass"},
+        {"id": "patio-06-012", "title": "Kontrollera att samtliga partier glider, stänger och låser normalt", "status": "pending", "condition": "always", "safety": "glass_and_pinch"}
+      ]
+    },
+    {
+      "id": "patio-07-vent-electrical",
+      "order": 7,
+      "title": "Ventilation, uttag och eldetaljer",
+      "tasks": [
+        {"id": "patio-07-001", "title": "Dammsug väggventilens utsida och området runt den", "status": "pending", "condition": "if_present"},
+        {"id": "patio-07-002", "title": "Ta loss och rengör ventilkåpan enligt konstruktionens anvisningar", "status": "pending", "condition": "if_supported"},
+        {"id": "patio-07-003", "title": "Rengör åtkomligt damm innanför ventilen utan att ändra inställningen", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-07-004", "title": "Torka strömbrytare och uttagens utsidor med nästan torr duk", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-07-005", "title": "Damma synliga sladdar, kontakter och kabelkanaler", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "patio-07-006", "title": "Kontrollera uttag och kapslingar efter fukt, sprickor eller korrosion", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-07-007", "title": "Kontrollera att utomhusklassade lock och tätningar sluter korrekt", "status": "pending", "condition": "if_present", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "patio-08-tv-electronics",
+      "order": 8,
+      "title": "TV och elektronik",
+      "tasks": [
+        {"id": "patio-08-001", "title": "Stäng av, koppla ur och låt TV:n svalna", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "patio-08-002", "title": "Damma TV-skärmen med ren, torr skärmduk", "details": "Spraya aldrig direkt på skärmen.", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "patio-08-003", "title": "Rengör TV:ns ram, kanter, baksida och ventilationsöppningar försiktigt", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "patio-08-004", "title": "Damma väggfäste, kablar och anslutningar torrt", "status": "pending", "condition": "if_accessible", "safety": "electronics"},
+        {"id": "patio-08-005", "title": "Rengör fjärrkontroll och annan medieutrustning", "status": "pending", "condition": "if_present", "safety": "electronics"},
+        {"id": "patio-08-006", "title": "Rengör tegelvägg och golv bakom och under TV:n", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-08-007", "title": "Kontrollera att utrustning, kontakter och kablar är lämpade för altanens fukt- och temperaturnivå", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-08-008", "title": "Låt allt torka helt innan TV:n ansluts och testas", "status": "pending", "condition": "always", "safety": "electricity"}
+      ]
+    },
+    {
+      "id": "patio-09-dining-set",
+      "order": 9,
+      "title": "Matbord och matstolar",
+      "tasks": [
+        {"id": "patio-09-001", "title": "Töm matbordet helt", "status": "pending", "condition": "always"},
+        {"id": "patio-09-002", "title": "Borsta eller dammsug bort pollen och löst skräp från bordsskivan", "status": "pending", "condition": "always"},
+        {"id": "patio-09-003", "title": "Rengör bordsskivans ovansida, kanter och undersida enligt material", "status": "pending", "condition": "always"},
+        {"id": "patio-09-004", "title": "Rengör bordets sarg, ben, stag och fötter", "status": "pending", "condition": "always"},
+        {"id": "patio-09-005", "title": "Kontrollera bordet efter fläckar, sprickor, glapp eller väderskador", "status": "pending", "condition": "always"},
+        {"id": "patio-09-006", "title": "Borsta eller dammsug varje matstols sits och rygg", "status": "pending", "condition": "always"},
+        {"id": "patio-09-007", "title": "Tvätta stolarnas textil- eller nätytor enligt materialets skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-09-008", "title": "Rengör stolsramar, armstöd, ben, undersidor och fötter", "status": "pending", "condition": "always"},
+        {"id": "patio-09-009", "title": "Kontrollera stolar efter glapp, rost, flisor eller skadad väv", "status": "pending", "condition": "always"},
+        {"id": "patio-09-010", "title": "Låt matgruppen torka helt innan den används", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "patio-10-lounge-bench-textiles",
+      "order": 10,
+      "title": "Loungefåtöljer, träbänk och textilier",
+      "tasks": [
+        {"id": "patio-10-001", "title": "Ta bort samtliga dynor, kuddar och plädar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-10-002", "title": "Dammsug dynor och kuddar på båda sidor och längs sömmar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-10-003", "title": "Tvätta avtagbara fodral och plädar enligt tvättråden", "status": "pending", "condition": "if_supported"},
+        {"id": "patio-10-004", "title": "Punktbehandla dynor enligt utomhustygets skötselråd", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-10-005", "title": "Kontrollera stoppning och textilier efter mögel, lukt, blekning eller skadedjur", "status": "pending", "condition": "always"},
+        {"id": "patio-10-006", "title": "Rengör loungefåtöljernas metallramar, armstöd, undersidor och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "patio-10-007", "title": "Ta bort ytrost och behandla enligt möbeltillverkarens råd", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-10-008", "title": "Rengör träbänkens rygg, sits, armstöd, sidor, undersida och ben", "status": "pending", "condition": "if_present"},
+        {"id": "patio-10-009", "title": "Kontrollera träbänken efter flisor, färgsläpp, röta eller lösa skruvar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-10-010", "title": "Rengör golv och väggar bakom och under samtliga sittmöbler", "status": "pending", "condition": "always"},
+        {"id": "patio-10-011", "title": "Låt alla möbler och textilier torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "patio-11-coffee-table-decor",
+      "order": 11,
+      "title": "Soffbord och dekorationer",
+      "tasks": [
+        {"id": "patio-11-001", "title": "Töm soffbordet helt", "status": "pending", "condition": "if_present"},
+        {"id": "patio-11-002", "title": "Rengör glasbordets ovansida och undersida", "status": "pending", "condition": "if_glass"},
+        {"id": "patio-11-003", "title": "Rengör bordets kanter, ram, ben och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "patio-11-004", "title": "Rengör stor glasvas in- och utvändigt", "status": "pending", "condition": "if_present"},
+        {"id": "patio-11-005", "title": "Dammsug torkade strån och arrangemang försiktigt", "status": "pending", "condition": "if_present"},
+        {"id": "patio-11-006", "title": "Rengör ljusstakar, ljuslyktor och andra prydnadsföremål", "status": "pending", "condition": "if_present"},
+        {"id": "patio-11-007", "title": "Kontrollera levande ljus och hållare efter brandsäkert skick", "status": "pending", "condition": "if_present", "safety": "fire"},
+        {"id": "patio-11-008", "title": "Låt bord, vas och dekorationer torka helt före återställning", "status": "pending", "condition": "always"}
+      ]
+    },
+    {
+      "id": "patio-12-drying-rack-storage",
+      "order": 12,
+      "title": "Torkställning, extrastolar och lös förvaring",
+      "tasks": [
+        {"id": "patio-12-001", "title": "Ta bort all tvätt från torkställningen", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-002", "title": "Rengör torkställningens samtliga stänger, leder, ben och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-003", "title": "Kontrollera torkställningen efter rost, glapp eller vassa kanter", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-004", "title": "Låt torkställningen torka helt innan ren tvätt hängs upp", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-005", "title": "Fäll ut och rengör staplade eller hopfällda extrastolar en och en", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-006", "title": "Rengör extrastolarnas sitsar, ryggar, ramar, leder och fötter", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-007", "title": "Kontrollera extrastolar efter glapp, rost eller trasiga låsmekanismer", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-008", "title": "Töm och rengör plastkorgar, verktygslådor och annan lös förvaring", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-009", "title": "Rengör skor och andra lösa utomhusföremål innan återställning", "status": "pending", "condition": "if_present"},
+        {"id": "patio-12-010", "title": "Förvara extramöbler torrt med luft mellan ytorna", "status": "pending", "condition": "if_stored_on_patio"}
+      ]
+    },
+    {
+      "id": "patio-13-deck-stairs",
+      "order": 13,
+      "title": "Trallgolv och trappsteg",
+      "tasks": [
+        {"id": "patio-13-001", "title": "Flytta undan samtliga möbler och lösa föremål sektionsvis", "status": "pending", "condition": "always"},
+        {"id": "patio-13-002", "title": "Sopa eller dammsug hela trallen i brädornas riktning", "status": "pending", "condition": "always"},
+        {"id": "patio-13-003", "title": "Rensa springorna mellan trallbrädorna från löv, barr, jord och skräp", "status": "pending", "condition": "always"},
+        {"id": "patio-13-004", "title": "Borsta bort spindelväv och skräp längs väggar och under fasta kanter", "status": "pending", "condition": "always"},
+        {"id": "patio-13-005", "title": "Tvätta trallen med träanpassad produkt och mjuk eller medelhård borste", "status": "pending", "condition": "if_needed"},
+        {"id": "patio-13-006", "title": "Behandla alger och påväxt med produkt avsedd för trall", "status": "pending", "condition": "if_needed", "safety": "slip_and_chemicals"},
+        {"id": "patio-13-007", "title": "Skölj eller eftertorka utan att dränka fasad, spår eller elinstallationer", "status": "pending", "condition": "if_washed"},
+        {"id": "patio-13-008", "title": "Rengör trappstegens ovansidor, framkanter, sidor och springor", "status": "pending", "condition": "if_present"},
+        {"id": "patio-13-009", "title": "Rengör trappans målade vangstycken och anslutningar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-13-010", "title": "Kontrollera trall och trappsteg efter flisor, lösa skruvar, röta eller svikt", "status": "pending", "condition": "always", "safety": "fall"},
+        {"id": "patio-13-011", "title": "Kontrollera om trallen behöver olja eller annat ytunderhåll", "status": "pending", "condition": "if_due", "category": "maintenance"},
+        {"id": "patio-13-012", "title": "Låt trall och trappsteg torka helt innan möbler återställs", "status": "pending", "condition": "always", "safety": "slip"}
+      ]
+    },
+    {
+      "id": "patio-14-drainage-exterior",
+      "order": 14,
+      "title": "Dränering, takavvattning och yttre kanter",
+      "tasks": [
+        {"id": "patio-14-001", "title": "Rensa synliga hängrännor och avrinningskanaler från löv och skräp", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "patio-14-002", "title": "Rensa stuprörens synliga inlopp och kontrollera vattenvägen", "status": "pending", "condition": "if_present"},
+        {"id": "patio-14-003", "title": "Rengör skarvar och vattenvägar längs glastakets nederkant", "status": "pending", "condition": "if_safely_accessible", "safety": "height"},
+        {"id": "patio-14-004", "title": "Kontrollera efter läckagespår på balkar, fasad och golv", "status": "pending", "condition": "always"},
+        {"id": "patio-14-005", "title": "Kontrollera att vatten inte blir stående i glasspår eller mot träfasad", "status": "pending", "condition": "always"},
+        {"id": "patio-14-006", "title": "Rengör altanens ytterkant och anslutning mot mark eller uteplats", "status": "pending", "condition": "if_accessible"},
+        {"id": "patio-14-007", "title": "Spola försiktigt igenom avrinningen och kontrollera flödet", "status": "pending", "condition": "if_supported"}
+      ]
+    },
+    {
+      "id": "patio-15-weather-pest-check",
+      "order": 15,
+      "title": "Väder-, fukt- och skadedjurskontroll",
+      "tasks": [
+        {"id": "patio-15-001", "title": "Kontrollera hörn, balkar och möbelundersidor efter getingbon eller andra bon", "status": "pending", "condition": "always", "safety": "pests"},
+        {"id": "patio-15-002", "title": "Kontrollera trä, textilier och korgar efter insektsangrepp", "status": "pending", "condition": "always"},
+        {"id": "patio-15-003", "title": "Kontrollera textilier och träytor efter mögel eller unken lukt", "status": "pending", "condition": "always", "safety": "moisture"},
+        {"id": "patio-15-004", "title": "Kontrollera metallmöbler, lampor och profiler efter korrosion", "status": "pending", "condition": "always"},
+        {"id": "patio-15-005", "title": "Kontrollera glaspartier och tak efter kondensproblem", "status": "pending", "condition": "always"},
+        {"id": "patio-15-006", "title": "Kontrollera möbler och dekorationer efter solblekning eller materialsprickor", "status": "pending", "condition": "always"},
+        {"id": "patio-15-007", "title": "Dokumentera skador, läckage eller återkommande påväxt för separat underhåll", "status": "pending", "condition": "if_issue_found"}
+      ]
+    },
+    {
+      "id": "patio-16-finish",
+      "order": 16,
+      "title": "Avslutning och funktionskontroll",
+      "tasks": [
+        {"id": "patio-16-001", "title": "Återställ matbord, stolar, loungemöbler, bänk och soffbord", "status": "pending", "condition": "always"},
+        {"id": "patio-16-002", "title": "Sätt tillbaka endast helt torra dynor, kuddar och plädar", "status": "pending", "condition": "if_present"},
+        {"id": "patio-16-003", "title": "Ställ tillbaka rena och torra dekorationer och förvaringsföremål", "status": "pending", "condition": "always"},
+        {"id": "patio-16-004", "title": "Koppla in TV och annan elektronik först när området är helt torrt", "status": "pending", "condition": "if_present", "safety": "electricity"},
+        {"id": "patio-16-005", "title": "Starta TV:n och kontrollera bild, ljud och fjärrkontroll", "status": "pending", "condition": "if_present"},
+        {"id": "patio-16-006", "title": "Slå på samtliga lampor och kontrollera funktionen", "status": "pending", "condition": "always", "safety": "electricity"},
+        {"id": "patio-16-007", "title": "Kontrollera att husdörr, fönster och alla glaspartier öppnar, stänger och låser normalt", "status": "pending", "condition": "always"},
+        {"id": "patio-16-008", "title": "Kontrollera att ventilen är öppen i korrekt läge", "status": "pending", "condition": "if_present"},
+        {"id": "patio-16-009", "title": "Kontrollera att inga möbler blockerar glasspår, dörrar eller avrinningsvägar", "status": "pending", "condition": "always"},
+        {"id": "patio-16-010", "title": "Rengör och torka använda borstar, skrapor och andra redskap", "status": "pending", "condition": "always"},
+        {"id": "patio-16-011", "title": "Tvätta städdukar och moppar", "status": "pending", "condition": "always"},
+        {"id": "patio-16-012", "title": "Låt altanen vädra tills all kvarvarande fukt är borta", "status": "pending", "condition": "always"}
+      ]
+    }
+  ]
+}

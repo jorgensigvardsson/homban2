@@ -128,10 +128,7 @@ const categoryWeight: Record<Mode, Record<TaskCategory, number>> = {
 
 export const householdRooms: Room[] = [
   { id: 'upstairs-hall', name: 'Övre hall & linneskåp', floor: 'upper', type: 'hall', visibilityWeight: 0.7, freshness: { visible: 0.6, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: false },
-  { id: 'bedroom-1', name: 'Sovrum 1', floor: 'upper', type: 'bedroom', visibilityWeight: 0.4, freshness: { visible: 0.5, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: true },
-  { id: 'bedroom-2', name: 'Sovrum 2', floor: 'upper', type: 'bedroom', visibilityWeight: 0.4, freshness: { visible: 0.5, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: true },
-  { id: 'bedroom-3', name: 'Sovrum 3', floor: 'upper', type: 'bedroom', visibilityWeight: 0.4, freshness: { visible: 0.5, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: true },
-  { id: 'bedroom-4', name: 'Sovrum 4', floor: 'upper', type: 'bedroom', visibilityWeight: 0.4, freshness: { visible: 0.5, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: true },
+  { id: 'bedroom-1', name: 'Master bedroom', floor: 'upper', type: 'bedroom', visibilityWeight: 0.4, freshness: { visible: 0.5, hygiene: 0.8, floor: 0.6, odor: 0.8 }, isPrivate: true },
   { id: 'upstairs-bathroom', name: 'Badrum uppe', floor: 'upper', type: 'bathroom', visibilityWeight: 1, freshness: { visible: 0.7, hygiene: 0.6, floor: 0.7, odor: 0.7 }, isPrivate: false },
   { id: 'middle-hall', name: 'Hall', floor: 'middle', type: 'hall', visibilityWeight: 1.4, freshness: { visible: 0.4, hygiene: 0.8, floor: 0.5, odor: 0.8 }, isPrivate: false },
   { id: 'kitchen', name: 'Kök', floor: 'middle', type: 'kitchen', visibilityWeight: 1.6, freshness: { visible: 0.5, hygiene: 0.6, floor: 0.7, odor: 0.7 }, isPrivate: false },
@@ -147,9 +144,9 @@ export const householdRooms: Room[] = [
 export const householdMembers: HouseholdMember[] = [
   { id: 'malin', name: 'Malin', role: 'adult', willingToHelp: true, preferredRoomIds: [] },
   { id: 'jorgen', name: 'Jörgen', role: 'adult', willingToHelp: true, preferredRoomIds: [] },
-  { id: 'alice', name: 'Alice', role: 'child', birthYear: 2010, willingToHelp: true, preferredRoomIds: ['bedroom-1'] },
-  { id: 'annie', name: 'Annie', role: 'child', birthYear: 2013, willingToHelp: true, preferredRoomIds: ['bedroom-2'] },
-  { id: 'ella', name: 'Ella', role: 'child', birthYear: 2016, willingToHelp: true, preferredRoomIds: ['bedroom-3'] },
+  { id: 'alice', name: 'Alice', role: 'child', birthYear: 2010, willingToHelp: true, preferredRoomIds: [] },
+  { id: 'annie', name: 'Annie', role: 'child', birthYear: 2013, willingToHelp: true, preferredRoomIds: [] },
+  { id: 'ella', name: 'Ella', role: 'child', birthYear: 2016, willingToHelp: true, preferredRoomIds: [] },
 ];
 
 export function buildPlan(input: TaskSelectionInput): TaskPlan {

@@ -423,7 +423,7 @@ export const householdTasks: Task[] = [
   },
   {
     id: 'bedroom-floor',
-    roomId: 'bedroom-2',
+    roomId: 'bedroom-1',
     title: 'Frigör sovrumsgolvet',
     category: 'floor',
     durationMinutes: 8,
