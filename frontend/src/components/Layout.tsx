@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router';
 import { useLogout, useSession } from '../api/auth';
 
-const links = [{ to: '/', label: 'Home' }];
+const links = [{ to: '/', label: 'Översikt' }];
 
 /** App chrome: header, navigation, the signed-in user, and the routed page. */
 export function Layout() {
@@ -12,7 +12,7 @@ export function Layout() {
     <div className="flex min-h-full flex-col">
       <header className="border-b border-line bg-surface-raised">
         <div className="mx-auto flex max-w-4xl items-center gap-6 px-6 py-4">
-          <span className="font-semibold tracking-tight">Homban</span>
+          <span className="font-semibold tracking-tight">Ring På</span>
           <nav className="flex gap-4 text-sm">
             {links.map((link) => (
               <NavLink
@@ -42,7 +42,7 @@ export function Layout() {
                 disabled={logout.isPending}
                 className="rounded-md border border-line px-2.5 py-1 text-ink-muted hover:text-ink disabled:opacity-50"
               >
-                Sign out
+                Logga ut
               </button>
             </div>
           )}
