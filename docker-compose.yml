@@ -1,7 +1,15 @@
 # Copy .env.example to .env first (at least JWT_SECRET must be set, since
 # APP_ENV defaults to production in the image).
+#
+# Fixed image names (rather than relying on Compose's default
+# <project>-<service> naming, which depends on this file's directory name):
+# the deploy pipeline (.github/workflows/deploy.yml) builds and
+# "docker save"s images under these exact names, so a server running
+# `docker load` then `docker compose up -d --no-build` picks them up
+# regardless of what directory this file lives in.
 services:
   api:
+    image: homban2-api:latest
     build:
       context: ./backend
     # No host port mapping: only "web" talks to this, over the compose
@@ -24,6 +32,7 @@ services:
     restart: unless-stopped
 
   web:
+    image: homban2-web:latest
     build:
       context: .
       dockerfile: frontend/Dockerfile

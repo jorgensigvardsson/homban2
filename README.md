@@ -360,6 +360,8 @@ proxy/                   Local HTTPS reverse proxy (TypeScript)
 
 docker-compose.yml       self-hosted deployment: api + web (nginx) services
 devdata/                 host-mounted volume for the SQLite database file
+.github/workflows/       deploy.yml: build, test, ship to the server on push
+                         to the "deploy" branch
 ```
 
 ## Adding things
@@ -495,6 +497,39 @@ This starts two containers:
 
 **Back up `devdata/homban.db`** (plus its `-wal`/`-shm` files if present) to
 back up all application data; everything else is rebuildable from source.
+
+### Continuous deployment
+
+Pushing to the `deploy` branch runs
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml): typecheck, vet
+and the Go test suite, then — only if all of that is green — builds the `api`
+and `web` images, `docker save`s them to a single tarball, `scp`s it to the
+server over SSH, and remotely runs `docker load` followed by
+`docker compose up -d --no-build`. No image registry is involved; the tarball
+goes directly from the GitHub Actions runner to the server. Nothing is deployed
+on a failed build or test.
+
+The workflow does **not** touch the server's `docker-compose.yml` or `.env` —
+those stay managed by hand there, same as the rest of this section assumes.
+Because of that, **the server's `docker-compose.yml` must tag its services
+`homban2-api:latest` and `homban2-web:latest`** (matching the `image:` lines in
+this repo's `docker-compose.yml`) — otherwise the freshly loaded images won't
+be the ones `docker compose up` picks up.
+
+Add these as repository secrets (Settings → Secrets and variables → Actions)
+before the first push to `deploy`:
+
+| Secret | Value |
+| --- | --- |
+| `DEPLOY_SSH_HOST` | Hostname or IP of the Docker server |
+| `DEPLOY_SSH_PORT` | SSH port (optional; defaults to 22) |
+| `DEPLOY_SSH_USER` | SSH user on that server |
+| `DEPLOY_SSH_PRIVATE_KEY` | Private key for that user — set up a dedicated deploy key, not a personal one |
+| `DEPLOY_PATH` | Directory on that server holding `docker-compose.yml` and `.env` |
+
+The deploy key's matching public key needs to be in that user's
+`~/.ssh/authorized_keys` on the server, and that user needs permission to run
+`docker`/`docker compose` (typically: a member of the `docker` group).
 
 ### TLS
 
