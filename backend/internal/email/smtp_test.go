@@ -1,6 +1,7 @@
 package email
 
 import (
+	"net/smtp"
 	"strings"
 	"testing"
 	"time"
@@ -72,6 +73,45 @@ func TestBuildMessage(t *testing.T) {
 	}
 	if !strings.Contains(s, "\r\n\r\n") {
 		t.Error("message is missing the header/body separator")
+	}
+}
+
+func TestLoginAuth(t *testing.T) {
+	a := &loginAuth{username: "user@example.com", password: "hunter2"}
+
+	proto, initial, err := a.Start(&smtp.ServerInfo{})
+	if err != nil {
+		t.Fatalf("Start: %v", err)
+	}
+	if proto != "LOGIN" {
+		t.Errorf("proto = %q, want LOGIN", proto)
+	}
+	if initial != nil {
+		t.Errorf("initial response = %q, want nil (LOGIN starts with a server challenge)", initial)
+	}
+
+	reply, err := a.Next([]byte("Username:"), true)
+	if err != nil {
+		t.Fatalf("Next(Username): %v", err)
+	}
+	if string(reply) != "user@example.com" {
+		t.Errorf("reply = %q, want the username", reply)
+	}
+
+	reply, err = a.Next([]byte("Password:"), true)
+	if err != nil {
+		t.Fatalf("Next(Password): %v", err)
+	}
+	if string(reply) != "hunter2" {
+		t.Errorf("reply = %q, want the password", reply)
+	}
+
+	if reply, err := a.Next(nil, false); err != nil || reply != nil {
+		t.Errorf("Next after server accepted = (%q, %v), want (nil, nil)", reply, err)
+	}
+
+	if _, err := a.Next([]byte("something else:"), true); err == nil {
+		t.Error("expected an error for an unrecognized challenge")
 	}
 }
 

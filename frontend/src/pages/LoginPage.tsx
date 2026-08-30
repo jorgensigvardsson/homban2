@@ -80,7 +80,7 @@ function EmailStep({
             value={email}
             onChange={(event) => onEmailChange(event.target.value)}
             placeholder="you@example.com"
-            className="mt-1 w-full rounded-md border border-line bg-surface-raised px-3 py-2 outline-none focus:border-brand"
+            className="mt-1 w-full rounded-md border border-line bg-white px-3 py-2 text-black outline-none focus:border-brand"
           />
         </div>
 
@@ -174,7 +174,7 @@ function CodeStep({
             value={code}
             // Keep digits only, so a pasted code with stray spaces still works.
             onChange={(event) => setCode(event.target.value.replace(/\D/g, ''))}
-            className="mt-1 w-full rounded-md border border-line bg-surface-raised px-3 py-2 text-center font-mono text-2xl tracking-[0.4em] outline-none focus:border-brand"
+            className="mt-1 w-full rounded-md border border-line bg-white px-3 py-2 text-center font-mono text-2xl tracking-[0.4em] text-black outline-none focus:border-brand"
           />
           <p className="mt-2 text-sm text-ink-muted" aria-live="polite">
             {expired ? 'This code has expired. Request a new one.' : `Expires in ${formatSeconds(expiresIn)}.`}

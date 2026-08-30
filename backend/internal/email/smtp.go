@@ -60,7 +60,7 @@ func (s *SMTPSender) SendSignInCode(ctx context.Context, to, code string, validF
 
 	var auth smtp.Auth
 	if s.cfg.Username != "" {
-		auth = smtp.PlainAuth("", s.cfg.Username, s.cfg.Password, s.cfg.Host)
+		auth = &loginAuth{username: s.cfg.Username, password: s.cfg.Password}
 	}
 
 	addr := fmt.Sprintf("%s:%d", s.cfg.Host, s.cfg.Port)
@@ -91,4 +91,33 @@ func buildMessage(from, to, code string, validFor time.Duration) ([]byte, error)
 	return []byte(b.String()), nil
 }
 
+// loginAuth implements the SMTP "AUTH LOGIN" mechanism, which the standard
+// library does not provide (only PLAIN and CRAM-MD5). Microsoft's SMTP
+// servers (Outlook.com, Office 365) reject PLAIN outright with "504 5.7.4
+// Unrecognized authentication type" and require LOGIN instead; LOGIN is also
+// accepted by every other mainstream provider (Gmail included), so this
+// covers both without needing to pick a mechanism per provider.
+type loginAuth struct {
+	username, password string
+}
+
+func (a *loginAuth) Start(*smtp.ServerInfo) (string, []byte, error) {
+	return "LOGIN", nil, nil
+}
+
+func (a *loginAuth) Next(fromServer []byte, more bool) ([]byte, error) {
+	if !more {
+		return nil, nil
+	}
+	switch prompt := strings.ToLower(strings.TrimSpace(string(fromServer))); {
+	case strings.HasPrefix(prompt, "username"):
+		return []byte(a.username), nil
+	case strings.HasPrefix(prompt, "password"):
+		return []byte(a.password), nil
+	default:
+		return nil, fmt.Errorf("unexpected LOGIN challenge: %q", fromServer)
+	}
+}
+
+var _ smtp.Auth = (*loginAuth)(nil)
 var _ Sender = (*SMTPSender)(nil)
