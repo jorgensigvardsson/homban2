@@ -1,9 +1,8 @@
 // Package store defines the persistence boundary for the service.
 //
 // The interface exists so that the HTTP layer never talks to a database
-// directly. Today the only implementation is Memory; a Cosmos DB
-// implementation will be added alongside it (cosmos.go) without touching
-// any handler code.
+// directly. Memory backs local development; SQLite (sqlite.go) backs a real
+// deployment.
 package store
 
 import "context"

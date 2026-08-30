@@ -130,11 +130,12 @@ func run() error {
 	return nil
 }
 
-// openStore picks the persistence implementation from configuration. Once the
-// Cosmos implementation exists this returns it whenever Cosmos is configured.
-func openStore(_ context.Context, cfg config.Config, logger *slog.Logger) (store.Store, error) {
-	if cfg.Cosmos.Enabled() {
-		return nil, errors.New("cosmos store is not implemented yet; unset COSMOS_ENDPOINT to use the in-memory store")
+// openStore picks the persistence implementation from configuration: SQLite
+// when SQLITE_PATH is set, otherwise an in-memory store for local development.
+func openStore(ctx context.Context, cfg config.Config, logger *slog.Logger) (store.Store, error) {
+	if cfg.SQLite.Enabled() {
+		logger.Info("using sqlite store", "path", cfg.SQLite.Path)
+		return store.NewSQLite(ctx, cfg.SQLite.Path)
 	}
 	logger.Warn("using in-memory store; data is lost on restart")
 	return store.NewMemory(), nil

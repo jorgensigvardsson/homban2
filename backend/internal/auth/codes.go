@@ -46,8 +46,8 @@ type CodeStore interface {
 // MemoryCodeStore keeps codes in process memory.
 //
 // Good enough for local development and a single instance. Before scaling to
-// more than one replica in Azure this has to move to shared storage (Redis, or
-// Cosmos with a TTL on the container), otherwise a user's code lands on one
+// more than one replica this has to move to shared storage (Redis, or a
+// database table with a TTL sweep), otherwise a user's code lands on one
 // replica and the verification request on another.
 type MemoryCodeStore struct {
 	mu      sync.Mutex

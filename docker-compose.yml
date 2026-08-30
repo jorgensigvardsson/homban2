@@ -1,0 +1,35 @@
+# Copy .env.example to .env first (at least JWT_SECRET must be set, since
+# APP_ENV defaults to production in the image).
+services:
+  api:
+    build:
+      context: ./backend
+    # No host port mapping: only "web" talks to this, over the compose
+    # network at http://api:8080. Keeps a single origin for the browser,
+    # same as the local dev proxy.
+    env_file:
+      - .env
+    environment:
+      # Overrides any SQLITE_PATH in .env, so it always points at the volume
+      # mounted below regardless of what a local (non-docker) dev run uses.
+      SQLITE_PATH: /data/homban.db
+      # .env.example sets HOST=127.0.0.1 for `npm run dev` on the host; inside
+      # the container that would bind to its own loopback only, unreachable
+      # from the "web" container. Always bind all interfaces here.
+      HOST: 0.0.0.0
+    volumes:
+      # Host-mounted app data directory, so the SQLite database file lives on
+      # the docker host and survives container rebuilds/removal.
+      - ./devdata:/data
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      # The TLS-terminating reverse proxy calls in on 5581.
+      - "5581:80"
+    depends_on:
+      - api
+    restart: unless-stopped

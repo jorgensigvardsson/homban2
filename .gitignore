@@ -10,6 +10,10 @@ backend/bin/
 proxy/certs/*
 !proxy/certs/.gitkeep
 
+# Host-mounted app data (SQLite database file etc.), never commit
+devdata/*
+!devdata/.gitkeep
+
 # Environment
 .env
 .env.local

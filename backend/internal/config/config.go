@@ -36,9 +36,9 @@ type Config struct {
 	// Auth configures passwordless sign-in and session cookies.
 	Auth AuthConfig
 
-	// Cosmos holds the Azure Cosmos DB settings. Unset during local
+	// SQLite configures the on-disk database file. Unset during local
 	// development, in which case the in-memory store is used instead.
-	Cosmos CosmosConfig
+	SQLite SQLiteConfig
 }
 
 // AuthConfig configures sign-in codes and session tokens.
@@ -80,17 +80,14 @@ type AuthConfig struct {
 // everyone out mid-session.
 const devJWTSecret = "homban-development-only-signing-secret-do-not-deploy"
 
-// CosmosConfig describes how to reach Azure Cosmos DB. Authentication is done
-// with a managed identity (DefaultAzureCredential), so no key is configured.
-type CosmosConfig struct {
-	Endpoint  string
-	Database  string
-	Container string
+// SQLiteConfig describes where the SQLite database file lives.
+type SQLiteConfig struct {
+	Path string
 }
 
-// Enabled reports whether enough Cosmos settings are present to connect.
-func (c CosmosConfig) Enabled() bool {
-	return c.Endpoint != "" && c.Database != ""
+// Enabled reports whether a database file path is configured.
+func (c SQLiteConfig) Enabled() bool {
+	return c.Path != ""
 }
 
 // Load reads the configuration from the process environment.
@@ -100,10 +97,8 @@ func Load() (Config, error) {
 		Host:            env("HOST", "127.0.0.1"),
 		LogFormat:       env("LOG_FORMAT", "text"),
 		ShutdownTimeout: 15 * time.Second,
-		Cosmos: CosmosConfig{
-			Endpoint:  env("COSMOS_ENDPOINT", ""),
-			Database:  env("COSMOS_DATABASE", ""),
-			Container: env("COSMOS_CONTAINER", ""),
+		SQLite: SQLiteConfig{
+			Path: env("SQLITE_PATH", ""),
 		},
 	}
 

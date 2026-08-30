@@ -1,7 +1,7 @@
 # Homban
 
 A web application with a React frontend and a Go backend. Both are served
-through a single HTTPS origin, locally and in the cloud.
+through a single origin, locally over HTTPS and self-hosted via Docker Compose.
 
 The app's purpose is still to be defined — this repository currently holds the
 running skeleton everything else gets built on.
@@ -13,8 +13,10 @@ running skeleton everything else gets built on.
 | [Node.js](https://nodejs.org) | 20 or later | `node --version` |
 | [Go](https://go.dev/dl/) | 1.26 or later | `go version` |
 
-Nothing else. No Docker, no OpenSSL, no separate certificate tool — the proxy
-generates its own certificates in pure JavaScript.
+Nothing else for local development. No Docker, no OpenSSL, no separate
+certificate tool — the proxy generates its own certificates in pure
+JavaScript. [Docker Compose](#self-hosted-deployment-docker-compose) is only
+needed for self-hosting a built deployment, not for day-to-day development.
 
 ## First-time setup
 
@@ -183,14 +185,24 @@ In development:
                     +--------------------------------------+
 ```
 
-In Azure the same single-origin shape is kept, with managed services taking the
-proxy's place:
+Self-hosted, the same single-origin shape is kept, with `nginx` taking the
+proxy's place inside Docker Compose:
 
 ```
-  browser --> Azure ingress --> /api/* --> backend container (Container Apps)
-                            \-> /*     --> static frontend build
-                                             backend --> Cosmos DB
+  browser --> your reverse proxy (TLS) --> web (nginx, published as :5581)
+                                              |
+                                              +-- /api/* --> api (Go; not
+                                              |              published, reached
+                                              |              only over the
+                                              |              compose network)
+                                              +-- /*     --> static frontend build
+
+                                            api --> SQLite (./devdata, host-mounted)
 ```
+
+`web` does not terminate TLS itself — that is left to whatever reverse proxy
+fronts the Docker host (see [docker-compose.yml](docker-compose.yml) and
+[frontend/nginx.conf](frontend/nginx.conf)).
 
 Because the browser only ever sees one origin, the frontend calls the API with
 relative paths (`/api/v1/health`). There is no CORS configuration anywhere, and
@@ -280,10 +292,11 @@ harmless.
 ### What signs the tokens
 
 A dedicated secret in `JWT_SECRET`, using HS256 — deliberately **not** the TLS
-certificate. TLS terminates at the Azure ingress where the app cannot read the
-private key, managed certificates rotate on their own schedule (which would
-invalidate every session), and a key that proves server identity should not also
-mint credentials.
+certificate. TLS terminates in front of the app (the local dev proxy, or
+whatever reverse proxy fronts a real deployment), so the backend typically has
+no access to that private key at all; a certificate can also rotate on its own
+schedule, which would invalidate every session if sessions depended on it; and
+a key that proves server identity should not also mint credentials.
 
 Two deliberate shortcuts make local development less annoying, and both are
 development-only: sessions last **30 days** instead of 12 hours, and the signing
@@ -326,8 +339,8 @@ backend/                 Go service (one dependency: golang-jwt)
   internal/auth/         sign-in codes, session tokens, roles
   internal/email/        mail delivery; prints to stdout for now
   internal/httpapi/      routing, middleware, handlers
-  internal/store/        persistence port; in-memory today, Cosmos later
-  Dockerfile             distroless image for Container Apps
+  internal/store/        persistence port; in-memory for dev, SQLite for real use
+  Dockerfile             distroless image, built by docker-compose.yml
 
 frontend/                React + TypeScript + Vite + Tailwind v4
   src/api/               typed API client and per-resource query hooks
@@ -335,6 +348,8 @@ frontend/                React + TypeScript + Vite + Tailwind v4
   src/hooks/             small reusable hooks
   src/pages/             one file per route
   src/App.tsx            route table
+  Dockerfile             builds the static assets, serves them behind nginx
+  nginx.conf             single-origin routing: / to static files, /api/* to api
 
 proxy/                   Local HTTPS reverse proxy (TypeScript)
   src/config.ts          ports, targets and routing rules
@@ -342,6 +357,9 @@ proxy/                   Local HTTPS reverse proxy (TypeScript)
   src/index.ts           the proxy server
   scripts/trust-ca.ts    installs the CA in the OS trust store
   certs/                 generated, git-ignored
+
+docker-compose.yml       self-hosted deployment: api + web (nginx) services
+devdata/                 host-mounted volume for the SQLite database file
 ```
 
 ## Adding things
@@ -402,7 +420,8 @@ concrete database.
 - **Relative API paths only.** Never a hard-coded host or port in frontend code.
 - **API version in the path.** Everything lives under `/api/v1`.
 - **Config from the environment, with dev defaults.** The service starts with no
-  setup, and the same binary is configured differently in Azure.
+  setup, and the same binary is configured differently for a real deployment —
+  see [docker-compose.yml](docker-compose.yml) and [.env.example](.env.example).
 
 ## Troubleshooting
 
@@ -451,32 +470,66 @@ development secret keeps sessions alive across restarts.
 only stored over HTTPS. Reach the app at `https://localhost` through the proxy,
 never at `http://localhost:5173` directly.
 
-## Road to Azure
+## Self-hosted deployment (Docker Compose)
 
-Not built yet, but the skeleton is shaped for it:
+```bash
+cp .env.example .env
+# Edit .env: at minimum set a real JWT_SECRET (APP_ENV defaults to
+# production in the image, which requires one).
+#   node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
 
-- **Backend** — `backend/Dockerfile` produces a distroless image that reads
-  `PORT` and binds all interfaces, which is what Container Apps expects. The
-  probes are `GET /api/v1/health` (liveness) and `GET /api/v1/ready` (readiness).
-- **Frontend** — `npm run build` emits static files in `frontend/dist`, ready for
-  Static Web Apps or Blob Storage behind a CDN. Hosting must fall back to
-  `index.html` for unknown paths so client-side routing works.
-- **Database** — `COSMOS_ENDPOINT` / `COSMOS_DATABASE` / `COSMOS_CONTAINER` are
-  already read by the config package. The implementation goes in
-  `internal/store/cosmos.go` behind the existing `Store` interface, authenticating
-  with a managed identity rather than keys.
-- **Logging** — set `LOG_FORMAT=json` in the container so Azure Monitor parses
-  the structured `slog` output.
-- **Secrets** — `JWT_SECRET` becomes a Container Apps secret backed by Key
-  Vault. Rotating it signs everyone out, which is acceptable but worth doing
-  deliberately.
-- **Email** — implement `email.Sender` against Azure Communication Services (or
-  SMTP) and swap it in `buildAuth`. Nothing else changes.
-- **Sign-in codes across replicas** — codes currently live in process memory, so
-  scaling past one replica breaks sign-in: the code is issued by one instance and
-  verified by another. Before scaling out, back `auth.CodeStore` with Redis or a
-  Cosmos container with a TTL. Session tokens themselves are stateless and scale
-  fine.
+docker compose up -d --build
+```
+
+This starts two containers:
+
+- **`api`** — the Go backend, built from [backend/Dockerfile](backend/Dockerfile).
+  Not published to the host; only `web` can reach it, at `http://api:8080` over
+  the compose network. Persists to SQLite at `/data/homban.db`, where `/data` is
+  the [devdata/](devdata/) directory on the host (`docker-compose.yml` pins
+  `SQLITE_PATH` so this is not left to whatever `.env` happens to say).
+- **`web`** — nginx, built from [frontend/Dockerfile](frontend/Dockerfile).
+  Serves the static frontend build and reverse-proxies `/api/*` to `api`, so the
+  browser sees one origin exactly as it does through the local dev proxy.
+  Published to the host as port **5581**.
+
+**Back up `devdata/homban.db`** (plus its `-wal`/`-shm` files if present) to
+back up all application data; everything else is rebuildable from source.
+
+### TLS
+
+`web` only ever speaks plain HTTP — it does not terminate TLS itself. This is
+built for a TLS-terminating reverse proxy on a *different* machine (a separate
+box or network appliance) forwarding to `web`'s published port 5581:
+
+- Point that proxy's upstream at `http://<this-host>:5581` and have it set
+  `X-Forwarded-Proto: https` (nearly every reverse proxy does this by default).
+  [frontend/nginx.conf](frontend/nginx.conf) passes it straight through to
+  `api`, falling back to its own scheme only if the header is ever missing.
+- **Restrict port 5581 to that proxy's address**, with a host firewall rule or
+  network/VLAN policy — it is published on all interfaces (required, since the
+  proxy reaches it over the network) and serves plain HTTP, so anything else
+  that can reach it bypasses TLS entirely.
+- The session cookie is `Secure` (required once `APP_ENV` is not
+  `development`), so sign-in only works once the browser's address bar shows
+  `https://`, which the proxy is what provides — `web` itself never needs to
+  know or care.
+- If the proxy's address is fixed, uncomment the `set_real_ip_from` /
+  `real_ip_header` lines in `nginx.conf` and set it to that address, so `web`'s
+  own access log (and the `X-Forwarded-For` it forwards to `api`) shows the
+  real client instead of the proxy's IP for every request.
+
+### What is *not* handled yet
+
+- **Email.** Sign-in codes still only go to stdout — check
+  `docker compose logs api` for the code box shown in [Signing in](#signing-in).
+  Implement `email.Sender` (SMTP or a provider API) and swap it in `buildAuth`
+  to send real mail.
+- **Scaling past one `api` replica.** Sign-in codes live in that container's
+  process memory, so a code issued by one replica cannot be verified by
+  another. Compose runs a single replica by default, so this only matters if
+  that ever changes — at which point `auth.CodeStore` needs shared storage
+  (Redis, or a database table with a TTL sweep) instead.
 
 ## Licence
 
