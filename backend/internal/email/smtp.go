@@ -25,8 +25,9 @@ type SMTPConfig struct {
 
 // SMTPSender delivers mail through an SMTP relay.
 type SMTPSender struct {
-	cfg      SMTPConfig
-	fromAddr string // bare address, for the envelope
+	cfg        SMTPConfig
+	fromAddr   string // bare address, for the envelope
+	fromHeader string // formatted "From" header value, MIME-encoded if needed
 }
 
 // NewSMTPSender validates cfg and returns a ready sender.
@@ -44,7 +45,10 @@ func NewSMTPSender(cfg SMTPConfig) (*SMTPSender, error) {
 	if err != nil {
 		return nil, fmt.Errorf("smtp from address: %w", err)
 	}
-	return &SMTPSender{cfg: cfg, fromAddr: parsed.Address}, nil
+	// parsed.String() re-renders the address per RFC 5322/2047, MIME-encoding
+	// the display name if it has non-ASCII characters (cfg.From is whatever
+	// was typed into an environment variable, verbatim).
+	return &SMTPSender{cfg: cfg, fromAddr: parsed.Address, fromHeader: parsed.String()}, nil
 }
 
 // SendSignInCode implements Sender by relaying a plain-text message over SMTP.
@@ -53,7 +57,7 @@ func (s *SMTPSender) SendSignInCode(ctx context.Context, to, code string, validF
 		return err
 	}
 
-	msg, err := buildMessage(s.cfg.From, to, code, validFor)
+	msg, err := buildMessage(s.fromHeader, to, code, validFor)
 	if err != nil {
 		return err
 	}

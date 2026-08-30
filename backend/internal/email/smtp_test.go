@@ -53,6 +53,25 @@ func TestNewSMTPSenderExtractsBareFromAddress(t *testing.T) {
 	}
 }
 
+func TestNewSMTPSenderEncodesNonASCIIDisplayName(t *testing.T) {
+	sender, err := NewSMTPSender(SMTPConfig{
+		Host: "smtp.example.com",
+		Port: 587,
+		From: "Ringpå <noreply@example.com>",
+	})
+	if err != nil {
+		t.Fatalf("NewSMTPSender: %v", err)
+	}
+	// A raw "å" is not valid in an RFC 5322 header; it must come out
+	// MIME-encoded (RFC 2047), not verbatim.
+	if strings.Contains(sender.fromHeader, "å") {
+		t.Errorf("fromHeader = %q, contains a raw non-ASCII byte", sender.fromHeader)
+	}
+	if !strings.Contains(sender.fromHeader, "noreply@example.com") {
+		t.Errorf("fromHeader = %q, missing the address", sender.fromHeader)
+	}
+}
+
 func TestBuildMessage(t *testing.T) {
 	msg, err := buildMessage("Homban <noreply@example.com>", "user@example.com", "123456", 10*time.Minute)
 	if err != nil {
