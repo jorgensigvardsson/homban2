@@ -27,6 +27,11 @@ type ServiceConfig struct {
 	ResendAfter time.Duration
 	// HashSecret keys the stored code digests.
 	HashSecret string
+	// Users maps a recognized sign-in address to its role. Empty means any
+	// syntactically valid address may sign in as admin — local-development
+	// convenience only; config.Load enforces a non-empty map outside
+	// APP_ENV=development.
+	Users map[string]Role
 }
 
 // Service runs the passwordless sign-in flow.
@@ -80,14 +85,24 @@ type CodeRequest struct {
 
 // RequestCode generates a code, stores its digest and mails it out.
 //
-// Note there is no user directory yet: any syntactically valid address can sign
-// in. Once users are stored, look the address up here and return the same
-// response whether or not it exists, so the endpoint cannot be used to
-// enumerate accounts.
+// For an address outside the configured allowlist, this returns the same
+// response as a real one — but never issues or sends a code — so the
+// endpoint cannot be used to enumerate which addresses are recognized.
 func (s *Service) RequestCode(ctx context.Context, rawEmail string) (CodeRequest, error) {
 	address, err := NormalizeEmail(rawEmail)
 	if err != nil {
 		return CodeRequest{}, err
+	}
+
+	now := s.now()
+	resp := CodeRequest{
+		Email:       address,
+		ExpiresAt:   now.Add(s.cfg.CodeTTL),
+		ResendAfter: s.cfg.ResendAfter,
+	}
+
+	if !s.recognizes(address) {
+		return resp, nil
 	}
 
 	code, err := generateCode(s.cfg.CodeLength)
@@ -95,7 +110,6 @@ func (s *Service) RequestCode(ctx context.Context, rawEmail string) (CodeRequest
 		return CodeRequest{}, err
 	}
 
-	now := s.now()
 	digest := hashCode([]byte(s.cfg.HashSecret), address, code)
 
 	if err := s.codes.Issue(ctx, address, digest, now, s.cfg.CodeTTL, s.cfg.ResendAfter); err != nil {
@@ -109,11 +123,18 @@ func (s *Service) RequestCode(ctx context.Context, rawEmail string) (CodeRequest
 		return CodeRequest{}, fmt.Errorf("deliver sign-in code: %w", err)
 	}
 
-	return CodeRequest{
-		Email:       address,
-		ExpiresAt:   now.Add(s.cfg.CodeTTL),
-		ResendAfter: s.cfg.ResendAfter,
-	}, nil
+	return resp, nil
+}
+
+// recognizes reports whether address may sign in. An empty allowlist means
+// every syntactically valid address is recognized (local development only;
+// config.Load requires a non-empty one outside APP_ENV=development).
+func (s *Service) recognizes(address string) bool {
+	if len(s.cfg.Users) == 0 {
+		return true
+	}
+	_, ok := s.cfg.Users[address]
+	return ok
 }
 
 // Session is a freshly established session.
@@ -153,12 +174,16 @@ func (s *Service) VerifyCode(ctx context.Context, rawEmail, code string) (Sessio
 // Tokens exposes the token service, so the HTTP layer can verify cookies.
 func (s *Service) Tokens() *TokenService { return s.tokens }
 
-// roleFor decides what a user may do.
-//
-// Everyone is an admin while the app is being built. This is the single place
-// to change once roles come from a user record.
-func (s *Service) roleFor(string) Role {
-	return RoleAdmin
+// roleFor decides what a recognized user may do. It is only ever called
+// after VerifyCode redeems a code, and codes are only ever issued to a
+// recognized address (see recognizes), so the lookup below always succeeds
+// once an allowlist is configured. With no allowlist configured (local
+// development only), everyone is admin.
+func (s *Service) roleFor(address string) Role {
+	if len(s.cfg.Users) == 0 {
+		return RoleAdmin
+	}
+	return s.cfg.Users[address]
 }
 
 // NormalizeEmail validates an address and reduces it to a canonical form, so

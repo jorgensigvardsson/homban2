@@ -25,6 +25,11 @@ func (c *captureSender) SendSignInCode(_ context.Context, to, code string, _ tim
 
 func newTestService(t *testing.T) (*Service, *captureSender) {
 	t.Helper()
+	return newTestServiceWithUsers(t, nil)
+}
+
+func newTestServiceWithUsers(t *testing.T, users map[string]Role) (*Service, *captureSender) {
+	t.Helper()
 	sender := &captureSender{}
 	svc, err := NewService(NewMemoryCodeStore(), sender, newTestTokens(t), ServiceConfig{
 		CodeLength:  6,
@@ -32,6 +37,7 @@ func newTestService(t *testing.T) (*Service, *captureSender) {
 		MaxAttempts: 5,
 		ResendAfter: time.Minute,
 		HashSecret:  testSecret,
+		Users:       users,
 	}, nil)
 	if err != nil {
 		t.Fatalf("NewService: %v", err)
@@ -139,6 +145,47 @@ func TestRequestCodeDoesNotStoreCodeWhenDeliveryFails(t *testing.T) {
 
 	if _, err := svc.RequestCode(context.Background(), "user@example.com"); err == nil {
 		t.Fatal("expected a delivery failure to surface")
+	}
+}
+
+func TestRequestCodeIgnoresUnrecognizedAddressWhenAllowlistConfigured(t *testing.T) {
+	svc, sender := newTestServiceWithUsers(t, map[string]Role{"admin@example.com": RoleAdmin})
+	ctx := context.Background()
+
+	request, err := svc.RequestCode(ctx, "stranger@example.com")
+	if err != nil {
+		t.Fatalf("RequestCode: %v", err)
+	}
+	if request.Email != "stranger@example.com" {
+		t.Errorf("email = %q, want the request echoed back", request.Email)
+	}
+	if sender.sent != 0 {
+		t.Fatalf("sender called %d times, want 0 for an unrecognized address", sender.sent)
+	}
+
+	// No code was ever issued, so any guess is rejected the same way a wrong
+	// code would be — the caller cannot tell "unrecognized" from "wrong".
+	if _, err := svc.VerifyCode(ctx, "stranger@example.com", "123456"); !errors.Is(err, ErrInvalidCode) {
+		t.Fatalf("err = %v, want ErrInvalidCode", err)
+	}
+}
+
+func TestVerifyCodeAssignsConfiguredRole(t *testing.T) {
+	svc, sender := newTestServiceWithUsers(t, map[string]Role{
+		"admin@example.com": RoleAdmin,
+		"kid@example.com":   RoleUser,
+	})
+	ctx := context.Background()
+
+	if _, err := svc.RequestCode(ctx, "kid@example.com"); err != nil {
+		t.Fatalf("RequestCode: %v", err)
+	}
+	session, err := svc.VerifyCode(ctx, "kid@example.com", sender.code)
+	if err != nil {
+		t.Fatalf("VerifyCode: %v", err)
+	}
+	if session.Identity.Role != RoleUser {
+		t.Errorf("role = %q, want %q", session.Identity.Role, RoleUser)
 	}
 }
 

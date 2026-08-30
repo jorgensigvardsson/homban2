@@ -10,7 +10,7 @@ import { queryOptions, useMutation, useQuery, useQueryClient } from '@tanstack/r
 import { ApiError, apiFetch } from './client';
 
 /** A role carried in the session token. Extend alongside the Go Role type. */
-export type Role = 'admin';
+export type Role = 'admin' | 'user';
 
 /** The signed-in user. */
 export interface Identity {

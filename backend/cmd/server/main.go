@@ -70,6 +70,9 @@ func run() error {
 		logger.Warn("signing sessions with the built-in development secret; set JWT_SECRET before deploying",
 			"sessionTTL", cfg.Auth.SessionTTL)
 	}
+	if !cfg.Email.Enabled() && !cfg.IsDevelopment() {
+		logger.Warn("no SMTP configured; sign-in codes are only printed to the log, not mailed")
+	}
 
 	srv := &http.Server{
 		Addr: cfg.Addr(),
@@ -82,8 +85,7 @@ func run() error {
 			CookieName:   cfg.Auth.CookieName,
 			CookieSecure: cfg.Auth.CookieSecure,
 			CodeLength:   cfg.Auth.CodeLength,
-			// Codes go to stdout until a real mail sender is configured.
-			MailToStdout: true,
+			MailToStdout: !cfg.Email.Enabled(),
 		}),
 		ReadHeaderTimeout: 10 * time.Second,
 		ReadTimeout:       30 * time.Second,
@@ -186,9 +188,10 @@ func buildAuth(cfg config.Config, logger *slog.Logger) (*auth.Service, error) {
 		return nil, err
 	}
 
-	// Development stub: the code is printed to stdout, so it shows up in the
-	// `npm run dev` output. Swap this for a real Sender when mail is set up.
-	sender := email.NewStdoutSender(os.Stdout, logger)
+	sender, err := buildSender(cfg, logger)
+	if err != nil {
+		return nil, fmt.Errorf("configure mail sender: %w", err)
+	}
 
 	// In-memory codes are fine for one instance. More than one replica needs
 	// shared storage, or a user's code and their verification request can
@@ -201,5 +204,21 @@ func buildAuth(cfg config.Config, logger *slog.Logger) (*auth.Service, error) {
 		MaxAttempts: cfg.Auth.CodeMaxAttempts,
 		ResendAfter: cfg.Auth.CodeResendAfter,
 		HashSecret:  cfg.Auth.JWTSecret,
+		Users:       cfg.Auth.Users,
 	}, logger)
+}
+
+// buildSender picks a real SMTP sender when SMTP is configured, otherwise the
+// stdout stub used for local development.
+func buildSender(cfg config.Config, logger *slog.Logger) (email.Sender, error) {
+	if !cfg.Email.Enabled() {
+		return email.NewStdoutSender(os.Stdout, logger), nil
+	}
+	return email.NewSMTPSender(email.SMTPConfig{
+		Host:     cfg.Email.SMTPHost,
+		Port:     cfg.Email.SMTPPort,
+		Username: cfg.Email.SMTPUsername,
+		Password: cfg.Email.SMTPPassword,
+		From:     cfg.Email.From,
+	})
 }

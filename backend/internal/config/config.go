@@ -39,15 +39,20 @@ type Config struct {
 	// SQLite configures the on-disk database file. Unset during local
 	// development, in which case the in-memory store is used instead.
 	SQLite SQLiteConfig
+
+	// Email configures outgoing SMTP mail. Unset during local development, in
+	// which case sign-in codes are printed to stdout instead.
+	Email EmailConfig
 }
 
 // AuthConfig configures sign-in codes and session tokens.
 type AuthConfig struct {
 	// JWTSecret signs session tokens (HS256).
 	//
-	// Deliberately unrelated to the TLS certificate: TLS terminates at the
-	// Azure ingress, where the app has no access to the private key, and a
-	// managed certificate rotates on its own schedule, which would invalidate
+	// Deliberately unrelated to the TLS certificate: TLS terminates in front
+	// of the app (the local dev proxy, or a reverse proxy in front of a real
+	// deployment), so the app typically has no access to the private key, and
+	// a certificate can rotate on its own schedule, which would invalidate
 	// every session. Signing keys and transport keys stay separate.
 	JWTSecret string
 	// UsingDevSecret is true when JWTSecret fell back to the built-in
@@ -73,6 +78,27 @@ type AuthConfig struct {
 	CodeMaxAttempts int
 	// CodeResendAfter is the cooldown between code requests per address.
 	CodeResendAfter time.Duration
+
+	// Users maps a recognized sign-in address to its role. Empty during
+	// local development, in which case any syntactically valid address may
+	// sign in as admin; required once APP_ENV is not development.
+	Users map[string]auth.Role
+}
+
+// EmailConfig configures outgoing SMTP mail for sign-in codes.
+type EmailConfig struct {
+	SMTPHost     string
+	SMTPPort     int
+	SMTPUsername string
+	SMTPPassword string
+	// From is used as both the envelope sender and the "From" header. May be
+	// a bare address or "Display Name <address>".
+	From string
+}
+
+// Enabled reports whether enough SMTP settings are present to send mail.
+func (c EmailConfig) Enabled() bool {
+	return c.SMTPHost != ""
 }
 
 // devJWTSecret is used only when APP_ENV is development and JWT_SECRET is
@@ -120,6 +146,18 @@ func Load() (Config, error) {
 
 	if cfg.Auth, err = loadAuth(cfg.Env); err != nil {
 		return Config{}, err
+	}
+
+	smtpPort, err := envInt("SMTP_PORT", 587)
+	if err != nil {
+		return Config{}, err
+	}
+	cfg.Email = EmailConfig{
+		SMTPHost:     env("SMTP_HOST", ""),
+		SMTPPort:     smtpPort,
+		SMTPUsername: env("SMTP_USERNAME", ""),
+		SMTPPassword: env("SMTP_PASSWORD", ""),
+		From:         env("SMTP_FROM", ""),
 	}
 
 	return cfg, nil
@@ -176,7 +214,45 @@ func loadAuth(appEnv string) (AuthConfig, error) {
 		return AuthConfig{}, fmt.Errorf("AUTH_COOKIE_SECURE must not be disabled when APP_ENV=%s", appEnv)
 	}
 
+	if a.Users, err = parseUsers(env("RECOGNIZED_USERS", "")); err != nil {
+		return AuthConfig{}, err
+	}
+	if len(a.Users) == 0 && appEnv != "development" {
+		return AuthConfig{}, fmt.Errorf("RECOGNIZED_USERS is required when APP_ENV=%s", appEnv)
+	}
+
 	return a, nil
+}
+
+// parseUsers parses RECOGNIZED_USERS: comma-separated "email:role" pairs,
+// e.g. "a@example.com:admin,b@example.com:user".
+func parseUsers(raw string) (map[string]auth.Role, error) {
+	raw = strings.TrimSpace(raw)
+	if raw == "" {
+		return nil, nil
+	}
+
+	users := make(map[string]auth.Role)
+	for _, entry := range strings.Split(raw, ",") {
+		entry = strings.TrimSpace(entry)
+		if entry == "" {
+			continue
+		}
+		rawEmail, rawRole, ok := strings.Cut(entry, ":")
+		if !ok {
+			return nil, fmt.Errorf("RECOGNIZED_USERS: entry %q is missing a :role suffix", entry)
+		}
+		address, err := auth.NormalizeEmail(rawEmail)
+		if err != nil {
+			return nil, fmt.Errorf("RECOGNIZED_USERS: %w", err)
+		}
+		role := auth.Role(strings.TrimSpace(rawRole))
+		if !role.Valid() {
+			return nil, fmt.Errorf("RECOGNIZED_USERS: %s has unknown role %q", address, rawRole)
+		}
+		users[address] = role
+	}
+	return users, nil
 }
 
 // Addr is the listen address for the HTTP server.

@@ -20,13 +20,20 @@ import (
 type Role string
 
 const (
-	// RoleAdmin can do everything. Every user gets this for now.
+	// RoleAdmin can do everything.
 	RoleAdmin Role = "admin"
+	// RoleUser is an ordinary signed-in household member.
+	RoleUser Role = "user"
 )
 
 // Valid reports whether r is a role this build knows about.
 func (r Role) Valid() bool {
-	return r == RoleAdmin
+	switch r {
+	case RoleAdmin, RoleUser:
+		return true
+	default:
+		return false
+	}
 }
 
 // Identity is the authenticated caller, as recovered from a token.

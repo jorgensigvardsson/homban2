@@ -1,8 +1,5 @@
-// Package email delivers transactional mail.
-//
-// Only the stdout stub exists today. A real implementation (Azure
-// Communication Services, or SMTP) will be added as another Sender, so no
-// calling code has to change.
+// Package email delivers transactional mail: StdoutSender for local
+// development, SMTPSender (smtp.go) for a real deployment.
 package email
 
 import (

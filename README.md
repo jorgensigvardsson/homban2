@@ -105,8 +105,11 @@ You will land on the login page.
 
 ### 5. Sign in (the code is in your terminal)
 
-Type any email address that looks valid — there is no user directory yet, so
-anything works — and press **Send code**.
+Type any email address that looks valid and press **Send code** — with
+`RECOGNIZED_USERS` unset (the default locally), any syntactically valid
+address works. Once `RECOGNIZED_USERS` is set (required outside
+`APP_ENV=development` — see [Recognized users](#recognized-users)), only
+addresses in that list receive an actual code.
 
 **No mail is sent in development.** The code is printed by the backend, so look
 at the terminal running `npm run dev` and find the box in the `[backend]` lane:
@@ -248,8 +251,29 @@ shows up in the `[backend]` lane of `npm run dev`:
   +--------------------------------------------------+
 ```
 
-Any syntactically valid address works — there is no user directory yet, so
-whatever you type is treated as a valid account.
+Any syntactically valid address works when `RECOGNIZED_USERS` is unset (the
+default locally). See [Recognized users](#recognized-users) for how a real
+deployment restricts this to specific addresses, and mails a real code
+instead of printing one.
+
+### Recognized users
+
+`RECOGNIZED_USERS` is a comma-separated allowlist: `email:role` pairs, where
+role is `admin` or `user` (extend the `Role` type in
+[backend/internal/auth/token.go](backend/internal/auth/token.go) for more).
+It is required unless `APP_ENV=development` — the server refuses to start
+without it, exactly like `JWT_SECRET`.
+
+```
+RECOGNIZED_USERS=you@example.com:admin,other@example.com:user
+```
+
+Requesting a code for an address outside the list gets the same `202`
+response as a real one, but no code is issued or mailed — this endpoint
+cannot be used to probe which addresses are registered. There is no way to
+add a user at runtime; changing the list means editing this environment
+variable and restarting the service (a new deploy, for the self-hosted
+setup — see [Continuous deployment](#continuous-deployment)).
 
 ### Signing in from the command line
 
@@ -476,9 +500,12 @@ never at `http://localhost:5173` directly.
 
 ```bash
 cp .env.example .env
-# Edit .env: at minimum set a real JWT_SECRET (APP_ENV defaults to
-# production in the image, which requires one).
+# Edit .env: at minimum set a real JWT_SECRET and RECOGNIZED_USERS (APP_ENV
+# defaults to production in the image, which requires both). See
+# [Recognized users](#recognized-users) for RECOGNIZED_USERS' format.
 #   node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
+# Set SMTP_HOST (and friends) too, or sign-in codes only ever reach
+# `docker compose logs api`, never an inbox.
 
 docker compose up -d --build
 ```
@@ -556,10 +583,6 @@ box or network appliance) forwarding to `web`'s published port 5581:
 
 ### What is *not* handled yet
 
-- **Email.** Sign-in codes still only go to stdout — check
-  `docker compose logs api` for the code box shown in [Signing in](#signing-in).
-  Implement `email.Sender` (SMTP or a provider API) and swap it in `buildAuth`
-  to send real mail.
 - **Scaling past one `api` replica.** Sign-in codes live in that container's
   process memory, so a code issued by one replica cannot be verified by
   another. Compose runs a single replica by default, so this only matters if
